@@ -11,7 +11,7 @@ echo
 read -r -p "Enter your name (First Last): " name
 read -r -p "Enter your email: " email
 read -r -p "Enter your cohort (c-sharp): " cohort
-read -r -p "Enter your bitbucket team (e.g. te-cbus-cohort-10): " team
+read -r -p "Enter your bitbucket team (e.g. te-cbus-cohort-11): " team
 
 echo
 echo "Setting Up Global Configuration Settings"
