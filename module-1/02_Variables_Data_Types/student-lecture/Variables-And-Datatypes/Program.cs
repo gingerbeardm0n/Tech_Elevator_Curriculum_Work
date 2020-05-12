@@ -13,39 +13,53 @@ namespace Variables_And_Datatypes
 			Then set it to 26.
 		    */
 
-            //Console.WriteLine(numberOfExercises);
+            int numberOfExercises = 26;
+            Console.WriteLine(numberOfExercises);
 
             /*
             2. Create a variable to hold a double and call it half.
                 Set it to 0.5.
             */
-
-            //Console.WriteLine(half);
+            double half = 0.5;
+            Console.WriteLine(half);
 
             /*
             3. Create a variable to hold a string and call it name.
                 Set it to "TechElevator".
             */
+            string name = "TechElevator";
+            Console.WriteLine(name);
 
-            //Console.WriteLine(name);
+            bool result = true;
+            Console.WriteLine(result);
+
+            float floatyMcGee = 1.03F;
+
+            float floatyMcGoo = 0.42F;
+
+            double floatyMcBoomBoom = floatyMcGee - floatyMcGoo;
+            Console.WriteLine(floatyMcBoomBoom);
 
             /*
             4. Create a variable called seasonsOfFirefly and set it to 1.
             */
-
-            //Console.WriteLine(seasonsOfFirefly);
+            int seasonsOfFirefly = 1;  //so far! Death to the Alliance!!!
+            Console.WriteLine(seasonsOfFirefly);
 
             /*
             5. Create a variable called myFavoriteLanguage and set it to "C#".
             */
+            const string myFavoriteLanguage = "C#";
 
-            //Console.WriteLine(myFavoriteLanguage);
+            Console.WriteLine(myFavoriteLanguage);
 
             /*
             6. Create a variable called pi and set it to 3.1416.
             */
+            double pi = 3.1416;
+            Console.WriteLine(pi);
 
-            //Console.WriteLine(pi);
+            int inPi = (int)pi;
 
             /*
             7. Create and set a variable that holds your name.
@@ -65,10 +79,15 @@ namespace Variables_And_Datatypes
             /*
             10. Create an int variable that holds the difference between 121 and 27.
             */
-
+            int difference = 121 - 27;
             /*
             11. Create a double that holds the addition of 12.3 and 32.1.
             */
+            double hold = 12.3 + 32.1;
+
+            int a = 1;
+
+            a = a + 1;
 
             /*
             12. Create a string that holds your full name.
@@ -78,7 +97,7 @@ namespace Variables_And_Datatypes
             13. Create a string that holds the word "Hello, " concatenated onto your
             name from above.
             */
-
+            string name2 = "Hello" + " There" + "!";
             /*
             14. Add a " Esquire" onto the end of your full name and save it back to
             the same variable.
