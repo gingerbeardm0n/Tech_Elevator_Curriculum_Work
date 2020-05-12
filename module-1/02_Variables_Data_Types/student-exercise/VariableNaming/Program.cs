@@ -130,86 +130,129 @@ namespace VariableNaming
             altogether?
             */
 
-
-            Console.WriteLine();
+            int numberOfLargeMarshmallows = 8;
+            int numberOfMiniMarshmallows = 10;
+            int totalNumberOfMarshmallows = numberOfLargeMarshmallows + numberOfMiniMarshmallows;
+            Console.WriteLine(totalNumberOfMarshmallows);
             /*
             14. At Mrs. Hilt's house, there was 29 inches of snow, and Brecknock
             Elementary School received 17 inches of snow. How much more snow
             did Mrs. Hilt's house have?
             */
 
-
-
-            Console.WriteLine();
+            int inchesOfSnowAtMrsHiltHouse = 29;
+            int inchesOfSnowAtBrecknockSchool = 17;
+            int differenceInAmountOfSnow = inchesOfSnowAtMrsHiltHouse - inchesOfSnowAtBrecknockSchool;
+            Console.WriteLine(differenceInAmountOfSnow);
             /*
             15. Mrs. Hilt has $10. She spends $3 on a toy truck and $2 on a pencil
             case. How much money does she have left?
             */
 
-
-
-            Console.WriteLine();
+            double mrsHiltStartingMoney = 10.00;
+            double costOfToyTruck = 3.00;
+            double costOfPencil = 2.00;
+            //Mrs.Hilt buys the toy truck and the pencil
+            double mrsHiltRemainingMoney = mrsHiltStartingMoney - costOfToyTruck - costOfPencil;
+            Console.WriteLine(mrsHiltRemainingMoney);
             /*
             16. Josh had 16 marbles in his collection. He lost 7 marbles. How many
             marbles does he have now?
             */
-            Console.WriteLine();
+            int numberOfMarblesInCollection = 16;
+            int numberOfLostMarbles = 7;
+            int remainingNumberOfMarbles = numberOfMarblesInCollection - numberOfLostMarbles;
+            Console.WriteLine(remainingNumberOfMarbles);
             /*
             17. Megan has 19 seashells. How many more seashells does she need to
             find to have 25 seashells in her collection?
             */
-            Console.WriteLine();
+            int startingNumberOfSeashells = 19;
+            int targetNumberOfSeashells = 25;
+            int neededNumberofSeashells = targetNumberOfSeashells - startingNumberOfSeashells;
+            Console.WriteLine(neededNumberofSeashells);
             /*
             18. Brad has 17 balloons. 8 balloons are red and the rest are green. How
             many green balloons does Brad have?
             */
-            Console.WriteLine();
+            int totalNumberOfBalloons = 17;
+            int redNumberOfBalloons = 8;
+            int greenNumberOfBalloons = totalNumberOfBalloons - redNumberOfBalloons;
+            Console.WriteLine(greenNumberOfBalloons);
             /*
             19. There are 38 books on the shelf. Marta put 10 more books on the shelf.
             How many books are on the shelf now?
             */
-            Console.WriteLine();
+            int initialNumberOfBooksOnShelf = 38;
+            int addedNumberOfBooksOnShelf = 10;
+            int updatedNumberOfBooksOnShelf = initialNumberOfBooksOnShelf + addedNumberOfBooksOnShelf;
+            Console.WriteLine(updatedNumberOfBooksOnShelf);
             /*
             20. A bee has 6 legs. How many legs do 8 bees have?
             */
-            Console.WriteLine();
+            int legsPerBee = 6;
+            int totalNumberofBees = 8;
+            int totalNumberOfLegs = legsPerBee * totalNumberofBees;
+            Console.WriteLine(totalNumberOfLegs);
             /*
             21. Mrs. Hilt bought an ice cream cone for 99 cents. How much would 2 ice
             cream cones cost?
             */
-            Console.WriteLine();
+            double costOfIceCremCone = 0.99;
+            int numberOfIceCreamCones = 2;
+            double totalCostOfIceCreamCones = costOfIceCremCone * numberOfIceCreamCones;
+            Console.WriteLine(totalCostOfIceCreamCones);
             /*
             22. Mrs. Hilt wants to make a border around her garden. She needs 125
             rocks to complete the border. She has 64 rocks. How many more rocks
             does she need to complete the border?
             */
-            Console.WriteLine();
+            int targetNumberOfRocks = 125;
+            int startingNumberOfRocks = 64;
+            int neededNumberOfRocks = targetNumberOfRocks - startingNumberOfRocks;
+            Console.WriteLine(neededNumberOfRocks);
             /*
             23. Mrs. Hilt had 38 marbles. She lost 15 of them. How many marbles does
             she have left?
             */
-            Console.WriteLine();
+            int startingNumberOfMarblesMrsHilt = 38;
+            int lostNumberOfMarblesMrsHilt = 15;
+            int remainingNumberOfMarblesMrsHilt = startingNumberOfMarblesMrsHilt - lostNumberOfMarblesMrsHilt;
+            Console.WriteLine(remainingNumberOfMarblesMrsHilt);
             /*
             24. Mrs. Hilt and her sister drove to a concert 78 miles away. They drove 32
             miles and then stopped for gas. How many miles did they have left to drive?
             */
-            Console.WriteLine();
+            int totalMileageNeeded = 78;
+            int mileageBeforeFirstStop = 32;
+            int remainingMileageLeftInTrip = totalMileageNeeded - mileageBeforeFirstStop;
+            Console.WriteLine(remainingMileageLeftInTrip);
             /*
             25. Mrs. Hilt spent 1 hour and 30 minutes shoveling snow on Saturday
             morning and 45 minutes shoveling snow on Saturday afternoon. How
             much total time did she spend shoveling snow?
             */
-            Console.WriteLine();
+            double morningTimeMrsHiltSpentShovelinginHours = 1.5;
+            double afternoonTimeMrsHiltSpentShovelinginHours = 0.75;
+            double totalTimeMrsHiltSpentShovelinginHours = morningTimeMrsHiltSpentShovelinginHours + afternoonTimeMrsHiltSpentShovelinginHours;
+            Console.WriteLine(totalTimeMrsHiltSpentShovelinginHours);
             /*
             26. Mrs. Hilt bought 6 hot dogs. Each hot dog cost 50 cents. How much
             money did she pay for all of the hot dogs?
             */
-            Console.WriteLine();
+            int boughtNumberOfHotDogs = 6;
+            double costPerHotDog = 0.50;
+            double totalCostOfHotDogsBought = boughtNumberOfHotDogs * costPerHotDog;
+            Console.WriteLine(totalCostOfHotDogsBought);
             /*
             27. Mrs. Hilt has 50 cents. A pencil costs 7 cents. How many pencils can
             she buy with the money she has?
             */
-            Console.WriteLine();
+            int costOfPencilMrsHiltWantsInCents = 7;
+            int totalMoneyMrsHiltHasInCents = 50;
+            double fractionalNumberOfPencilsMrsHiltCanBuy = totalMoneyMrsHiltHasInCents / costOfPencilMrsHiltWantsInCents;
+            int actualNumberOfPencilsMrsHiltCanBuy = (int)fractionalNumberOfPencilsMrsHiltCanBuy;
+            Console.WriteLine(actualNumberOfPencilsMrsHiltCanBuy);
             /*
             28. Mrs. Hilt saw 33 butterflies. Some of the butterflies were red and others
             were orange. If 20 of the butterflies were orange, how many of them
