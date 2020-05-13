@@ -36,7 +36,7 @@ namespace VariableNaming
             int outDoorsyRaccoons = 3;
             int hungryRaccoons = 2;
             int dedicatedRaccoons = outDoorsyRaccoons - hungryRaccoons;
-            Console.WriteLine(dedicatedRaccoons);
+            Console.WriteLine("3) " + dedicatedRaccoons);
 
             /*
             4. There are 5 flowers and 3 bees. How many less bees than flowers?
@@ -45,7 +45,7 @@ namespace VariableNaming
             int numberOfFlowers = 5;
             int numberOfBees = 3;
             int lessBees = numberOfFlowers - numberOfBees;
-            Console.WriteLine(lessBees);
+            Console.WriteLine("4) " + lessBees);
 
             /*
             5. 1 lonely pigeon was eating breadcrumbs. Another pigeon came to eat
@@ -55,7 +55,7 @@ namespace VariableNaming
             int lonelyPigeons = 1;
             int friendlyPigeons = 1;
             int possyPigeons = lonelyPigeons + friendlyPigeons;
-            Console.WriteLine(possyPigeons);
+            Console.WriteLine("5) " + possyPigeons);
             /*
             6. 3 owls were sitting on the fence. 2 more owls joined them. How many
             owls are on the fence now?
@@ -64,7 +64,7 @@ namespace VariableNaming
             int initialOwls = 3;
             int newOwls = 2;
             int totalOwls = initialOwls + newOwls;
-            Console.WriteLine(totalOwls);
+            Console.WriteLine("6) " + totalOwls);
             /*
             7. 2 beavers were working on their home. 1 went for a swim. How many
             beavers are still working on their home?
@@ -73,7 +73,7 @@ namespace VariableNaming
             int workerBeavers = 2;
             int lazyBeavers = 1;
             int frustratedBeavers = workerBeavers - lazyBeavers;
-            Console.WriteLine(frustratedBeavers);
+            Console.WriteLine("7) " + frustratedBeavers);
             /*
             8. 2 toucans are sitting on a tree limb. 1 more toucan joins them. How
             many toucans in all?
@@ -82,7 +82,7 @@ namespace VariableNaming
             int initialToucans = 2;
             int newToucans = 1;
             int totalToucans = initialToucans + newToucans;
-            Console.WriteLine(totalToucans);
+            Console.WriteLine("8) " + totalToucans);
             /*
             9. There are 4 squirrels in a tree with 2 nuts. How many more squirrels
             are there than nuts?
@@ -91,7 +91,7 @@ namespace VariableNaming
             int numberOfSquirrels = 4;
             int numberOfNuts = 2;
             int sqirrelDominance = numberOfSquirrels - numberOfNuts;
-            Console.WriteLine(sqirrelDominance);
+            Console.WriteLine("9) " + sqirrelDominance);
             /*
             10. Mrs. Hilt found a quarter, 1 dime, and 2 nickels. How much money did
             she find?
@@ -101,7 +101,7 @@ namespace VariableNaming
             double dime = 0.10;
             double nickel = 0.05;
             double mrsHiltTotalMoney = quarter + dime + (2 *nickel);
-            Console.WriteLine(mrsHiltTotalMoney);
+            Console.WriteLine("10) " + mrsHiltTotalMoney);
             /*
             11. Mrs. Hilt's favorite first grade classes are baking muffins. Mrs. Brier's
             class bakes 18 muffins, Mrs. MacAdams's class bakes 20 muffins, and
@@ -113,7 +113,7 @@ namespace VariableNaming
             int macAdams = 20;
             int flannery = 17;
             int totalMuffins = brier + macAdams + flannery;
-            Console.WriteLine(totalMuffins);
+            Console.WriteLine("11) " + totalMuffins);
             /*
             12. Mrs. Hilt bought a yoyo for 24 cents and a whistle for 14 cents. How
             much did she spend in all for the two toys?
@@ -123,7 +123,7 @@ namespace VariableNaming
 
             double costOfWhistle = 0.14;
             double valueOfToys = costOfYoyo + costOfWhistle;
-            Console.WriteLine(valueOfToys);
+            Console.WriteLine("12) " + valueOfToys);
             /*
             13. Mrs. Hilt made 5 Rice Krispie Treats. She used 8 large marshmallows
             and 10 mini marshmallows.How many marshmallows did she use
@@ -133,7 +133,7 @@ namespace VariableNaming
             int numberOfLargeMarshmallows = 8;
             int numberOfMiniMarshmallows = 10;
             int totalNumberOfMarshmallows = numberOfLargeMarshmallows + numberOfMiniMarshmallows;
-            Console.WriteLine(totalNumberOfMarshmallows);
+            Console.WriteLine("13) " + totalNumberOfMarshmallows);
             /*
             14. At Mrs. Hilt's house, there was 29 inches of snow, and Brecknock
             Elementary School received 17 inches of snow. How much more snow
@@ -143,7 +143,7 @@ namespace VariableNaming
             int inchesOfSnowAtMrsHiltHouse = 29;
             int inchesOfSnowAtBrecknockSchool = 17;
             int differenceInAmountOfSnow = inchesOfSnowAtMrsHiltHouse - inchesOfSnowAtBrecknockSchool;
-            Console.WriteLine(differenceInAmountOfSnow);
+            Console.WriteLine("14) " + differenceInAmountOfSnow);
             /*
             15. Mrs. Hilt has $10. She spends $3 on a toy truck and $2 on a pencil
             case. How much money does she have left?
@@ -154,7 +154,7 @@ namespace VariableNaming
             double costOfPencil = 2.00;
             //Mrs.Hilt buys the toy truck and the pencil
             double mrsHiltRemainingMoney = mrsHiltStartingMoney - costOfToyTruck - costOfPencil;
-            Console.WriteLine(mrsHiltRemainingMoney);
+            Console.WriteLine("15) " + mrsHiltRemainingMoney);
             /*
             16. Josh had 16 marbles in his collection. He lost 7 marbles. How many
             marbles does he have now?
@@ -162,7 +162,7 @@ namespace VariableNaming
             int numberOfMarblesInCollection = 16;
             int numberOfLostMarbles = 7;
             int remainingNumberOfMarbles = numberOfMarblesInCollection - numberOfLostMarbles;
-            Console.WriteLine(remainingNumberOfMarbles);
+            Console.WriteLine("16) " + remainingNumberOfMarbles);
             /*
             17. Megan has 19 seashells. How many more seashells does she need to
             find to have 25 seashells in her collection?
@@ -170,7 +170,7 @@ namespace VariableNaming
             int startingNumberOfSeashells = 19;
             int targetNumberOfSeashells = 25;
             int neededNumberofSeashells = targetNumberOfSeashells - startingNumberOfSeashells;
-            Console.WriteLine(neededNumberofSeashells);
+            Console.WriteLine("17) " + neededNumberofSeashells);
             /*
             18. Brad has 17 balloons. 8 balloons are red and the rest are green. How
             many green balloons does Brad have?
@@ -178,7 +178,7 @@ namespace VariableNaming
             int totalNumberOfBalloons = 17;
             int redNumberOfBalloons = 8;
             int greenNumberOfBalloons = totalNumberOfBalloons - redNumberOfBalloons;
-            Console.WriteLine(greenNumberOfBalloons);
+            Console.WriteLine("18) " + greenNumberOfBalloons);
             /*
             19. There are 38 books on the shelf. Marta put 10 more books on the shelf.
             How many books are on the shelf now?
@@ -186,14 +186,14 @@ namespace VariableNaming
             int initialNumberOfBooksOnShelf = 38;
             int addedNumberOfBooksOnShelf = 10;
             int updatedNumberOfBooksOnShelf = initialNumberOfBooksOnShelf + addedNumberOfBooksOnShelf;
-            Console.WriteLine(updatedNumberOfBooksOnShelf);
+            Console.WriteLine("19) " + updatedNumberOfBooksOnShelf);
             /*
             20. A bee has 6 legs. How many legs do 8 bees have?
             */
             int legsPerBee = 6;
             int totalNumberofBees = 8;
             int totalNumberOfLegs = legsPerBee * totalNumberofBees;
-            Console.WriteLine(totalNumberOfLegs);
+            Console.WriteLine("20) " + totalNumberOfLegs);
             /*
             21. Mrs. Hilt bought an ice cream cone for 99 cents. How much would 2 ice
             cream cones cost?
@@ -201,7 +201,7 @@ namespace VariableNaming
             double costOfIceCremCone = 0.99;
             int numberOfIceCreamCones = 2;
             double totalCostOfIceCreamCones = costOfIceCremCone * numberOfIceCreamCones;
-            Console.WriteLine(totalCostOfIceCreamCones);
+            Console.WriteLine("21) " + totalCostOfIceCreamCones);
             /*
             22. Mrs. Hilt wants to make a border around her garden. She needs 125
             rocks to complete the border. She has 64 rocks. How many more rocks
@@ -210,7 +210,7 @@ namespace VariableNaming
             int targetNumberOfRocks = 125;
             int startingNumberOfRocks = 64;
             int neededNumberOfRocks = targetNumberOfRocks - startingNumberOfRocks;
-            Console.WriteLine(neededNumberOfRocks);
+            Console.WriteLine("22) " + neededNumberOfRocks);
             /*
             23. Mrs. Hilt had 38 marbles. She lost 15 of them. How many marbles does
             she have left?
@@ -218,7 +218,7 @@ namespace VariableNaming
             int startingNumberOfMarblesMrsHilt = 38;
             int lostNumberOfMarblesMrsHilt = 15;
             int remainingNumberOfMarblesMrsHilt = startingNumberOfMarblesMrsHilt - lostNumberOfMarblesMrsHilt;
-            Console.WriteLine(remainingNumberOfMarblesMrsHilt);
+            Console.WriteLine("23) " + remainingNumberOfMarblesMrsHilt);
             /*
             24. Mrs. Hilt and her sister drove to a concert 78 miles away. They drove 32
             miles and then stopped for gas. How many miles did they have left to drive?
@@ -226,7 +226,7 @@ namespace VariableNaming
             int totalMileageNeeded = 78;
             int mileageBeforeFirstStop = 32;
             int remainingMileageLeftInTrip = totalMileageNeeded - mileageBeforeFirstStop;
-            Console.WriteLine(remainingMileageLeftInTrip);
+            Console.WriteLine("24) " + remainingMileageLeftInTrip);
             /*
             25. Mrs. Hilt spent 1 hour and 30 minutes shoveling snow on Saturday
             morning and 45 minutes shoveling snow on Saturday afternoon. How
@@ -235,7 +235,7 @@ namespace VariableNaming
             double morningTimeMrsHiltSpentShovelinginHours = 1.5;
             double afternoonTimeMrsHiltSpentShovelinginHours = 0.75;
             double totalTimeMrsHiltSpentShovelinginHours = morningTimeMrsHiltSpentShovelinginHours + afternoonTimeMrsHiltSpentShovelinginHours;
-            Console.WriteLine(totalTimeMrsHiltSpentShovelinginHours);
+            Console.WriteLine("25) " + totalTimeMrsHiltSpentShovelinginHours);
             /*
             26. Mrs. Hilt bought 6 hot dogs. Each hot dog cost 50 cents. How much
             money did she pay for all of the hot dogs?
@@ -243,7 +243,7 @@ namespace VariableNaming
             int boughtNumberOfHotDogs = 6;
             double costPerHotDog = 0.50;
             double totalCostOfHotDogsBought = boughtNumberOfHotDogs * costPerHotDog;
-            Console.WriteLine(totalCostOfHotDogsBought);
+            Console.WriteLine("26) " + totalCostOfHotDogsBought);
             /*
             27. Mrs. Hilt has 50 cents. A pencil costs 7 cents. How many pencils can
             she buy with the money she has?
@@ -252,7 +252,7 @@ namespace VariableNaming
             int totalMoneyMrsHiltHasInCents = 50;
             double fractionalNumberOfPencilsMrsHiltCanBuy = totalMoneyMrsHiltHasInCents / costOfPencilMrsHiltWantsInCents;
             int actualNumberOfPencilsMrsHiltCanBuy = (int)fractionalNumberOfPencilsMrsHiltCanBuy;
-            Console.WriteLine(actualNumberOfPencilsMrsHiltCanBuy);
+            Console.WriteLine("27) " + actualNumberOfPencilsMrsHiltCanBuy);
             /*
             28. Mrs. Hilt saw 33 butterflies. Some of the butterflies were red and others
             were orange. If 20 of the butterflies were orange, how many of them
@@ -261,7 +261,7 @@ namespace VariableNaming
             int totalNumberOfButterfliesSeen = 33;
             int orangeNumberofBufferfliesSeen = 20;
             int redNumberofBufferfliesSeen = totalNumberOfButterfliesSeen - orangeNumberofBufferfliesSeen;
-            Console.WriteLine(redNumberOfBalloons);
+            Console.WriteLine("28) " + redNumberOfBalloons);
             /*
             29. Kate gave the clerk $1.00. Her candy cost 54 cents. How much change
             should Kate get back?
@@ -270,7 +270,7 @@ namespace VariableNaming
             double costOfCandy = 0.54;
             //Kate wants to buy the candy
             double remainingMoneyKate = startingMoneyKate - costOfCandy;
-            Console.WriteLine(remainingMoneyKate);
+            Console.WriteLine("29) " + remainingMoneyKate);
             /*
             30. Mark has 13 trees in his backyard. If he plants 12 more, how many trees
             will he have?
@@ -278,7 +278,7 @@ namespace VariableNaming
             int startingNumberOfTreesInBackyard = 13;
             int additionalNumberOfTreesInBackyard = 12;
             int updatedNumberOfTreesInBackyard = startingNumberOfTreesInBackyard + additionalNumberOfTreesInBackyard;
-            Console.WriteLine(updatedNumberOfTreesInBackyard);
+            Console.WriteLine("30) " + updatedNumberOfTreesInBackyard);
             /*
             31. Joy will see her grandma in two days. How many hours until she sees
             her?
@@ -286,7 +286,7 @@ namespace VariableNaming
             int numberOfHoursPerDay = 24;
             int daysUntillJoySeesGrandma = 2;
             int numberOfHoursUntilJoySeesGrandma = numberOfHoursPerDay * daysUntillJoySeesGrandma;
-            Console.WriteLine(numberOfHoursUntilJoySeesGrandma);
+            Console.WriteLine("31) " + numberOfHoursUntilJoySeesGrandma);
             /*
             32. Kim has 4 cousins. She wants to give each one 5 pieces of gum. How
             much gum will she need?
@@ -294,7 +294,7 @@ namespace VariableNaming
             int numberOfCousins = 4;
             int piecesOfGumPerCousin = 5;
             int totalPiecesOfGumNeeded = numberOfCousins * piecesOfGumPerCousin;
-            Console.WriteLine(totalPiecesOfGumNeeded);
+            Console.WriteLine("32) " + totalPiecesOfGumNeeded);
             /*
             33. Dan has $3.00. He bought a candy bar for $1.00. How much money is
             left?
@@ -302,7 +302,7 @@ namespace VariableNaming
             double startingMoneyDan = 3.00;
             double costOfCandyBar = 1.00;
             double remainingMoneyDan = startingMoneyDan - costOfCandyBar;
-            Console.WriteLine(remainingMoneyDan);
+            Console.WriteLine("33) " + remainingMoneyDan);
             /*
             34. 5 boats are in the lake. Each boat has 3 people. How many people are
             on boats in the lake?
@@ -310,7 +310,7 @@ namespace VariableNaming
             int numberOfBoatsInLake = 5;
             int numberOfPeoplePerBoat = 3;
             int numberOfPeopleTotalInBoatsOnLake = numberOfBoatsInLake * numberOfPeoplePerBoat;
-            Console.WriteLine(numberOfPeopleTotalInBoatsOnLake);
+            Console.WriteLine("34) " + numberOfPeopleTotalInBoatsOnLake);
             /*
             35. Ellen had 380 legos, but she lost 57 of them. How many legos does she
             have now?
@@ -318,7 +318,7 @@ namespace VariableNaming
             int startingNumberOfLegos = 380;
             int lostNumberOfLegos = 57;
             int updatedNumberOfLegos = startingNumberOfLegos - lostNumberOfLegos;
-            Console.WriteLine(updatedNumberOfLegos);
+            Console.WriteLine("35) " + updatedNumberOfLegos);
             /*
             36. Arthur baked 35 muffins. How many more muffins does Arthur have to
             bake to have 83 muffins?
@@ -326,7 +326,7 @@ namespace VariableNaming
             int startingNumberOfMuffins = 35;
             int targetNumberOfMuffins = 83;
             int neededNumberOfMuffins = targetNumberOfMuffins - startingNumberOfMuffins;
-            Console.WriteLine(neededNumberOfMuffins);
+            Console.WriteLine("36) " + neededNumberOfMuffins);
             /*
             37. Willy has 1400 crayons. Lucy has 290 crayons. How many more
             crayons does Willy have then Lucy?
@@ -334,7 +334,7 @@ namespace VariableNaming
             int willysCrayons = 1400;
             int lucysCrayons = 290;
             int differenceInCrayons = willysCrayons - lucysCrayons;
-            Console.WriteLine(differenceInAmountOfSnow);
+            Console.WriteLine("37) " + differenceInAmountOfSnow);
             /*
             38. There are 10 stickers on a page. If you have 22 pages of stickers, how
             many stickers do you have?
@@ -342,7 +342,7 @@ namespace VariableNaming
             int stickersPerPage = 10;
             int numberOfPages = 22;
             int totalNumberOfStickers = stickersPerPage * numberOfPages;
-            Console.WriteLine(totalNumberOfStickers);
+            Console.WriteLine("38) " + totalNumberOfStickers);
             /*
             39. There are 96 cupcakes for 8 children to share. How much will each
             person get if they share the cupcakes equally?
@@ -350,7 +350,7 @@ namespace VariableNaming
             int numberOfCupcakesToShare = 96;
             int numberOfChildrenWantingCupcakes = 8;
             int numberOfCupcakesPerChild = numberOfCupcakesToShare / numberOfChildrenWantingCupcakes;
-            Console.WriteLine(numberOfCupcakesPerChild);
+            Console.WriteLine("39) " + numberOfCupcakesPerChild);
             /*
             40. She made 47 gingerbread cookies which she will distribute equally in
             tiny glass jars. If each jar is to contain six cookies each, how many
@@ -361,7 +361,7 @@ namespace VariableNaming
             double fractionalNumberOfJarsUsed = startingNumberOfCookies / cookiesPerJar;
             int actualNumberOfJarsUsed = (int)fractionalNumberOfJarsUsed;
             int numberOfCookiesNotInJar = startingNumberOfCookies - (actualNumberOfJarsUsed * cookiesPerJar);
-            Console.WriteLine(numberOfCookiesNotInJar);
+            Console.WriteLine("40) " + numberOfCookiesNotInJar);
             /*
             41. She also prepared 59 croissants which she plans to give to her 8
             neighbors. If each neighbor received and equal number of croissants,
@@ -372,7 +372,7 @@ namespace VariableNaming
             double fractionalNumberOfCroissantsPerNegihbor = startingNumberOfCroissants / numberOfNeighbor;
             int actualNumberOfCroissantsPerNegihbor = (int)fractionalNumberOfCroissantsPerNegihbor;
             int numberOfCroissantsLeftOver = startingNumberOfCroissants - (actualNumberOfCroissantsPerNegihbor * numberOfNeighbor);
-            Console.WriteLine(numberOfCroissantsLeftOver);
+            Console.WriteLine("41) " + numberOfCroissantsLeftOver);
             /*
             42. Marian also baked oatmeal cookies for her classmates. If she can
             place 12 cookies on a tray at a time, how many trays will she need to
@@ -381,7 +381,7 @@ namespace VariableNaming
             int cookiesPerTray = 12;
             int targetNumberOfCookies = 276;
             int traysNeeded = targetNumberOfCookies / cookiesPerTray;
-            Console.WriteLine(traysNeeded);
+            Console.WriteLine("42) " + traysNeeded);
             /*
             43. Marian’s friends were coming over that afternoon so she made 480
             bite-sized pretzels. If one serving is equal to 12 pretzels, how many
@@ -390,7 +390,7 @@ namespace VariableNaming
             int totalNumberOfPretzels = 480;
             int pretzelsPerServing = 12;
             int possibleNumberOfServings = totalNumberOfPretzels / pretzelsPerServing;
-            Console.WriteLine(possibleNumberOfServings);
+            Console.WriteLine("43) " + possibleNumberOfServings);
             /*
             44. Lastly, she baked 53 lemon cupcakes for the children living in the city
             orphanage. If two lemon cupcakes were left at home, how many
@@ -401,7 +401,7 @@ namespace VariableNaming
             int lemonCakesPerBox = 3;
             double fractionalNumberOfBoxesofLemonCakes = totalNumberOfLemonCakes / lemonCakesPerBox;
             int actualNumberOfBoxesofLemonCakes = (int)fractionalNumberOfBoxesofLemonCakes;
-            Console.WriteLine(actualNumberOfBoxesofLemonCakes);
+            Console.WriteLine("44) " + actualNumberOfBoxesofLemonCakes);
             /*
             45. Susie's mom prepared 74 carrot sticks for breakfast. If the carrots
             were served equally to 12 people, how many carrot sticks were left
@@ -412,7 +412,7 @@ namespace VariableNaming
             double fractionalNumberOfCarrotsPerPerson = totalCarrots / numberOfPeople;
             int actualNumberOfCarrotsPerPerson = (int)fractionalNumberOfCarrotsPerPerson;
             int remainingCarrots = totalCarrots - (numberOfPeople * actualNumberOfCarrotsPerPerson);
-            Console.WriteLine(remainingCarrots);
+            Console.WriteLine("45) " + remainingCarrots);
             /*
             46. Susie and her sister gathered all 98 of their teddy bears and placed
             them on the shelves in their bedroom. If every shelf can carry a
@@ -421,7 +421,7 @@ namespace VariableNaming
             int totalNumberOfTeddyBears = 98;
             int teddyBearsPerShelf = 7;
             int filledShelves = totalNumberOfTeddyBears / teddyBearsPerShelf;
-            Console.WriteLine(filledShelves);
+            Console.WriteLine("46) " + filledShelves);
             /*
             47. Susie’s mother collected all family pictures and wanted to place all of
             them in an album. If an album can contain 20 pictures, how many
@@ -430,7 +430,7 @@ namespace VariableNaming
             int picturesPerAlbum = 20;
             int totalNumberOfPictures = 480;
             int numberOfAlbumsNeeded = totalNumberOfPictures - picturesPerAlbum;
-            Console.WriteLine(numberOfAlbumsNeeded);
+            Console.WriteLine("47) " + numberOfAlbumsNeeded);
             /*
             48. Joe, Susie’s brother, collected all 94 trading cards scattered in his
             room and placed them in boxes. If a full box can hold a maximum of 8
@@ -442,8 +442,8 @@ namespace VariableNaming
             double fractionalNumberOfCardBoxesNeeded = totalTradingCards / cardsPerBox;
             int actualNumberOfCardBoxesFilled = (int)fractionalNumberOfCardBoxesNeeded;
             int remainingCardsNotInUnfilledBox = totalTradingCards - (cardsPerBox * actualNumberOfCardBoxesFilled);
-            Console.WriteLine(actualNumberOfCardBoxesFilled);
-            Console.WriteLine(remainingCardsNotInUnfilledBox);
+            Console.WriteLine("48a) " + actualNumberOfCardBoxesFilled);
+            Console.WriteLine("48b) " + remainingCardsNotInUnfilledBox);
             /*
             49. Susie’s father repaired the bookshelves in the reading room. If he has
             210 books to be distributed equally on the 10 shelves he repaired,
@@ -452,7 +452,7 @@ namespace VariableNaming
             int totalBooks = 210;
             int totalShelves = 10;
             int booksPerShelf = totalBooks / totalShelves;
-            Console.WriteLine(booksPerShelf);
+            Console.WriteLine("49) " + booksPerShelf);
             /*
             50. Cristina baked 17 croissants. If she planned to serve this equally to
             her seven guests, how many will each have?
@@ -461,32 +461,64 @@ namespace VariableNaming
             int numberOfChristinasGuests = 7;
             double fractionalNumberOfCroissantsPerGuest = totalCroissants / numberOfChristinasGuests;
             int actualNumberOfCroissantsPerGuest = (int)fractionalNumberOfCroissantsPerGuest;
-            Console.WriteLine(actualNumberOfCroissantsPerGuest);
+            Console.WriteLine("50) " + actualNumberOfCroissantsPerGuest);
             /*
                 CHALLENGE (Optional) PROBLEMS
             */
-            Console.WriteLine();
+            
             /*
             Bill and Jill are house painters. Bill can paint a 12 x 14 room in 2.15 hours, while Jill averages
             1.90 hours. How long will it take the two painter working together to paint 5 12 x 14 rooms?
             Hint: Calculate the hourly rate for each painter, combine them, and then divide the total walls in feet by the combined hourly rate of the painters.
-            Challenge: How many days will it take the pair to paint 623 rooms assuming they work 8 hours a day?.
+            
             */
-            Console.WriteLine();
+            double squareFeetOfRoom = 12 * 14;
+            double billPaintingRatePerRoom = 2.15;
+            double jillPaintingRatePerRoom = 1.90;
+            double billPaintingRatePerSqFt = squareFeetOfRoom / billPaintingRatePerRoom;
+            double jillPaintingRatePerSqFt = squareFeetOfRoom / jillPaintingRatePerRoom;
+            double combinedPaintingRatePerSqFt = billPaintingRatePerSqFt + jillPaintingRatePerSqFt;
+            Console.WriteLine("Combined Painting Rate Sq Ft / Hr = " + combinedPaintingRatePerSqFt); //166.5
+            double totalRooms = 5;
+            double totalSqFtRequiringPainting = totalRooms * squareFeetOfRoom;
+            double timeToPaintTotalRooms = totalSqFtRequiringPainting / combinedPaintingRatePerSqFt;
+            Console.WriteLine("Time to paint 5 rooms while working together = " + timeToPaintTotalRooms);
+
+            //Challenge: How many days will it take the pair to paint 623 rooms assuming they work 8 hours a day?.
+            double massiveNumberOfRooms = 623;
+            double massiveSqFtage = squareFeetOfRoom * massiveNumberOfRooms; //104,664
+            double workingHoursPerDay = 8;
+            double hoursToCompleteMassiveSqFtage = massiveSqFtage / combinedPaintingRatePerSqFt; //628.6
+            double daysToCompleteMassiveSqFtage = hoursToCompleteMassiveSqFtage / workingHoursPerDay; //78.5766
+            Console.WriteLine("Days to complete 623 rooms = " + daysToCompleteMassiveSqFtage);
             /*
+            
             Create and assign variables to hold your first name, last name, and middle initial. Using concatenation,
             build an additional variable to hold your full name in the order of last name, first name, middle initial. The
             last and first names should be separated by a comma followed by a space, and the middle initial must end
             with a period.
             Example: "Hopper, Grace B."
             */
-            Console.WriteLine();
+            string firstName = "Joel";
+            string middleInitial = "N";
+            string lastName = "Birdsall";
+            string officialFullName = lastName + ", " + firstName + " " + middleInitial + ".";
+            Console.WriteLine(officialFullName);
             /*
             The distance between New York and Chicago is 800 miles, and the train has already travelled 537 miles.
             What percentage of the trip has been completed?
             Hint: The percent completed is the miles already travelled divided by the total miles.
             Challenge: Display as an integer value between 0 and 100 using casts.
             */
+            double totalDistance = 800;
+            double traveledDistance = 537;
+            double fractionalPartOfTripCompleted = traveledDistance / totalDistance;
+            double percentagePartOfTripCompleted = fractionalPartOfTripCompleted * 100;
+            Console.WriteLine(percentagePartOfTripCompleted + "%");
+
+            int simplePercentageOfTripCompleted = (int)percentagePartOfTripCompleted;
+            Console.WriteLine(simplePercentageOfTripCompleted);
+
 
             Console.ReadLine();
 
