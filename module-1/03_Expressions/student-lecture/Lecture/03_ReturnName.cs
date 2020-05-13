@@ -15,7 +15,7 @@ namespace Lecture
         */
         public string ReturnName()
         {
-            return null;
+            return "I'm so excited, I just can't hide it";
         }
 
     }
