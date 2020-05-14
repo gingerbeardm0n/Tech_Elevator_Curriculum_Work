@@ -12,7 +12,7 @@ namespace Lecture
         /*
         1a. This method expects an array of integers to be returned.            
             Create an array and return it.
-
+            \\ THis is a chnage to the document to try to creat a merge conflict. FOR SCIENCE!!! (and learning)
             TOPIC: Array Creation
         */
         public int[] ReturnNewArray()
