@@ -18,7 +18,15 @@ namespace Exercises
          */
         public bool NearTen(int num)
         {
-            return false;
+            int remainder10 = (num%10);
+            if (remainder10 <=2 || remainder10 >= 8)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
