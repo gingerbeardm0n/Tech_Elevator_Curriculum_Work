@@ -17,6 +17,9 @@ namespace Lecture
         */
         public int[] ReturnNewArray()
         {
+            // this is a chenge done on the server
+            int result = 0;
+            
             return null;
         }
 
