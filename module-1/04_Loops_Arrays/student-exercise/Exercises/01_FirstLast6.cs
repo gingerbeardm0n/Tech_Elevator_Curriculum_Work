@@ -16,8 +16,14 @@ namespace Exercises
          FirstLast6([13, 6, 1, 2, 3]) → false
          */
         public bool FirstLast6(int[] nums)
-        {
-            return false;
+        { if (nums[0] == 6 || nums[nums.Length - 1] == 6)
+            {
+                return true;
+            }
+        else
+            {
+                return false;
+            }
         }
     }
 }
