@@ -21,7 +21,7 @@ namespace Exercises
             {
                  return a;  
             }
-            else if (b > a && (b >= 10 && b <= 20))
+            else if (b >= 10 && b <= 20)
             {
                 return b;
             }
