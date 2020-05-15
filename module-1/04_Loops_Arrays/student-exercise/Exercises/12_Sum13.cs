@@ -21,7 +21,7 @@ namespace Exercises
 
             int sumOfArray = 0;
 
-            for (int i = 0; i < nums.Length-1; i++)
+            for (int i = 0; i <= nums.Length-1; i++)
             {
                 if (nums[i] != 13)
                 {
@@ -29,7 +29,9 @@ namespace Exercises
                 }
                 else
                 {
-                    i++;
+                    nums[i] = 0;
+                    sumOfArray = sumOfArray + nums[i];
+                    i = i + 1;
                 } 
             }
             {
