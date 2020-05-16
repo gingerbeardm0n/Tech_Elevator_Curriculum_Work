@@ -20,10 +20,6 @@ namespace DecimalToBinary
                 Console.WriteLine("The integer " + separatedIntegerActuallyAsInteger + " translated to binary is..... drumroll please..... " + separatedBinaryString);
             }
 
-
-            
-
-
             Console.ReadLine();
         }
     }
