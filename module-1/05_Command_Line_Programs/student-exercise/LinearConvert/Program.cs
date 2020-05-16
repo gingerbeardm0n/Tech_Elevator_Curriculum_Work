@@ -36,7 +36,7 @@ namespace LinearConvert
                     Console.WriteLine("The input was " + length + " and the ouput is " + convertedMeters);
                     break;
                 default:
-                    Console.WriteLine("you dumbass, try again");
+                    Console.WriteLine("hey dumba$$, please start over and try again");
                     break;
             }
 

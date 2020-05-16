@@ -32,7 +32,7 @@ namespace TempConvert
                     Console.WriteLine("The input was " + temp + " and the ouput is " + convertedFahrenheit);
                     break;
                 default:
-                    Console.WriteLine("you dumbass, try again");
+                    Console.WriteLine("silly human, please start over and try again");
                     break;
             }
 
