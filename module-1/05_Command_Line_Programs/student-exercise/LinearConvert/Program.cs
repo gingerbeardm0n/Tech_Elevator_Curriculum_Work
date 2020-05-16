@@ -40,7 +40,7 @@ namespace LinearConvert
                     break;
             }
 
-            Console.WriteLine();
+            
 
             Console.ReadLine();
         }
