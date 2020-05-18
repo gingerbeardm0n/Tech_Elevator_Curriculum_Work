@@ -9,7 +9,7 @@ namespace LinearConvert
 
         static void Main(string[] args)
         {
-            double finalLength = 0;
+            //Didnt't need this variable --> double finalLength = 0;
             double convertedFeet = 0;
             double convertedMeters = 0;
 
