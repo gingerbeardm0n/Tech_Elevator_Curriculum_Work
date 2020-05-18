@@ -28,8 +28,46 @@ namespace Fibonacci
             }
             else
             {
+                Console.WriteLine("0");
+                Console.WriteLine("1");
+                
+                int twoBack = 0;
+                int oneBack = 1;
 
-                int[] loopingArray;
+
+                int i = 0;
+                while (i <= upperLimitInteger+1)
+                {
+
+                    int tempNumber = twoBack;
+                    twoBack = oneBack;
+                    oneBack = tempNumber + oneBack;
+
+                    Console.WriteLine(oneBack);
+
+                    i += twoBack;
+
+
+                }
+                Console.ReadLine();
+            }
+            }
+
+
+            
+        }
+    }
+
+
+/*
+int fibNumber = twoBack + oneBack;
+int newTwoBack = oneBack;
+int newOneBack = fibNumber;
+
+int newFibNumber = i;
+
+
+int[] loopingArray;
                 loopingArray = new int[upperLimitInteger+1];
 
                 for (int i = 0; i < upperLimitInteger+1; i++)
@@ -37,11 +75,11 @@ namespace Fibonacci
                     loopingArray[i] = i;
                 }
 
-                Console.WriteLine(loopingArray);
+                Console.WriteLine(loopingArray);  //just for me, not really necessary for program
                 Console.WriteLine(loopingArray[0]);
                 Console.WriteLine(loopingArray[1]);
                 Console.WriteLine(loopingArray[upperLimitInteger-1]);
-                Console.WriteLine(loopingArray[upperLimitInteger]);
+                Console.WriteLine(loopingArray[upperLimitInteger]);  //just for me, not really necessary for program
 
 
                 int n = 0;
@@ -73,11 +111,5 @@ namespace Fibonacci
                 //    {
 
                 //    }
-            }
-            }
 
-
-            
-        }
-    }
-
+    */

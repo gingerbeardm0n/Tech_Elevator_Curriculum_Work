@@ -16,45 +16,79 @@ namespace StringsDemo
             // Output: A
             // Output: e
 
-            // Console.WriteLine("First and Last Character. ");
+            Console.WriteLine("First and Last Character. ");
+            char first = name[0];
+            Console.WriteLine(first);
+            Console.WriteLine(name[name.Length -1]);
+            
+
+          
 
             // 2. How do we write code that prints out the first three characters
             // Output: Ada
 
-            // Console.WriteLine("First 3 characters: ");
+        
+            Console.WriteLine("First 3 characters: " + name.Substring(0,3));
 
             // 3. Now print out the first three and the last three characters
             // Output: Adaace
 
-            // Console.WriteLine("Last 3 characters: ");
+            Console.WriteLine("First 3 characters: " + name.Substring(0, 3));
+            Console.WriteLine("Last 3 characters: " + name.Substring(name.Length-3, 3));
 
             // 4. What about the last word?
             // Output: Lovelace
 
-            // Console.WriteLine("Last Word: ");
+            string[] result = name.Split(' ');
+            string lastName = result[1];
+
+            Console.WriteLine("Last Word: " + lastName);
 
             // 5. Does the string contain inside of it "Love"?
             // Output: true
 
-            // Console.WriteLine("Contains \"Love\"");
+            bool contains = name.Contains("Love");
+
+            Console.WriteLine("Contains \"Love\"");
 
             // 6. Where does the string "lace" show up in name?
             // Output: 8
 
-            // Console.WriteLine("Index of \"lace\": ");
+            int position = name.IndexOf("lace");
+
+            Console.WriteLine("Index of \"lace\": " + position);
 
             // 7. How many 'a's OR 'A's are in name?
             // Output: 3
 
-            // Console.WriteLine("Number of \"a's\": ");
+            int counter = 0;
+            string testName = name.ToLower();
+            for (int i = 0; i < name.Length; i++)
+            {
+                if (testName.Substring(i, 1) == "a")
+                {
+                    counter++;
+                }
+            }
+
+            Console.WriteLine("Number of \"a's\": " + counter);
 
             // 8. Replace "Ada" with "Ada, Countess of Lovelace"
 
-            // Console.WriteLine(name);
+
+            Console.WriteLine(name.Replace("Ada", "Ada, Countess of Lovelace"));
 
             // 9. Set name equal to null.
+            name = null;
 
+            //Console.WriteLine(name.Length);
+            
             // 10. If name is equal to null or "", print out "All Done".
+
+            if (String.IsNullOrEmpty(name))
+            {
+                Console.WriteLine("All Done.");
+            }
 
             Console.ReadLine();
         }

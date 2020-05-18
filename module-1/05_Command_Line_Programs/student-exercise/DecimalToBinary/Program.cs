@@ -8,8 +8,8 @@ namespace DecimalToBinary
         {
             Console.WriteLine("Please enter a series of integers (but please sepatate each integer with a space).");
             string seriesAsString = Console.ReadLine();
-            
-            string[] separatedIntegersAsStrings = seriesAsString.Split(' ');
+
+            /string[] separatedIntegersAsStrings = seriesAsString.Split(' ');
 
             for (int i = 0; i < separatedIntegersAsStrings.Length; i++)
             {
