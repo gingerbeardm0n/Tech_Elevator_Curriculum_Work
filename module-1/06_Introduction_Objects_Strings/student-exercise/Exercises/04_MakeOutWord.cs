@@ -18,8 +18,17 @@ namespace Exercises
          */
         public string MakeOutWord(string outword, string word)
         {
+            
+            string firstTwoChars = outword.Substring(0, 2);
+            string secondTwoChars = outword.Substring(2, 2);
 
-            return null;
+            //Console.WriteLine(firstTwoChars);
+            //Console.WriteLine(secondTwoChars);
+            //Console.WriteLine(word);
+
+            return firstTwoChars + word + secondTwoChars;
+
+            //Console.ReadLine();
         }
     }
 }
