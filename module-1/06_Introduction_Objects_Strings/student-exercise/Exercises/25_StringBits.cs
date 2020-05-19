@@ -1,4 +1,4 @@
-﻿/*using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +13,10 @@ namespace Exercises
          StringBits("Hello") → "Hlo"
          StringBits("Hi") → "H"
          StringBits("Heeololeo") → "Hello"
+
+    */
         public string StringBits(string str)
+
         {
 
             if (str.Length == 0)
@@ -28,19 +31,22 @@ namespace Exercises
             else
             {
 
-            string newString = "";
+                string newString = "";
 
-            for (int i = 0; i < str.Length; i++)
-            {
-                if (i%2 == 0)
+                for (int i = 0; i < str.Length; i++)
                 {
-                    newString = newString + str.Substring(i, 1);
-                return newString;
+                    if (i % 2 == 0)
+                    {
+                        newString = newString + str.Substring(i, 1);
+                        
+                    }
+                   
                 }
-                
-            }
+                return newString;
+               
+
             }
         }
     }
 }
-         */
+
