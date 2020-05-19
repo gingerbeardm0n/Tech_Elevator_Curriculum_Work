@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +13,6 @@ namespace Exercises
          StringBits("Hello") → "Hlo"
          StringBits("Hi") → "H"
          StringBits("Heeololeo") → "Hello"
-         */
         public string StringBits(string str)
         {
 
@@ -44,3 +43,4 @@ namespace Exercises
         }
     }
 }
+         */
