@@ -16,7 +16,18 @@ namespace Exercises
          */
         public bool EndsLy(string str)
         {
-            return false;
+            if (str.Length == 0 || str.Length == 1)
+            {
+                return false;
+            }
+            else if ((str.Substring(str.Length - 2, 2)) == "ly")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
