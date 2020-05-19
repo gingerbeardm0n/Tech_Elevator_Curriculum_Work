@@ -17,7 +17,35 @@ namespace Exercises
         */
         public string StringX(string str)
         {
-            return null;
+            if (str == "")
+            {
+                return "";
+            }
+            else if (str == "xx")
+            {
+                return "xx";
+            }
+            else if (str == "x")
+            {
+                return "x";
+            }
+            else
+            {
+                string geeRatedString = "";
+
+                for (int i = 1; i < str.Length - 1; i++)
+                {
+                    if (str.Substring(i, 0) == "x")
+                    {
+                        geeRatedString = str.Remove(i, 1);
+                    }
+
+                }
+                return geeRatedString;
+#
+            }
         }
+
     }
 }
+
