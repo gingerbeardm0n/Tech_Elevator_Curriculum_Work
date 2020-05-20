@@ -38,7 +38,29 @@ namespace Exercises
          */
         public string AnimalGroupName(string animalName)
         {
-            return null;
+            Dictionary<string, string> animalPedia = new Dictionary<string, string>();
+
+            animalPedia.Add("RHINO", "Crash");
+            animalPedia.Add("GIRAFFE", "Tower");
+            animalPedia.Add("ELEPHANT", "Herd");
+            animalPedia.Add("LION", "Pride");
+            animalPedia.Add("CROW", "Murder");
+            animalPedia.Add("PIGEON", "Kit");
+            animalPedia.Add("FLAMINGO", "Pat");
+            animalPedia.Add("DEER", "Herd");
+            animalPedia.Add("DOG", "Pack");
+            animalPedia.Add("CROCODILE", "Float");
+
+            string upperCaseAnimal = animalName.ToUpper();
+
+            if (animalPedia.ContainsKey(upperCaseAnimal) == true)
+            {
+                return animalPedia[upperCaseAnimal];
+            }
+            else
+            {
+                return "unknown";
+            }
         }
     }
 }
