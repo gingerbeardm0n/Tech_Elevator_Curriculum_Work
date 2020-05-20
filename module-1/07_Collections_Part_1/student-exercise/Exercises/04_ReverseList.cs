@@ -18,7 +18,13 @@ namespace Exercises
          */
         public List<string> ReverseList(List<string> objectList)
         {
-            return null;
+            //List<string> reverseReverseTakeItBackNowYall = new List<string>();
+
+            objectList.Reverse();
+
+            return objectList;
+
+            
         }
 
     }

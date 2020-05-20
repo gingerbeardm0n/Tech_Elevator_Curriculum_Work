@@ -16,8 +16,17 @@ namespace Exercises
          */
         public List<double> ArrayInt2ListDouble(int[] intArray)
         {
-            return null;
+            List<double> doubleTheFun = new List<double>();
+
+            foreach (int eachInt in intArray)
+            {
+                double badAssDouble = Convert.ToDouble(eachInt);
+                double kindaCool = badAssDouble / 2;
+                doubleTheFun.Add(kindaCool);
+            }
+            return doubleTheFun; 
         }
 
     }
 }
+
