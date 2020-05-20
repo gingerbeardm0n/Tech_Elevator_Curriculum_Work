@@ -32,7 +32,8 @@ namespace Exercises
                 int j = listTwo.Count;
                 while (j < listOne.Count)
                 {
-                    myList.Add(listOne.Count);
+                    myList.Add(listOne[j]);
+                    j++;
                 }
 
                 return myList;
@@ -50,7 +51,8 @@ namespace Exercises
                 int j = listOne.Count;
                 while (j < listTwo.Count)
                 {
-                    myList.Add(listTwo.Count);
+                    myList.Add(listTwo[j]);
+                    j++;
                 }
 
                 return myList;
