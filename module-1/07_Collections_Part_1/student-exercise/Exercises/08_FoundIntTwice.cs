@@ -17,7 +17,24 @@ namespace Exercises
          */
         public bool FoundIntTwice(List<int> integerList, int intToFind)
         {
-            return false;
+            int matchCounter = 0;
+
+            foreach (int intCheck in integerList)
+            {
+                if (intCheck == intToFind)
+                {
+                    matchCounter++;
+                }
+            }
+
+            if (matchCounter >= 2)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
     }
