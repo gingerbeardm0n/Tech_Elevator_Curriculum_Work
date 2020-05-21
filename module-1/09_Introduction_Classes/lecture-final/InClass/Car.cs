@@ -16,7 +16,7 @@ namespace InClass
             {
                 return make;
             }
-            private set
+            set
             {
                 make = value;
             }
@@ -24,7 +24,7 @@ namespace InClass
 
         public string Model
         {
-            get; private set;
+            get; set;
         }
 
         public bool IsStandard

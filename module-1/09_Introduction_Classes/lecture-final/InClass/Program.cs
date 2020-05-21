@@ -8,7 +8,7 @@ namespace InClass
         {
             Car myCar = new Car();
 
-            myCar.Make = "Honda";
+            myCar.Make= "Honda";
             myCar.Model = "CR-V";
             myCar.year = 2020;
 
