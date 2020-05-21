@@ -21,6 +21,13 @@ namespace Exercises
         public Dictionary<string, int> ConsolidateInventory(Dictionary<string, int> mainWarehouse,
             Dictionary<string, int> remoteWarehouse)
         {
+            Dictionary<string, int> skuAdder = new Dictionary<string, int>();
+
+            foreach(KeyValuePair<string, int> skuAndValue in mainWarehouse)
+            {
+                skuAdder.Add(skuAndValue);
+            }
+
             return null;
         }
     }

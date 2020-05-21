@@ -18,14 +18,40 @@ namespace Exercises
          * has a count of 2, one pair at position 0, and the second at position 1. The third pair at position 2 is the
          * end substring, which we don't count.
          *
-         * Return Dictionary<string, int>, where the key is string from the array, and its last2 count.
+         * Return Dictionary<string, int>, where the key is string from the array, and its last2 count IS IT'S VALUE
          *
          * Last2Revisited(["hixxhi", "xaxxaxaxx", "axxxaaxx"]) → {"hixxhi": 1, "xaxxaxaxx": 1, "axxxaaxx": 2}
          *
          */
         public Dictionary<string, int> Last2Revisited(string[] words)
         {
-            return null;
+            Dictionary<string, int> mattHatesUsAll = new Dictionary<string, int>();
+
+
+            foreach (string mattCanGoEaTaString in words)
+            {
+            int counter = 0;
+
+
+                if (mattCanGoEaTaString.Length < 3)
+                {
+                    return null;
+                }
+                else
+                {
+                    for (int i = 0; i < mattCanGoEaTaString.Length - 2; i++)
+                    {
+
+
+                        if (mattCanGoEaTaString.Substring(i, 2) == mattCanGoEaTaString.Substring(mattCanGoEaTaString.Length - 2, 2))
+                        {
+                            counter++;
+                        }
+                    }
+                }
+                mattHatesUsAll.Add(mattCanGoEaTaString, counter);
+            }
+            return mattHatesUsAll;
         }
     }
 }

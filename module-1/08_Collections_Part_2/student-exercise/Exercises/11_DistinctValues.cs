@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace Exercises
 {
@@ -16,7 +17,17 @@ namespace Exercises
          */
         public List<string> DistinctValues(List<string> stringList)
         {
-            return null;
+            HashSet<string> auntMildred = new HashSet<string>();
+
+            foreach (string flowerPot in stringList)
+            {
+                auntMildred.Add(flowerPot);
+            }
+
+            List<string> auntMildredsAssistant = auntMildred.ToList();
+
+            return auntMildredsAssistant;
+
         }
 
     }
