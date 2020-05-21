@@ -25,10 +25,14 @@ namespace Exercises
 
             foreach(KeyValuePair<string, int> skuAndValue in mainWarehouse)
             {
-                skuAdder.Add(skuAndValue);
+                skuAdder[skuAndValue.Key] = skuAndValue.Value;
+                //skuAdder.Add(skuAndValue.Key, skuAndValue.Value); these two lines do exactly the same thing as long is doesnt
             }
 
+
+            //do an if statement for remotewarhouse with "if contains key"
             return null;
         }
     }
 }
+
