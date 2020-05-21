@@ -22,19 +22,38 @@ namespace Exercises
          */
         public Dictionary<string, int> WordCount(string[] words)
         {
-            int stringCounter1 = 0;
+            //int stringCounter1 = 1;
 
             Dictionary<string, int> myDictionary = new Dictionary<string, int>();
 
-            for (int i=0; i < words.Length; i++)
+            if (words.Length == 0)
             {
-
+                return null;
             }
-            
-                
-                
 
-            
+            else
+            {
+                for (int i = 0; i < words.Length; i++)
+                {
+                    if (myDictionary.ContainsKey(words[i]))
+                    {
+                        //stringCounter1++;
+                        myDictionary[(words[i])]++;
+                    }
+                    else
+                    {
+                        myDictionary.Add((words[i]), 1);
+                    }
+                }
+            }
+
+
+
+
+
+            return myDictionary;
+
+
         }
     }
 }
@@ -43,4 +62,4 @@ namespace Exercises
                 {
                 if (words[i] == words[j])
                     {
-                        stringCounter1++;
+                        stringCounter1++; 8 */

@@ -20,7 +20,46 @@ namespace Exercises
          */
         public List<int> BoardingGate(List<int> seatNumberList)
         {
-            return null;
+            Queue<int> lowSeats = new Queue<int>();
+            Queue<int> mediumSeats = new Queue<int>();
+            Queue<int> highSeats = new Queue<int>();
+
+            
+
+            foreach (int seatNumber in seatNumberList)
+            {
+                if (seatNumber >= 1 && seatNumber <= 10)
+                {
+                    lowSeats.Enqueue(seatNumber);
+                }
+                else if (seatNumber >= 11 && seatNumber <= 20)
+                {
+                    mediumSeats.Enqueue(seatNumber);
+                }
+                else if (seatNumber >= 21 && seatNumber <= 30)
+                {
+                    highSeats.Enqueue(seatNumber);
+                }
+            }
+
+            List<int> iHateYouMatt = new List<int>();
+
+            foreach(int groupedLowSN in lowSeats)
+            {
+                iHateYouMatt.Add(groupedLowSN);
+            }
+            foreach (int groupedMediumSN in mediumSeats)
+            {
+                iHateYouMatt.Add(groupedMediumSN);
+            }
+            foreach (int groupedHignSN in highSeats)
+            {
+                iHateYouMatt.Add(groupedHignSN);
+            }
+            return iHateYouMatt;
         }
     }
 }
+
+
+//JK JK - you're pretty cool Matt.... i guess
