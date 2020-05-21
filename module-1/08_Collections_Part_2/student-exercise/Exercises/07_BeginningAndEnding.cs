@@ -18,7 +18,16 @@ namespace Exercises
          */
         public Dictionary<string, string> BeginningAndEnding(string[] words)
         {
-            return null;
+            Dictionary<string, string> firstAndLast = new Dictionary<string, string>();
+
+            foreach (string myString in words)
+            {
+                if (myString != "muddy" && firstAndLast.ContainsKey(myString.Substring(0, 1)) == false)
+                {
+                    firstAndLast.Add((myString.Substring(0, 1)), (myString.Substring(myString.Length - 1, 1)));
+                }
+            }
+            return firstAndLast;
         }
     }
 }

@@ -19,7 +19,20 @@ namespace Exercises
          */
         public Dictionary<string, bool> WordMultiple(string[] words)
         {
-            return null;
+            Dictionary<string, bool> twoIsBetterThanOne = new Dictionary<string, bool>();
+
+            foreach (string letter in words)
+            {
+                if (twoIsBetterThanOne.ContainsKey(letter))
+                {
+                    twoIsBetterThanOne[letter] = true;
+                }
+                else
+                {
+                    twoIsBetterThanOne.Add(letter, false);
+                }
+            }
+            return twoIsBetterThanOne;
         }
     }
 }
