@@ -85,7 +85,7 @@ namespace InClass
                 Console.WriteLine(item);
             }
 
-
+            List<int> hashList =  numbers.ToList();
 
             Console.ReadLine();
         }
