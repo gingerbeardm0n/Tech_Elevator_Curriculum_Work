@@ -29,6 +29,14 @@ namespace Exercises
                 //skuAdder.Add(skuAndValue.Key, skuAndValue.Value); these two lines do exactly the same thing as long is doesnt
             }
 
+            foreach(KeyValuePair<string, int> remoteCheck in remoteWarehouse)
+            {
+                if (skuAdder.ContainsKey(remoteCheck.Key))
+                {
+
+                    skuAdder[remoteCheck.Key] = skuAdder.Value + ; //add the value of the the key in the remot to the value of the key in the main(main is otherwise known as skuAdder now_)
+                }
+            }
 
             //do an if statement for remotewarhouse with "if contains key"
             return null;
