@@ -11,7 +11,7 @@ namespace TechElevator.Classes
     /// </summary>
     public class Calculator
     {
-        
+        public int Result { get; private set; }
 
     }
 }

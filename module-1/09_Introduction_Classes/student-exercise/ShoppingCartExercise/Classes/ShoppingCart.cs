@@ -11,46 +11,30 @@ namespace TechElevator.Classes
     /// </summary>
     public class ShoppingCart
     {
-        private int totalNumberOfItems;
-        public int TotalNumberOfItems
-        {
-            get
-            {
-                return totalNumberOfItems;
-            }
-            private set
-            {
-                totalNumberOfItems = value;
-            }
-        }
 
-        private decimal totalAmountOwed;
-        public decimal TotalAmontOwed
-        {
-            get
-            {
-                return totalAmountOwed;
-            }
-            private set
-            {
-                totalAmountOwed = value;
-            }
-        }
+        public int TotalNumberOfItems { get; private set; }
+        public decimal TotalAmountOwed { get; private set; }
 
         public decimal GetAveragePricePerItem()
         {
-            return (TotalAmontOwed / TotalNumberOfItems);
+            if (TotalNumberOfItems > 0)
+            {
+                return (TotalAmountOwed / TotalNumberOfItems);
+            }
+            else
+            {
+                return 0;
+            }
         }
-
         public void AddItems(int numberOfItems, decimal pricePerItem)
         {
-            TotalNumberOfItems = +numberOfItems;
-            TotalAmontOwed = (pricePerItem * numberOfItems);
+            TotalNumberOfItems += numberOfItems;
+            TotalAmountOwed = (pricePerItem * numberOfItems);
         }
-
         public void Empty()
         {
-
+            TotalNumberOfItems = 0;
+            TotalAmountOwed = 0;
         }
     }
 }
