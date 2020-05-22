@@ -13,5 +13,34 @@ namespace TechElevator.Classes
     {
         public int Result { get; private set; }
 
+        public int Add(int addend)
+        {
+            Result += addend;
+            return Result;
+        }
+        public int Multiply(int multiplier)
+        {
+            Result = Result * multiplier;
+            return Result;
+        }
+        public int Power(int exponent)
+        {
+            double doubleResult = (double)Result;
+            double doubleExponent = (double)exponent;
+            doubleResult = Math.Pow(doubleResult, doubleExponent);
+            int tempResult = Convert.ToInt32(doubleResult);
+            Result = tempResult;
+            return Result;
+        }
+        public void Reset()
+        {
+            Result = 0;
+        }
+        public int Subtract(int subtrahend)
+        {
+            Result -= subtrahend;
+            return Result;
+        }
+
     }
 }
