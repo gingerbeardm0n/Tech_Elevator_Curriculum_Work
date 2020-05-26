@@ -105,11 +105,12 @@ Implement the `BankCustomer` class. A bank customer "has-a" list of `Accountable
 | `Address`      | `string`  | X   | X   |         | Returns the address of the bank customer.                                                       |
 | `PhoneNumber`  | `string`  | X   | X   |         | Returns the phone number of the bank customer.                                                  |
 | `IsVip`        | `bool`    | X   |     |         | Calculates the balance of all accounts, returns `true` if at least $25,000; otherwise is false. |
-| `accounts`     | ???       | X   |     | X       | Returns the customer's list of `Accountable`s as an array.                                      |
+
+Note that you will likely want to have a private variable or field to store the accounts inside of the class, but the name and data type for this is up to you to decide.
 
 | Method Name                          | Return Type      | Description                                              |
 | ------------------------------------ | ---------------- | -------------------------------------------------------- |
-| `AddAccount(Accountable newAccount)` | `void`           | Adds `newAccount` to the customer's list of accounts.    |
+| `AddAccount(IAccountable newAccount)` | `void`           | Adds `newAccount` to the customer's list of accounts.    |
 | `GetAccounts()`                      | `IAccountable[]` | Returns array of the accounts belonging to the customer. |
 
 Note: Even though `GetAccounts()` returns an array, you don't have to store the accounts in the `BankCustomer` as an array. In fact, since you need to add accounts whenever the `AddAccount()` method is called, you'll need to use a different data structure in the class to store the accounts that's like an array, but can be added to at any time.

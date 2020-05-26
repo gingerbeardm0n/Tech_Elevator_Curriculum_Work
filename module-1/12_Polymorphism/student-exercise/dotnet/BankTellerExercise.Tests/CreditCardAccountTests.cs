@@ -22,7 +22,7 @@ namespace BankTellerExercise.Tests
         {
             object ccAccount = Activator.CreateInstance(type, new object[] { "TEST", "6011222233334444" });
 
-            object accountHolder = GetPropertyValue(ccAccount, "AccountHolder");
+            object accountHolder = GetPropertyValue(ccAccount, "AccountHolderName");
             object accountNumber = GetPropertyValue(ccAccount, "AccountNumber");
 
             Assert.IsNotNull(ccAccount);
