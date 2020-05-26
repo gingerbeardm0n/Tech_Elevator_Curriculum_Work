@@ -24,9 +24,9 @@
 
         public bool PickFruit (int numberOfPiecesToRemove)
         {
-            int startingFruit = PiecesOfFruitLeft;
+            //int startingFruit = PiecesOfFruitLeft;
 
-            if (PiecesOfFruitLeft > numberOfPiecesToRemove)
+            if (PiecesOfFruitLeft >= numberOfPiecesToRemove)
             {
                 PiecesOfFruitLeft = PiecesOfFruitLeft - numberOfPiecesToRemove;
                 return true;
