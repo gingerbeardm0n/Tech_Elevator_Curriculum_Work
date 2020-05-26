@@ -11,44 +11,49 @@
         public int PossibleMarks { get; }
         public string SubmitterName { get; }
         public string LetterGrade
-        { get
+        {
+            get
             {
                 double dubsEarned = (double)EarnedMarks;
                 double dubsPossible = (double)PossibleMarks;
                 double dubsGrade = EarnedMarks / PossibleMarks;
                 int grade = (int)dubsGrade;
-                
-                if (grade >= 90 && grade <= 100)
+
+                if (EarnedMarks >= 90 && EarnedMarks <= 100)
                 {
                     return "A";
                 }
-                else if (grade >= 80 && grade <= 89)
+                else if (EarnedMarks >= 80 && EarnedMarks <= 89)
                 {
                     return "B";
                 }
-                else if (grade >= 70 && grade <= 79)
+                else if (EarnedMarks >= 70 && EarnedMarks <= 79)
                 {
                     return "C";
                 }
-                else if (grade >= 60 && grade <= 69)
+                else if (EarnedMarks >= 60 && EarnedMarks <= 69)
                 {
                     return "D";
                 }
-                else 
+                else
                 {
                     return "F";
                 }
-
-
             }
-           
 
         //--------CONSTRUCTORS-----------------------------------------------------------------
 
-
+        }
+        public HomeworkAssignment(int possibleMarks, string submitterName)
+        {
+            this.PossibleMarks = possibleMarks;
+            this.SubmitterName = submitterName;
+        }
 
         //--------METHODS----------------------------------------------------------------------
 
-
     }
 }
+
+
+
