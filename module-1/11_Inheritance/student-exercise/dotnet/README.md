@@ -54,7 +54,7 @@ Implement the `BankAccount` class.
 | Constructor                                                              | Description                                                                                                                         |
 | ------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
 | BankAccount(String accountHolderName, String accountNumber)              | A new bank account requires an account holder name and account number. The balance defaults to a 0 dollar balance if not specified. |
-| BankAccount(String accountHolderName, String accountNumber, int balance) | A new bank account requires an account holder name and account number. The balance is initialized to the dollar balance given.      |
+| BankAccount(String accountHolderName, String accountNumber, decimal balance) | A new bank account requires an account holder name and account number. The balance is initialized to the dollar balance given.      |
 
 | Property Name     | Data Type | Get | Set     | Description                                                  |
 | ----------------- | --------- | --- | ------- | ------------------------------------------------------------ |
