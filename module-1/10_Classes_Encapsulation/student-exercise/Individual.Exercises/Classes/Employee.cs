@@ -21,17 +21,17 @@
 
         //-----CONSTRUCTORS---------------------------------------------------------------------------------------------
 
-        public Employee (int employeeId, string firstName, string lastName, double salary)
+        public Employee(int employeeId, string firstName, string lastName, double salary)
         {
-            this.EmployeeId = employeeId;
-            this.FirstName = firstName;
-            this.LastName = lastName;
-            this.AnnualSalary = salary;
+            EmployeeId = employeeId;
+            FirstName = firstName;
+            LastName = lastName;
+            AnnualSalary = salary;
         }
 
         //-----METHODS--------------------------------------------------------------------------------------------------
 
-        public void RaiseSalary( double percent)
+        public void RaiseSalary(double percent)
         {
             AnnualSalary = AnnualSalary * (1 + (percent / 100));
         }
