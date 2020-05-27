@@ -33,21 +33,23 @@ To allow polymorphism and reuse common code, a `Wall` class is implemented that 
 
 #### Step One: Implement the `Wall` class
 
-The `Wall` class can't be instantiated. It has two properties, `Name` and `Color`, that are readonly. Add a constructor that looks like this:
+The `Wall` class can't be instantiated. 
+
+The wall class has two `string` properties, `Name` and `Color`, that have only a public getter. 
+
+Add a constructor that looks like this:
 
 ``` csharp
 public Wall(string name, string color)
 ```
 
-It also has one public method that subclasses have to implement. `GetArea()` takes no parameters and returns an integer representing the total area of the wall.
+It also has one public method that subclasses must explicitly implement. `GetArea()` takes no parameters and returns an `int` representing the total area of the wall.
 
 If you implemented the class correctly, the `WallTests` pass.
 
-There are two places to uncomment code in `Program.cs`—look for `//uncomment after step 1:` and uncomment the line that follows it.
-
 #### Step Two: Implement the `RectangleWall` class
 
-`RectangleWall` extends `Wall` and adds two new properties, `Length` and `Height`, that are readonly. Add a constructor that looks like this:
+`RectangleWall` extends `Wall` and adds two new `int` properties, `Length` and `Height`, that are readonly (only have a getter). Add a constructor that looks like this:
 
 ``` csharp
 public RectangleWall(string name, string color, int length, int height)
@@ -61,21 +63,21 @@ Add a `ToString()` method that returns a `string` in the following format:
 Name (LengthxHeight) rectangle
 ```
 
-If you implemented the class correctly, the `RectangleWallTests` pass.
+For example, a `RectangleWall` created as `new RectangleWall("Office", "Green", 5, 10);` would return `Office (5x10) rectangle` from `ToString()`.
 
-There are three places to uncomment code in `Program.cs`—look for `//uncomment after step 2:` and uncomment the line that follows it. If you run the program now, you can calculate the paint needed for rectangle walls.
+If you implemented the class correctly, the `RectangleWallTests` pass.
 
 #### Step Three: Implement the `TriangleWall` class
 
-`TriangleWall` extends `Wall` and adds two new properties, `Base` and `Height`, that are readonly. Add a constructor that looks like this:
+`TriangleWall` extends `Wall` and adds two new `int` properties, `Base` and `Height`, that are readonly. Add a constructor that looks like this:
 
 ``` csharp
-public TriangleWall(string name, string color, int @base, int height)
+public TriangleWall(string name, string color, int baseLength, int height)
 ```
 
 Implement `GetArea()` to return the `Base` multiplied by the `Height` and then divided by two.
 
->Note: The answer is rounded down to the nearest whole number because you're dividing an `int` by another `int`.
+>Note: The answer is rounded down to the nearest whole number because you're dividing an `int` by another `int`. This is fine.
 
 Add a `ToString()` method that returns a `string` in the following format:
 
@@ -83,13 +85,13 @@ Add a `ToString()` method that returns a `string` in the following format:
 Name (BasexHeight) triangle
 ```
 
-If you implemented the class correctly, the `TriangleWallTests` pass.
+For example, a `TriangleWall` created as `new TriangleWall("Hall", "Green", 2, 3);` would return `Hall (2x3) triangle` from `ToString()`.
 
-There's one place to uncomment code in `Program.cs`—look for `//uncomment after step 3:` and uncomment the line that follows it. If you run the program now, you can calculate the paint needed for triangle and rectangle walls.
+If you implemented the class correctly, the `TriangleWallTests` pass.
 
 #### Step Four: Implement the `SquareWall` class
 
-`SquareWall` extends `RectangleWall`. Add a constructor that looks like this:
+`SquareWall` extends `RectangleWall` (**not** `Wall`). Add a constructor that looks like this:
 
 ``` csharp
 public SquareWall(string name, string color, int sideLength)
@@ -101,9 +103,9 @@ Add a `ToString()` method that returns a `string` in the following format:
 Name (SideLengthxSideLength) square
 ```
 
-If you implemented the class correctly, the `SquareWallTests` pass.
+For example, a `SquareWall` created as `new SquareWall("Bathroom", "Orange", 5);` would return `Bathroom (5x5) square` from `ToString()`.
 
-There's one place to uncomment code in `Program.cs`—look for `//uncomment after step 4:` and uncomment the line that follows it. If you run the program now, you can calculate the paint needed for all walls.
+If you implemented the class correctly, the `SquareWallTests` pass.
 
 ## Tips and tricks
 
