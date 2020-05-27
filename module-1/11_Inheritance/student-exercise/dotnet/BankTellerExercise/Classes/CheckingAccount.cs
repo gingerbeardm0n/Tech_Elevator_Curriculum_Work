@@ -29,7 +29,7 @@
                 Balance = Balance - amountToWithdraw - 10;
                 return Balance;
             }
-            else if (Balance < -100)
+            else if (Balance <= -100)
             {
                 return Balance;
             }
