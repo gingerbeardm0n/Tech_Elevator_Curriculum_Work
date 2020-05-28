@@ -77,7 +77,7 @@ namespace BankTellerExercise.Tests
             object balance = GetPropertyValue(ccAccount, "Balance");
 
             Assert.AreEqual(debt, 500);
-            Assert.AreEqual(balance, 500);
+            Assert.AreEqual(balance, -500);
         }
 
         private object GetPropertyValue(object instance, string propName)
