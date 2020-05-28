@@ -9,10 +9,14 @@ namespace BankTellerExercise
 
         public string AccountHolderName { get; private set; }
         public string AccountNumber { get; private set; }
-        public int Debt { get; private set; } 
-        
-            
-        public int Balance { get; }
+        public int Debt { get; private set; }
+        public int Balance
+        {
+            get
+            {
+                return Debt * -1;
+            }
+        }
 
         //-----CONSTRUCTORS---------------------------------------------------------------------------------------------
 

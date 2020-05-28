@@ -7,11 +7,7 @@ namespace BankTellerExercise
     class BankCustomer : IAccountable
     {
         List<IAccountable> bankAccounts = new List<IAccountable>();
-
-
-
-
-
+        
         public int Balance { get; private set; }
         public string Name { get; set; }
         public string Address { get; set; }
@@ -33,8 +29,18 @@ namespace BankTellerExercise
             }
         }
 
+        //-----METHODS--------------------------------------------------------------------------------------------------
 
-
+        public void AddAccount(IAccountable newAccount)
+        {
+            bankAccounts.Add(newAccount);
+        }
+        
+        public IAccountable[] GetAccounts()
+        {
+            
+            return bankAccounts.ToArray();
+        }
 
     }
 }
