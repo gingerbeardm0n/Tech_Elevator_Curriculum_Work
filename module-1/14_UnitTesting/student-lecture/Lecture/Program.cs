@@ -17,66 +17,14 @@ namespace Lecture
             Console.WriteLine();
         }
 
-        static IFlyable GetFlyingThing()
-        {
-            return new Dragon();
-        }
-
         static void Main(string[] args)
         {
-            //
-            // OLD MACDONALD
-            //
+            Farm farm = new Farm();
 
-            List<ISingAbout> animals = new List<ISingAbout>();
-            animals.Add(new Horse());
-            animals.Add(new Elephant());
-            animals.Add(new Dragon());
-            animals.Add(new Tractor());
-            animals.Add(new Cat());
-            // animals.Add(new FarmAnimal("Hardtospellvark"));
-            animals.Add(new Bird("Eagle"));
-            animals.Add(new Bird("Condor"));
-            animals.Add(Bird.CreatePterodactyl());
-            animals.Add(new Bird("Robot Chicken"));
-
-            Horse horse = new Horse();
-            horse.MakeSoundOnce();
-
-            WindowsPhone phone = new WindowsPhone();
-            YouTubeApp app = new YouTubeApp();
-            phone.RunApplication(app);
-
-
-            FarmAnimal flyingThing = new Dragon();
-
-            IFlyable trogdor = GetFlyingThing();
-
-            foreach (ISingAbout item in animals)
+            foreach (ISingAbout item in farm.Animals)
             {
                 SingAbout(item);
             }
-
-            /*
-
-            // Let's try singing about a Farm Animal
-            FarmAnimal animal = new Horse();
-            SingAbout(animal);
-
-            // Horse horse = (Horse)animal;
-            // horse.Gallop();
-
-            Elephant elephant = new Elephant();
-            SingAbout(elephant);
-
-            Dragon dragon = new Dragon();
-            SingAbout(dragon);
-            // Same thing as: SingAbout(new Dragon());
-            */
-
-            // What if we wanted to sing about other things on the farm that were 
-            // singable but not farm animals?
-            // Can it be done? 
 
             Console.ReadLine();
         }
