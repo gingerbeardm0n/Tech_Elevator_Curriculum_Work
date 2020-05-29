@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace unit_testing_lecture
+namespace polymorphism_lecture
 {
     class Program
     {
