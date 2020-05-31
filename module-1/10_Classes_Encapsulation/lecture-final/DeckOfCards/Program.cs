@@ -8,43 +8,25 @@ namespace DeckOfCards
     {
         static void Main(string[] args)
         {
-            List<Card> cards = new List<Card>();
+            Deck deck = new Deck();
 
             while (true)
             {
                 Console.WriteLine("What do you want to do? ");
-                Console.WriteLine("1. Create a new card.");
                 Console.WriteLine("2. Display all of the cards.");
                 Console.WriteLine("3. Flip all of the cards.");
+                Console.WriteLine("4. Shuffle");
                 Console.WriteLine("Q. Quit");
 
                 string input = Console.ReadLine();
 
-                if (input == "1")
-                {
-                    // Get the value for the new card
-                    Console.Write("What is the value of the card (1-13): ");
-                    int value = int.Parse(Console.ReadLine());
-
-                    // Get the suit for the new card
-                    Console.Write("What suit does the card have (Hearts, Diamonds, Clubs, Spades): ");
-                    string suit = Console.ReadLine();
-
-                    // Is the card face up or face down
-                    Console.Write("Is the card face up (True/False): ");
-                    bool isFaceUp = bool.Parse(Console.ReadLine());
-
-                    // Create the card and add to the list
-                    Card card = new Card(value, suit, isFaceUp);
-                    cards.Add(card);
-
-                    Console.WriteLine($"There (is/are) now {cards.Count} cards in the list.");
-                }
-                else if (input == "2")
+                if (input == "2")
                 {
                     Console.WriteLine("Displaying all of the cards.");
 
                     // Loop through each of the cards
+                    Card[] cards = deck.GetCards();
+
                     foreach (Card card in cards)
                     {
                         if (card.IsFaceUp)
@@ -60,8 +42,9 @@ namespace DeckOfCards
                 else if (input == "3")
                 {
                     Console.WriteLine($"Flipping the cards.");
-                    
+
                     // Loop through each of the cards and flip them
+                    Card[] cards = deck.GetCards();
                     foreach (Card card in cards)
                     {
                         if (card.IsFaceUp)
@@ -75,6 +58,11 @@ namespace DeckOfCards
 
                         card.Flip();
                     }
+                }
+                else if (input == "4")
+                {
+                    deck.Shuffle();
+                    Console.WriteLine("Deck shuffled");
                 }
                 else if (input == "Q")
                 {
