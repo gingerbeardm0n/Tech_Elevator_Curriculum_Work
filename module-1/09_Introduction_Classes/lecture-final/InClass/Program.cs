@@ -20,6 +20,7 @@ namespace InClass
 
             Car chrisCar = new Car("Honda", "Civic", 2010);
 
+            bool result = chrisCar.AreDoorsOpen();
 
 
             myCar.Display();
@@ -33,6 +34,10 @@ namespace InClass
 
             Console.WriteLine(chrisCar);
 
+            //Person person = new Person();
+
+            string name = Person.GetPerson();
+            Console.WriteLine(name);
 
             Console.ReadLine();
         }

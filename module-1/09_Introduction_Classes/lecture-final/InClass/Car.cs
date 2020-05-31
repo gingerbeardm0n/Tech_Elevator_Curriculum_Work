@@ -47,8 +47,6 @@ namespace InClass
             this.year = year;
         }
 
-
-
         public void Display()
         {
             Console.WriteLine("Make: " + make);
@@ -65,6 +63,10 @@ namespace InClass
             return result;
         }
 
+        public bool AreDoorsOpen()
+        {
+            return false;
+        }
 
         public bool Equals(Car car)
         {
