@@ -1,9 +1,12 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Exercises.Tests
 {
     [TestClass]
-    public class UnitTest1
+    public class Lucky13Tests
     {
         [TestMethod]
         public void TestMethod1()
