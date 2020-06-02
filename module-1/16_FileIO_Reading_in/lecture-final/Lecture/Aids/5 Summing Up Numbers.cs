@@ -33,6 +33,8 @@ namespace Lecture.Aids
             }
             
             Console.WriteLine("The sum is " + sum);
+
+            Console.ReadLine();
         }
     }
 }

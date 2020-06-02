@@ -9,7 +9,7 @@ namespace Lecture.Aids
 {
     /*
     * Reading files for input involves working with streams and readers.
-    */
+    */ 
     public static class ReadingInFiles
     {
 
@@ -19,9 +19,8 @@ namespace Lecture.Aids
         public static void ReadACharacterFile()
         {
             // Start with the file path to input
-            //string directory = Environment.CurrentDirectory;
-            string directory = "c:\\NicePlace";
-            string filename = "Hamlet.txt";
+            string directory = Environment.CurrentDirectory;
+            string filename = "Input.txt";
 
             // Create the full path
             string fullPath = Path.Combine(directory, filename);
@@ -40,20 +39,19 @@ namespace Lecture.Aids
                     {
                         // Read in the line
                         string line = sr.ReadLine();
-
+                        
                         // Print it to the screen
                         Console.WriteLine(line);
                     }
                 }
             }
-            catch (IOException e) //catch a specific type of Exception
+            catch(IOException e) //catch a specific type of Exception
             {
                 Console.WriteLine("Error reading the file");
                 Console.WriteLine(e.Message);
             }
-
-            Console.ReadLine();
         }
+
 
 
     }
