@@ -84,7 +84,7 @@ For instance:
 | `FizzBuzz(30)` | `"FizzBuzz"`    |
 | `FizzBuzz(35)` | `"FizzBuzz"`    |
 | `FizzBuzz(5)`  | `"Buzz"`        |
-| `FizzBuzz(51)` | `"Fizz"`        |
+| `FizzBuzz(51)` | `"Buzz"`        |
 | `FizzBuzz(53)` | `"FizzBuzz"`    |
 
 Are there any additional cases missing?
