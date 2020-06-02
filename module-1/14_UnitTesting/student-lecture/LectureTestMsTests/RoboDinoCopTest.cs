@@ -47,7 +47,7 @@ namespace LectureTestMsTests
             //act - no action is needed
 
             //assert
-            Assert.IsTrue(cop.IsAsleep, "Cop didnt start asleep");
+            Assert.IsFalse(!cop.IsAsleep, "Cop didnt start asleep");
 
 
             if (!cop.IsAsleep)
@@ -55,6 +55,11 @@ namespace LectureTestMsTests
             Assert.Fail("Dude, the cop should start asleep, its awake.");
             }
 
+        }
+        [TestMethod]
+        public void RoboDinoCopShouldBeBatman()
+        {
+            Assert.Inconclusive();
         }
 
 
