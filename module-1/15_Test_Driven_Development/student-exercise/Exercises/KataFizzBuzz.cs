@@ -11,7 +11,12 @@ namespace Exercises
         public string ConvertFizzBuzz(int n)
         {
             string output = "Fizz";
-            
+
+            if (n < 1 || n > 100)
+            {
+                output = "";
+                return output;
+            }
             if (n % 5 == 0 && n % 3 == 0)
             {
                 output = "FizzBuzz";

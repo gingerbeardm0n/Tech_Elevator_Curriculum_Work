@@ -21,12 +21,12 @@ namespace Exercises.Tests
 
         [DataTestMethod]
         [DataRow(3, "Fizz")]
-        [DataRow(-9, "Fizz")]
+        [DataRow(-9, "")]
         [DataRow(1, "1")]
         [DataRow(71, "71")]
         [DataRow(15, "FizzBuzz")]
-        [DataRow(108, "Fizz")]//might need to change this later
-        [DataRow(300, "FizzBuzz")]
+        [DataRow(108, "")]//might need to change this later
+        [DataRow(300, "")]
         public void DivisibleByJustThree(int input, string expectedResult)
         {
             //----Act-----------------------------------------------
@@ -37,12 +37,12 @@ namespace Exercises.Tests
 
         [DataTestMethod]
         [DataRow(5, "Buzz")]
-        [DataRow(-10, "Buzz")]
-        [DataRow(0, "FizzBuzz")]
+        [DataRow(-10, "")]
+        [DataRow(0, "")]
         [DataRow(61, "61")]
         [DataRow(15, "FizzBuzz")]
-        [DataRow(110, "Buzz")]
-        [DataRow(300, "FizzBuzz")]//might need to change this later
+        [DataRow(110, "")]
+        [DataRow(300, "")]//might need to change this later
         public void DivisibleByJustFive(int input, string expectedResult)
         {
             //----Act-----------------------------------------------
@@ -54,11 +54,11 @@ namespace Exercises.Tests
         [DataTestMethod]
         [DataRow(30, "FizzBuzz")]
         [DataRow(60, "FizzBuzz")]
-        [DataRow(0, "FizzBuzz")]
+        [DataRow(0, "")]
         [DataRow(91, "91")]
         [DataRow(15, "FizzBuzz")]
-        [DataRow(110, "Buzz")]
-        [DataRow(300, "FizzBuzz")]//might need to change this later
+        [DataRow(110, "")]
+        [DataRow(300, "")]//might need to change this later
         public void DivisibleByThreeAndFive(int input, string expectedResult)
         {
             //----Act-----------------------------------------------
@@ -73,8 +73,8 @@ namespace Exercises.Tests
         [DataRow(17, "17")]
         [DataRow(56, "56")]
         [DataRow(98, "98")]
-        [DataRow(112, "112")]//might need to change this later
-        [DataRow(167, "167")]//might need to change this later
+        [DataRow(112, "")]//might need to change this later
+        [DataRow(167, "")]//might need to change this later
         public void NotDivisibleBy3Or5ButUnder100(int input, string expectedResult)
         {
             //----Act-----------------------------------------------
