@@ -11,9 +11,13 @@ namespace Exercises
         public string ConvertFizzBuzz(int n)
         {
             string output = "Fizz";
-
-
-            if (n % 5 == 0)
+            
+            if (n % 5 == 0 && n % 3 == 0)
+            {
+                output = "FizzBuzz";
+                return output;
+            }
+            else if (n % 5 == 0)
             {
                 output = "Buzz";
                 return output;
@@ -23,7 +27,6 @@ namespace Exercises
                 string nString = n.ToString();
                 return nString;
             }
-
             return output;
         }
     }

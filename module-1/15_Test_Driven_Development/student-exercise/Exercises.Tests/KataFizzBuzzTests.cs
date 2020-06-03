@@ -24,9 +24,9 @@ namespace Exercises.Tests
         [DataRow(-9, "Fizz")]
         [DataRow(1, "1")]
         [DataRow(71, "71")]
-        [DataRow(15, "Buzz")]//might need to change this later
+        [DataRow(15, "FizzBuzz")]
         [DataRow(108, "Fizz")]//might need to change this later
-        [DataRow(300, "Buzz")]//might need to change this later
+        [DataRow(300, "FizzBuzz")]
         public void DivisibleByJustThree(int input, string expectedResult)
         {
             //----Act-----------------------------------------------
@@ -38,11 +38,11 @@ namespace Exercises.Tests
         [DataTestMethod]
         [DataRow(5, "Buzz")]
         [DataRow(-10, "Buzz")]
-        [DataRow(0, "Buzz")]
+        [DataRow(0, "FizzBuzz")]
         [DataRow(61, "61")]
-        [DataRow(15, "Buzz")]//might need to change this later
+        [DataRow(15, "FizzBuzz")]
         [DataRow(110, "Buzz")]//might need to change this later
-        [DataRow(300, "Buzz")]//might need to change this later
+        [DataRow(300, "FizzBuzz")]//might need to change this later
         public void DivisibleByJustFive(int input, string expectedResult)
         {
             //----Act-----------------------------------------------
@@ -57,7 +57,7 @@ namespace Exercises.Tests
         [DataRow(0, "FizzBuzz")]
         [DataRow(91, "91")]
         [DataRow(15, "FizzBuzz")]
-        [DataRow(110, "FizzBuzz")]//might need to change this later
+        [DataRow(110, "Buzz")]
         [DataRow(300, "FizzBuzz")]//might need to change this later
         public void DivisibleByThreeAndFive(int input, string expectedResult)
         {
