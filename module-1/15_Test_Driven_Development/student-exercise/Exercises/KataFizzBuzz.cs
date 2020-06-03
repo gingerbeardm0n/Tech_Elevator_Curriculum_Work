@@ -17,15 +17,15 @@ namespace Exercises
                 output = "";
                 return output;
             }
-            if (n % 5 == 0 && n % 3 == 0)
+            if ((n % 5 == 0 && n % 3 == 0) || (output.Contains("3") && output.Contains("5")))
             {
                 output = "FizzBuzz";
             }
-            else if (n % 5 == 0)
+            else if ((n % 5 == 0) || (output.Contains("5")) )
             {
                 output = "Buzz";
             }
-            else if (n % 3 == 0)
+            else if ((n % 3 == 0) || (output.Contains("3")) )
             {
                 output = "Fizz";
             }

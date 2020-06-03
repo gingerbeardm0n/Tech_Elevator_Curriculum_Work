@@ -71,7 +71,7 @@ namespace Exercises.Tests
         [DataRow(2, "2")]
         [DataRow(7, "7")]
         [DataRow(17, "17")]
-        [DataRow(56, "56")]
+        [DataRow(56, "Buzz")]
         [DataRow(98, "98")]
         [DataRow(112, "")]//might need to change this later
         [DataRow(167, "")]//might need to change this later
@@ -86,7 +86,7 @@ namespace Exercises.Tests
         [DataRow(2, "2")]
         [DataRow(7, "7")]
         [DataRow(17, "17")]
-        [DataRow(56, "56")]
+        [DataRow(56, "Buzz")]
         [DataRow(98, "98")]
         [DataRow(112, "")]//might need to change this later
         [DataRow(167, "")]//might need to change this later
@@ -96,7 +96,53 @@ namespace Exercises.Tests
             string result = testObj.ConvertFizzBuzz(input);
             //----Assert--------------------------------------------
             Assert.AreEqual(expectedResult, result);
-        }
 
+        }
+        [DataTestMethod]
+        [DataRow(5, "Buzz")]
+        [DataRow(15, "FizzBuzz")]
+        [DataRow(51, "Buzz")]//might need to chage later
+        [DataRow(53, "FizzBuzz")]
+        [DataRow(35, "FizzBuzz")]
+        [DataRow(112, "")]//might need to change this later
+        [DataRow(167, "")]//might need to change this later
+        public void DivisibleBy3And5OrContainsA3and5(int input, string expectedResult)
+        {
+            //----Act-----------------------------------------------
+            string result = testObj.ConvertFizzBuzz(input);
+            //----Assert--------------------------------------------
+            Assert.AreEqual(expectedResult, result);
+
+        }
+        [DataTestMethod]
+        [DataRow(5, "Buzz")]
+        [DataRow(51, "Buzz")]
+        [DataRow(53, "FizzBuzz")]
+        [DataRow(25, "Buzz")]
+        [DataRow(112, "")]//might need to change this later
+        [DataRow(167, "")]//might need to change this later
+        public void DivisibleBy5OrContainsA5(int input, string expectedResult)
+        {
+            //----Act-----------------------------------------------
+            string result = testObj.ConvertFizzBuzz(input);
+            //----Assert--------------------------------------------
+            Assert.AreEqual(expectedResult, result);
+
+        }
+        [DataTestMethod]
+        [DataRow(3, "Fizz")]
+        [DataRow(31, "Fizz")]
+        [DataRow(53, "FizzBuzz")]
+        [DataRow(93, "Fizz")]
+        [DataRow(112, "")]//might need to change this later
+        [DataRow(167, "")]//might need to change this later
+        public void DivisibleBy3OrContainsA3(int input, string expectedResult)
+        {
+            //----Act-----------------------------------------------
+            string result = testObj.ConvertFizzBuzz(input);
+            //----Assert--------------------------------------------
+            Assert.AreEqual(expectedResult, result);
+
+        }
     }
 }
