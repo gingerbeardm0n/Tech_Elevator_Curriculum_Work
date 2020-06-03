@@ -51,6 +51,20 @@ namespace Exercises.Tests
             Assert.AreEqual(expectedResult, result);
         }
 
-
+        [DataTestMethod]
+        [DataRow(30, "FizzBuzz")]
+        [DataRow(60, "FizzBuzz")]
+        [DataRow(0, "FizzBuzz")]
+        [DataRow(91, "91")]
+        [DataRow(15, "FizzBuzz")]
+        [DataRow(110, "FizzBuzz")]//might need to change this later
+        [DataRow(300, "FizzBuzz")]//might need to change this later
+        public void DivisibleByThreeAndFive(int input, string expectedResult)
+        {
+            //----Act-----------------------------------------------
+            string result = testObj.ConvertFizzBuzz(input);
+            //----Assert--------------------------------------------
+            Assert.AreEqual(expectedResult, result);
+        }
     }
 }
