@@ -12,7 +12,13 @@ namespace Exercises
         {
             string output = "Fizz";
 
-            if (n % 3 != 0)
+
+            if (n % 5 == 0)
+            {
+                output = "Buzz";
+                return output;
+            }
+            else if (n % 3 != 0)
             {
                 string nString = n.ToString();
                 return nString;
