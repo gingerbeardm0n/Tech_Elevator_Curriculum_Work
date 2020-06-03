@@ -19,6 +19,8 @@ namespace ExceptionHandling
           * By using try/catch blocks, you can stop the Exception from exiting the method and provide
           * code to handle it. 
           */
+
+
             Console.WriteLine("The following cities: ");
             string[] cities = new string[] { "Cleveland", "Columbus", "Cincinatti" };
             try
