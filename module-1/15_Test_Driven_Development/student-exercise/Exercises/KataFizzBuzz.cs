@@ -10,8 +10,8 @@ namespace Exercises
     {
         public string ConvertFizzBuzz(int n)
         {
-            string output = "Fizz";
-
+            string output = n.ToString();
+            
             if (n < 1 || n > 100)
             {
                 output = "";
@@ -20,17 +20,14 @@ namespace Exercises
             if (n % 5 == 0 && n % 3 == 0)
             {
                 output = "FizzBuzz";
-                return output;
             }
             else if (n % 5 == 0)
             {
                 output = "Buzz";
-                return output;
             }
-            else if (n % 3 != 0)
+            else if (n % 3 == 0)
             {
-                string nString = n.ToString();
-                return nString;
+                output = "Fizz";
             }
             return output;
         }
