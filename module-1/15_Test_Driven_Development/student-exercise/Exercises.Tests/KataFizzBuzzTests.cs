@@ -82,5 +82,21 @@ namespace Exercises.Tests
             //----Assert--------------------------------------------
             Assert.AreEqual(expectedResult, result);
         }
+        [DataTestMethod]
+        [DataRow(2, "2")]
+        [DataRow(7, "7")]
+        [DataRow(17, "17")]
+        [DataRow(56, "56")]
+        [DataRow(98, "98")]
+        [DataRow(112, "")]//might need to change this later
+        [DataRow(167, "")]//might need to change this later
+        public void NotDivisibleBy3Or5ButOver100(int input, string expectedResult)
+        {
+            //----Act-----------------------------------------------
+            string result = testObj.ConvertFizzBuzz(input);
+            //----Assert--------------------------------------------
+            Assert.AreEqual(expectedResult, result);
+        }
+
     }
 }
