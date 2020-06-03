@@ -62,8 +62,6 @@ namespace Lecture.Aids
             {
                 Console.WriteLine(word);
             }
-
-            Console.ReadLine();
         }
     }
 }
