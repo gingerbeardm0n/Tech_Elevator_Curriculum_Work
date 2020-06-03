@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Exercises;
 
 namespace Exercises.Tests
 {
@@ -21,6 +22,8 @@ namespace Exercises.Tests
         [DataTestMethod]
         [DataRow(3, "Fizz")]
         [DataRow(-9, "Fizz")]
+        [DataRow(1, "1")]
+        [DataRow(71, "71")]
         [DataRow(15, "Fizz")]//might need to change this later
         [DataRow(108, "Fizz")]//might need to change this later
         [DataRow(300, "Fizz")]//might need to change this later
