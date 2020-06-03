@@ -41,7 +41,7 @@ namespace Exercises.Tests
         [DataRow(0, "FizzBuzz")]
         [DataRow(61, "61")]
         [DataRow(15, "FizzBuzz")]
-        [DataRow(110, "Buzz")]//might need to change this later
+        [DataRow(110, "Buzz")]
         [DataRow(300, "FizzBuzz")]//might need to change this later
         public void DivisibleByJustFive(int input, string expectedResult)
         {
@@ -60,6 +60,22 @@ namespace Exercises.Tests
         [DataRow(110, "Buzz")]
         [DataRow(300, "FizzBuzz")]//might need to change this later
         public void DivisibleByThreeAndFive(int input, string expectedResult)
+        {
+            //----Act-----------------------------------------------
+            string result = testObj.ConvertFizzBuzz(input);
+            //----Assert--------------------------------------------
+            Assert.AreEqual(expectedResult, result);
+        }
+
+        [DataTestMethod]
+        [DataRow(2, "2")]
+        [DataRow(7, "7")]
+        [DataRow(17, "17")]
+        [DataRow(56, "56")]
+        [DataRow(98, "98")]
+        [DataRow(112, "112")]//might need to change this later
+        [DataRow(167, "167")]//might need to change this later
+        public void NotDivisibleBy3Or5ButUnder100(int input, string expectedResult)
         {
             //----Act-----------------------------------------------
             string result = testObj.ConvertFizzBuzz(input);
