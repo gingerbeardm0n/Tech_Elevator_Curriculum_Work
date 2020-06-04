@@ -23,7 +23,9 @@ namespace PetInfo
         // add to pet collection and write pet collection to file
         public bool AddPet(Pet pet)
         {
-            throw new NotImplementedException();
+            pets.Add(pet);
+            bool result = WritePets(pets);
+            return result;
         }
 
         // remove pet from collection and write to file
@@ -42,7 +44,9 @@ namespace PetInfo
         // wrfite pets to file
         public bool WritePets(List<Pet> pets)
         {
-            throw new NotImplementedException();
+            FileAccess fa = new FileAccess();
+            return fa.WritePets(pets);
+            
         }
     }
 }

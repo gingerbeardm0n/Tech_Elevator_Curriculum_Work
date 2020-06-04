@@ -76,7 +76,16 @@ namespace PetInfo
             Console.WriteLine("Pet type");
             pet.PetType = Console.ReadLine();
 
-            pets.AddPet(pet);
+            bool result = pets.AddPet(pet);
+
+            if (result == true)
+            {
+                Console.WriteLine("Pet added.");
+            }
+            else
+            {
+                Console.WriteLine("Pet not added");
+            }
 
             Console.WriteLine("Pet added.");
         }

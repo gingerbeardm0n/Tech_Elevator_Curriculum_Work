@@ -25,7 +25,7 @@ namespace PetInfo
 
                         Pet temp = new Pet();
                         temp.Number = int.Parse(split[0]);
-                            temp.Name = split[1];
+                        temp.Name = split[1];
                         temp.FamilyName = split[2];
                         temp.PetType = split[3];
 
@@ -38,13 +38,35 @@ namespace PetInfo
                 pets = new List<Pet>();
             }
 
-            return  pets;
+            return pets;
         }
 
         // replaces currenct contents of file with collection
         public bool WritePets(List<Pet> pets)
         {
-            throw new NotImplementedException();
+            bool result = false;
+            string fullPath = Path.Combine(directory, filename);
+
+            try
+            {
+                using (StreamWriter sw = new StreamWriter(fullPath, false))
+
+                    foreach (Pet pet in pets)
+                    {
+                        string petString = pet.Number + "|";
+                        petString += pet.Name + "|";
+                        petString += pet.FamilyName + "|";
+                        petString += pet.PetType;
+                        sw.WriteLine(petString);
+                    }
+
+                result = true;
+            }
+            catch
+            {
+                result = false;
+            }
+            return result;
         }
     }
 }

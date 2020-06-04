@@ -26,7 +26,7 @@ namespace Lecture.Aids
         *
         * NOTE
         * Normally if you use a \ in a string you need to escape it with two \\.
-        * C# lets you put the @ in front of a string and it will realize that if any \ are typed
+        * C# lets you put the @ in front of a string (to the left of the first ") and it will realize that if any \ are typed
         * they do not need to be escaped and will show up as the literal value.        
         */
         public static void UsingTheDirectoryClass()
