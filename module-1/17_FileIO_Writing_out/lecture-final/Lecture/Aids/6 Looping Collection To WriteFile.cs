@@ -31,12 +31,14 @@ namespace Lecture.Aids
                 {"Ruby", 76.2 },
                 {"Matlab", 72.4 }
             };
-            string directory = Environment.CurrentDirectory;
-            string filename = "programminglanguages.txt";
-            string path = Path.Combine(directory, filename);
+            //string directory = Environment.CurrentDirectory;
+            //string filename = "programminglanguages.txt";
+            //string path = Path.Combine(directory, filename);
+
+            string path = @"c:\goodplace\programminglanguages.txt";
 
             // Open up a streamwriter for the file to write to
-            using (StreamWriter sw = new StreamWriter(path))
+            using (StreamWriter sw = new StreamWriter(path, false))
             {
                 // Loop through each key-value pair and print it out to the file
                 foreach (KeyValuePair<string, double> kvp in programmingLanguages)
@@ -45,7 +47,7 @@ namespace Lecture.Aids
                     // This format uses String Interpolation to print out dynamic values inside of a string
                     // It is very useful and compiler-friendly.
                     // https://msdn.microsoft.com/en-us/library/dn961160.aspx
-                    sw.WriteLine($"{kvp.Key} is an IEEE top 10 langauge with a spectrum ranking of {kvp.Value}");
+                    sw.WriteLine($"{kvp.Key} is an IEEE top 10 langauge with a Spectrum ranking of {kvp.Value}");
                 }
 
                 //The using statement up above automatically flushes and closes the stream

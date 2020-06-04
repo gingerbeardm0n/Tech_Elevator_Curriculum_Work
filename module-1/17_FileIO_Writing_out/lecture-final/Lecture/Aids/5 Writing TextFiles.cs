@@ -20,7 +20,7 @@ namespace Lecture.Aids
 
             // Creates a new stream writer
             // FALSE indicates that the file should be overwritten instead of appended to
-            using (StreamWriter sw = new StreamWriter(filename, false))
+            using (StreamWriter sw = new StreamWriter(filename, true))
             {
                 // Prints the current datetime
                 sw.WriteLine(DateTime.UtcNow);

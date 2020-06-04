@@ -9,9 +9,11 @@ namespace Lecture
         {
             // Here are a few examples of reading in a file and writing out values
             // to demonstrate their value.
+            //FileAndDirectories.UsingTheDirectoryClass();
             //ReadingInFiles.ReadACharacterFile();
             //ReadingInFiles.ReadInACSVFile();  
-            WritingTextFiles.WritingAFile();
+            //WritingTextFiles.WritingAFile();
+            LoopingCollectionToWriteFile.LoopingADictionaryToWriteAFile();
             //BinaryFileWriter.WritePrimitiveValues();          
             //BinaryImageManipulator.ReadFileIn();
             //PerformanceDemo.SlowPerformance();
