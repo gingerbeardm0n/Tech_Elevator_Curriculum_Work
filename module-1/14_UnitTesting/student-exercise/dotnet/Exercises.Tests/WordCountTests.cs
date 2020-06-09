@@ -16,16 +16,19 @@ namespace Exercises.Tests
             testObj = new WordCount();
         }
 
-        [DataTestMethod]
+        [TestMethod]
         //[DataRow(new string[] { "ba", "ba", "black", "sheep" }, new Dictionary<string, int> { "ba" : 2, "black": 1, "sheep": 1 })]
 
-        public void TestMethod1()
-        {   //----Arrangle----------------------------------------
-
-
+        public void PassInExampleFromProblem()
+        {
+            WordCount mattIsTheJavaBatMan = new WordCount();
+            Dictionary<string, int> mattsSneakyDictionary1 = new Dictionary<string, int>();
 
             //----Act-----------------------------------------------
+            //new string[] words = null;
+             //   { "ba", "ba", "black", "sheep" };
 
+            //mattsSneakyDictionary1 = mattIsTheJavaBatMan.GetCount
 
 
             //----Assert-------------------------------------------
