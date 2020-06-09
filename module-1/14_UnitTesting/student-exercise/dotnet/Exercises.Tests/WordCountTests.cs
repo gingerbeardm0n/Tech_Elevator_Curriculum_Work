@@ -8,7 +8,17 @@ namespace Exercises.Tests
     [TestClass]
     public class WordCountTests
     {
-        [TestMethod]
+        WordCount testObj;
+
+        [TestInitialize]
+        public void Init()
+        {
+            testObj = new WordCount();
+        }
+
+        [DataTestMethod]
+        //[DataRow(new string[] { "ba", "ba", "black", "sheep" }, new Dictionary<string, int> { "ba" : 2, "black": 1, "sheep": 1 })]
+
         public void TestMethod1()
         {   //----Arrangle----------------------------------------
 
