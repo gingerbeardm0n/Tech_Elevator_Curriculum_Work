@@ -17,6 +17,7 @@ namespace Exercises.Tests
 
             //----Act-----------------------------------------------
 
+            //break these into separate methods or just use DataTestMethod
             bool isABanger1 = party.HaveParty(100, true);
             bool isABanger2 = party.HaveParty(30, true);
             bool isABanger3 = party.HaveParty(70, false);
