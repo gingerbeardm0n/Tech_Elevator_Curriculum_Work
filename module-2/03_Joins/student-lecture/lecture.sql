@@ -2,17 +2,55 @@
 
 -- Let's find out who made payment 16666:
 
+SELECT * FROM payment
+WHERE payment_id = 16666
+
+SELECT * FROM payment p
+JOIN customer c ON p.customer_id = c.customer_id
+WHERE p.payment_id = 16666
+
 -- Ok, that gives us a customer_id, but not the name. We can use the customer_id to get the name FROM the customer table
 
 -- We can see that the * pulls back everything from both tables. We just want everything from payment and then the first and last name of the customer:
 
+SELECT p.*, c.first_name, c.last_name FROM payment p
+JOIN customer c ON p.customer_id = c.customer_id
+WHERE p.payment_id = 16666
+
 -- But when did they return the rental? Where would that data come from? From the rental table, so let’s join that.
+
+SELECT p.*, c.first_name, c.last_name, r.return_date FROM payment p
+JOIN customer c ON p.customer_id = c.customer_id
+JOIN rental r ON p.rental_id = r.rental_id
+WHERE p.payment_id = 16666
 
 -- What did they rent? Film id can be gotten through inventory.
 
+SELECT p.*, c.first_name, c.last_name, r.return_date, i.film_id FROM payment p
+JOIN customer c ON p.customer_id = c.customer_id
+JOIN rental r ON p.rental_id = r.rental_id
+JOIN inventory i ON r.inventory_id = i.inventory_id
+WHERE p.payment_id = 16666
+
 -- What if we wanted to know who acted in that film?
 
+SELECT p.*, c.first_name, c.last_name, r.return_date, i.film_id, fa.actor_id FROM payment p
+JOIN customer c ON p.customer_id = c.customer_id
+JOIN rental r ON p.rental_id = r.rental_id
+JOIN inventory i ON r.inventory_id = i.inventory_id
+JOIN film_actor fa ON i.film_id = fa.film_id
+WHERE p.payment_id = 16666
+
 -- What if we wanted a list of all the films and their categories ordered by film title
+
+SELECT p.*, c.first_name, c.last_name, r.return_date, i.film_id, fa.actor_id, 
+a.first_name + ' ' + a.last_name AS 'Actor Name' FROM payment p
+JOIN customer c ON p.customer_id = c.customer_id
+JOIN rental r ON p.rental_id = r.rental_id
+JOIN inventory i ON r.inventory_id = i.inventory_id
+JOIN film_actor fa ON i.film_id = fa.film_id
+JOIN actor a ON fa.actor_id = a.actor_id
+WHERE p.payment_id = 16666
 
 -- Show all the 'Comedy' films ordered by film title
 
