@@ -28,9 +28,9 @@ namespace Exercises.Tests
             Assert.AreEqual(expectedResult, result);
         }
         [DataTestMethod]
-        [DataRow(new int[] { 8}, false)]
-        [DataRow(new int[] { 2, 2}, false)]
-        [DataRow(new int[] { 500, 6, 500 }, false)]
+        [DataRow(new int[] { 8}, true)]
+        [DataRow(new int[] { 2, 2}, true)]
+        [DataRow(new int[] { 500, 6, 500 }, true)]
         public void PositiveNumbersAtLeastLength1(int[] input, bool expectedResult)
         {
             //----Act-----------------------------------------------

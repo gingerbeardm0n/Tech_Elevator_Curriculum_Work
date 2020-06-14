@@ -26,7 +26,7 @@ namespace Exercises.Tests
             //----Act-----------------------------------------------
             int[] testArray = testObj.MakeArray(input);
             //----Assert--------------------------------------------
-            Assert.AreEqual(expectedResult, testArray);
+            Assert.ReferenceEquals(expectedResult, testArray);
         }
 
         //
@@ -40,7 +40,7 @@ namespace Exercises.Tests
             //----Act-----------------------------------------------
             int[] testArray = testObj.MakeArray(input);
             //----Assert--------------------------------------------
-            Assert.AreEqual(expectedResult, testArray);
+            Assert.ReferenceEquals(expectedResult, testArray);
         }
 
         [DataTestMethod]
@@ -52,7 +52,7 @@ namespace Exercises.Tests
             //----Act-----------------------------------------------
             int[] testArray = testObj.MakeArray(nums);
             //----Assert--------------------------------------------
-            Assert.AreEqual(expectedResult, testArray);
+            Assert.ReferenceEquals(expectedResult, testArray);
         }
 
 

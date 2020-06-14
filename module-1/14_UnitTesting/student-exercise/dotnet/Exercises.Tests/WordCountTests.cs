@@ -28,14 +28,12 @@ namespace Exercises.Tests
 
             //----Act-----------------------------------------------
             //new string[] words = null;
-
-
+            
             mattsSneakyDictionary1 = mattIsTheJavaBatMan.GetCount(new string[]{"ba", "ba", "black", "sheep" });
-
-
+            
             //----Assert-------------------------------------------
 
-
+            //Assert.ReferenceEquals((new Dictionary<string, int> { "ba" : 2, "black": 1, "sheep": 1 }), mattsSneakyDictionary1);
 
 
         }
