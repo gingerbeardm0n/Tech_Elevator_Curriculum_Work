@@ -112,8 +112,12 @@ WHERE title IN ('Euclidean PI','EGG IGBY', 'KARATE MOON', 'RANDOM GO', 'YOUNG LA
 
 -- 7. Add a copy of "Euclidean PI" to all the stores.
 
-SELECT * FROM inventory
+SELECT * 
+FROM inventory
+WHERE film_id = 1002
+AND inventory_id IN (4584, 4585)
 Order BY inventory_id desc
+
 
 INSERT INTO inventory (film_id, store_id)
 VALUES (1002, 1)
@@ -124,24 +128,73 @@ VALUES (1002, 2)
 -- "Euclidean PI". The film has been seized from all stores, and needs to be
 -- deleted from the film table. Delete "Euclidean PI" from the film table.
 
-SELECT * FROM
+delete
+FROM inventory
+WHERE film_id = 1002
+
 
 -- (Did it succeed? Why?)
--- <YOUR ANSWER HERE>
+-- YES!!! Becasuse the only primary key was the inventory id (which i believe was an identity or surrogate primary key) and it 
+--    auto-generated it when I added the film in the first place.  So no other table was relying on that information. Also, 
+--    I hadn't added anything to the rental table which was relying on the invebtory ID.  So in otherwords, since Euclidean PI
+--    had never been rented, I wasn't deleting other information by deleting the copies of it.
 
 -- 9. Delete Mathmagical from the category table.
+
+Delete
+FROM category
+where category_id = 17
+
 -- (Did it succeed? Why?)
--- <YOUR ANSWER HERE>
+-- NO!!! The column category.category_id is a primary key and that the column film_category.category_id relies on for information,
+--   so I couldn't delete it.  (MSG 547)
 
 -- 10. Delete all links to Mathmagical in the film_category tale.
+
+SELECT * FROM film_category
+WHERE category_id = 17
+
+UPDATE film_category  SET category_id = '2'
+WHERE film_id = 274 
+
+UPDATE film_category  SET category_id = 4
+WHERE film_id = 494 
+
+UPDATE film_category  SET category_id = 6
+WHERE film_id = 714 
+
+UPDATE film_category  SET category_id = 10
+WHERE film_id = 996 
+
+UPDATE film_category  SET category_id = 12
+WHERE film_id = 1002 
+
+
+SELECT * FROM film
+WHERE title IN ('Euclidean PI','EGG IGBY', 'KARATE MOON', 'RANDOM GO', 'YOUNG LANGUAGE')
+
 -- (Did it succeed? Why?)
--- <YOUR ANSWER HERE>
+-- YES!!! First I tried just updating the categories of each of the 5 films that had catefory of 17.  That
+--  didn't work , so I just had to delete the entry of those films entirely in the film_category table.
 
 -- 11. Retry deleting Mathmagical from the category table, followed by retrying
 -- to delete "Euclidean PI".
+
+delete
+FROM category
+where category_id = 17
+
 -- (Did either deletes succeed? Why?)
--- <YOUR ANSWER HERE>
+-- YES.  Becuase we had deleted all records of the mathmagical category in the film_category table, so there
+--   were no links to it, hence no information relying on it.
 
 -- 12. Check database metadata to determine all constraints of the film id, and
 -- describe any remaining adjustments needed before the film "Euclidean PI" can
 -- be removed from the film table.
+
+
+SELECT * FROM sys.objects
+
+WHERE type_desc LIKE '%CONSTRAINT'
+
+
