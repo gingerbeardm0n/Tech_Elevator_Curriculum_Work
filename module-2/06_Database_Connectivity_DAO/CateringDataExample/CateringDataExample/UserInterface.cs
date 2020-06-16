@@ -59,6 +59,8 @@ namespace CateringDataExample
             List<CateringItem> items = new List<CateringItem>();
 
             // get data from the database using a Data Access Object
+            DatabaseAccess access = new DatabaseAccess();
+            items = access.GetInventoryList();
 
             foreach (CateringItem item in items)
             {
@@ -82,6 +84,8 @@ namespace CateringDataExample
             decimal endValue = decimal.Parse(Console.ReadLine());
 
             //send data to the database using a Data Access Object
+            DatabaseAccess access = new DatabaseAccess();
+            access.WriteLogData(message, startValue, endValue);
 
             if (result)
             {
