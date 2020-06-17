@@ -43,7 +43,7 @@ namespace CateringDataTest
             List<CateringItem> items = access.GetInventoryList();
 
             bool found = false;
-            foreach(CateringItem item in items)
+            foreach (CateringItem item in items)
             {
                 if (item.ProductCode == "X1")
                 {
@@ -53,6 +53,36 @@ namespace CateringDataTest
             }
 
             Assert.IsTrue(found);
+        }
+
+        [TestMethod]
+        public void TestWriteLogData()
+        {
+            DatabaseAccess access = new DatabaseAccess();
+
+            bool result = access.WriteLogData("Xyzzy", 999.99M, 8888.88M);
+
+            Assert.IsTrue(result);
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string sql_select = "SELECT * FROM log WHERE description = 'Xyzzy';";
+
+                SqlCommand cmd = new SqlCommand(sql_select, conn);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                int count = 0;
+
+                while (reader.Read())
+                {
+                    count++;
+                }
+
+                Assert.AreEqual(1, count);
+            }
         }
     }
 }
