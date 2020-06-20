@@ -51,7 +51,7 @@ You'll find the `Main()` method in `src/Program.cs`.
 
 #### Provided Code
 
-Also in the `Program.cs` file, you'll find several private methods that you'll use to print information to the console:
+In the `UserInterface.cs` file, you'll find several private methods that you'll use to print information to the console:
 
 - `PrintGreeting()`: Prints the welcome greeting along with the menu options
 - `PrintLocations()`: Prints a list of locations
@@ -59,7 +59,7 @@ Also in the `Program.cs` file, you'll find several private methods that you'll u
 
 #### Your Code
 
-The main method in UserInterface calls a method called `Run`. You'll place most of the code you write inside the `Run()` method:
+The main method in Program calls a method called `Run` in UserInterface. You'll place most of the code you write inside the `Run()` method:
 
 ```csharp
 static void Main(string[] args)
