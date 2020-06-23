@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "json-server --watch ./hotels-reviews.json --routes routes.json --port 3001"
+    "start": "json-server --id \"Id\" auctions.json"
   },
   "keywords": [],
   "author": "",
