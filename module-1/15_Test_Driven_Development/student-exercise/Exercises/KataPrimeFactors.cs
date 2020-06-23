@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace Exercises
 {
-    /* OPTIONAL */
+   
     public class KataPrimeFactors
     {
+        public List<int> Factorize()
+        {
+            return null;
+        }
     }
 }

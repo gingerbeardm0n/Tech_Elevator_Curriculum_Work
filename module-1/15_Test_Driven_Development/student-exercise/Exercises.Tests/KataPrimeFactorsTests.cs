@@ -1,25 +1,32 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Exercises.Tests
 {
-    
     [TestClass]
     public class KataPrimeFactorsTests
     {
+        KataPrimeFactors testObj;
+
+        [TestInitialize]
+        public void Init()
+        {
+            testObj = new KataPrimeFactors();
+        }
+
         [TestMethod]
-        public void Factorize()
+        public void FactorizeTest_BaseCase()
         {
 
-        //----Arrange-------------------------------------------
+            
+            //----Act-----------------------------------------------
 
-        KataPrimeFactors testObj = new KataPrimeFactors();
+            List<int> testList = testObj.Factorize();
 
-        //----Act-----------------------------------------------
+            //----Assert--------------------------------------------
 
-        List<int> testList = testObj.Factorize(25);
-
-        //----Assert--------------------------------------------
+            Assert.AreEqual(new List<int> { 1, 2 }, testList);
         }
     }
 }
