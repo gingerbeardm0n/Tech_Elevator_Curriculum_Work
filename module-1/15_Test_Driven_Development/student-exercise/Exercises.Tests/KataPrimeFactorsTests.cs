@@ -16,7 +16,7 @@ namespace Exercises.Tests
         }
 
         [TestMethod]
-        public void FactorizeTest_BaseCase()
+        public void FactorizeTest_two()
         {
             
             //----Act-----------------------------------------------
@@ -31,9 +31,20 @@ namespace Exercises.Tests
             //----Act-----------------------------------------------
             List<int> testList = testObj.Factorize(3);
             //----Assert--------------------------------------------
-            Assert.AreEqual(2, testList[0]);
-
-
+            Assert.AreEqual(3, testList[0]);
         }
+        [TestMethod]
+        public void FactorizeTest_four()
+        {
+            //----Act-----------------------------------------------
+            List<int> testList = testObj.Factorize(3);
+            //----Assert--------------------------------------------
+            Assert.AreEqual(4, testList[0]);
+        }
+
+
+
+
+
     }
 }

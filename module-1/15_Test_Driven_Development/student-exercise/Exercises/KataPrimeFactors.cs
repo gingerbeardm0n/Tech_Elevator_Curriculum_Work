@@ -17,6 +17,11 @@ namespace Exercises
                 factorsList.Add(n);
                 return factorsList;
             }
+            else if (n == 3)
+            {
+                factorsList.Add(n);
+                return factorsList;
+            }
 
             return null;
         }
