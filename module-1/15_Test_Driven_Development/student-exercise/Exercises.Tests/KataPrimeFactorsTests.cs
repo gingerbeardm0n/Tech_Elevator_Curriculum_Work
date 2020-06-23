@@ -18,15 +18,22 @@ namespace Exercises.Tests
         [TestMethod]
         public void FactorizeTest_BaseCase()
         {
-
             
             //----Act-----------------------------------------------
-
-            List<int> testList1 = testObj.Factorize(2);
-
+            List<int> testList = testObj.Factorize(2);
             //----Assert--------------------------------------------
+            Assert.AreEqual(2, testList[0]);
+            
+        }
+        [TestMethod]
+        public void FactorizeTest_three()
+        {
+            //----Act-----------------------------------------------
+            List<int> testList = testObj.Factorize(3);
+            //----Assert--------------------------------------------
+            Assert.AreEqual(2, testList[0]);
 
-            Assert.ReferenceEquals(new List<int> { 2 }, testList1);
+
         }
     }
 }
