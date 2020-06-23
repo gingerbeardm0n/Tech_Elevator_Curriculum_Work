@@ -8,28 +8,22 @@ namespace AuctionApp
     public class APIService
     {
         RestClient client = new RestClient();
-<<<<<<< HEAD
-        string URL = "http://localhost:3001/";
-=======
+
+
         string URL = "http://localhost:3000/";
->>>>>>> 4ff26181376882962c9fd240352702503bc5d88e
+
 
         public List<Auction> GetAllAuctions()
         {
             RestRequest request = new RestRequest(URL + "auctions");
             IRestResponse<List<Auction>> response = client.Get<List<Auction>>(request);
-<<<<<<< HEAD
+
             if (response.Data == null)
             {
                 response.Data = new List<Auction>();
             }
-=======
-            if(response.Data == null)
-            {
-                response.Data = new List<Auction>();
-            }
 
->>>>>>> 4ff26181376882962c9fd240352702503bc5d88e
+
             return response.Data;
         }
 
