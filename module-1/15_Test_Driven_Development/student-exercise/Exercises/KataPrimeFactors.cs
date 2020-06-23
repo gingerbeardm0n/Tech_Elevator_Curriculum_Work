@@ -9,8 +9,15 @@ namespace Exercises
    
     public class KataPrimeFactors
     {
-        public List<int> Factorize()
+        public List<int> Factorize(int n)
         {
+            List<int> factorsList = new List<int>();
+            if (n == 2)
+            {
+                factorsList.Add(n);
+                return factorsList;
+            }
+
             return null;
         }
     }

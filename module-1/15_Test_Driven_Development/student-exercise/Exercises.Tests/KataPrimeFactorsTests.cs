@@ -22,11 +22,11 @@ namespace Exercises.Tests
             
             //----Act-----------------------------------------------
 
-            List<int> testList = testObj.Factorize();
+            List<int> testList1 = testObj.Factorize(2);
 
             //----Assert--------------------------------------------
 
-            Assert.AreEqual(new List<int> { 1, 2 }, testList);
+            Assert.ReferenceEquals(new List<int> { 2 }, testList1);
         }
     }
 }
