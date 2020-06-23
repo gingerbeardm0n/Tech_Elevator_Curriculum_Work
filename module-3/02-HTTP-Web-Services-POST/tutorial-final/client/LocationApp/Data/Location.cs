@@ -17,13 +17,17 @@ namespace LocationApp
         public Location(string csv)
         {
             string[] parsed = csv.Split(",");
-            if (parsed.Length == 5 || parsed.Length == 6) {
+            if (parsed.Length == 5 || parsed.Length == 6)
+            {
                 Name = parsed[0].Trim();
                 Address = parsed[1].Trim();
                 City = parsed[2].Trim();
                 State = parsed[3].Trim();
                 Zip = parsed[4].Trim();
-                if (parsed.Length == 6 && int.TryParse(parsed[5].Trim(), out int parsedId)) Id = parsedId;
+                if (parsed.Length == 6 && int.TryParse(parsed[5].Trim(), out int parsedId))
+                {
+                    Id = parsedId;
+                }
             }
         }
 

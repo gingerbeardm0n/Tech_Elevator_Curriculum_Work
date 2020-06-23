@@ -70,7 +70,8 @@ namespace LocationApp
                 Console.WriteLine("An error occurred communicating with the server.");
                 return null;
             }
-            else if (response.StatusCode != HttpStatusCode.OK)
+            // else if (response.StatusCode != HttpStatusCode.OK)
+            else if (!response.IsSuccessful)
             {
                 //response non-2xx
                 Console.WriteLine("An error response was received from the server. The status code is " + (int)response.StatusCode);
