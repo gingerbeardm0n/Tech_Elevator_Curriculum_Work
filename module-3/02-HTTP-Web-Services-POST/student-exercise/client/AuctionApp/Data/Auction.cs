@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using RestSharp;
 
 namespace AuctionApp
 {
@@ -54,5 +55,9 @@ namespace AuctionApp
                 return Title != null && Description != null && User != null && CurrentBid != 0;
             }
         }
+
+        //public ResponseStatus ResponseStatus { get; internal set; }
+        //public bool IsSuccessful { get; internal set; }
+        //public int StatusCode { get; internal set; }
     }
 }

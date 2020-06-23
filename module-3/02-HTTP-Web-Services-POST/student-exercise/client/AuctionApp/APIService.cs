@@ -95,21 +95,75 @@ namespace AuctionApp
             return null;
         }
 
-        public Auction AddAuction(Auction newAuction) {
+        public Auction AddAuction(Auction newAuction)
+        {
             // place code here
-            throw new NotImplementedException();
+            RestRequest request = new RestRequest(API_URL);
+            request.AddJsonBody(newAuction);
+            IRestResponse<Auction> response = client.Post<Auction>(request);
+
+            if (response.ResponseStatus != ResponseStatus.Completed)
+            {
+                Console.WriteLine("Server error has occured, communication is key to any healthy relationship");
+                return null;
+            }
+            else if (!response.IsSuccessful)
+            {
+                Console.WriteLine("Server gave the following error code" + (int)response.StatusCode);
+            }
+
+            Console.WriteLine("The Auction Was Successfully Added. Way to go Tiger!!!");
+            return response.Data;
         }
 
         public Auction UpdateAuction(Auction auctionToUpdate)
         {
             // place code here
-            throw new NotImplementedException();
+            RestRequest request = new RestRequest(API_URL + "/" + auctionToUpdate.Id);
+            request.AddJsonBody(auctionToUpdate);
+            IRestResponse<Auction> response = client.Put<Auction>(request);
+
+            if (response.ResponseStatus != ResponseStatus.Completed)
+            {
+                Console.WriteLine("Server error has occured, communication is key to any healthy relationship");
+                return null;
+            }
+            else if (!response.IsSuccessful)
+            {
+                Console.WriteLine("Server gave the following error code" + (int)response.StatusCode);
+            }
+            else
+            {
+                Console.WriteLine("The Auction Was Successfully Updated! You really want to sell that ThingyMcBobber");
+            }
+            return response.Data;
+
         }
 
         public bool DeleteAuction(int auctionId)
         {
             // place code here
-            throw new NotImplementedException();
+            RestRequest request = new RestRequest(API_URL + "/" + auctionId);
+            IRestResponse response = client.Delete(request);
+
+
+            if (response.ResponseStatus != ResponseStatus.Completed)
+            {
+                Console.WriteLine("Server error has occured, communication is key to any healthy relationship");
+                return false;
+
+            }
+            else if (!response.IsSuccessful)
+            {
+                Console.WriteLine("Server gave the following error code" + (int)response.StatusCode);
+                return false;
+            }
+            else
+            {
+                Console.WriteLine("The Auction Was Successfully Updated! You really want to sell that ThingyMcBobber");
+                return true;
+            }
+
         }
     }
 }
