@@ -22,6 +22,12 @@ namespace Exercises
                 factorsList.Add(n);
                 return factorsList;
             }
+            else if (n == 7)
+            {
+                factorsList.Add(n);
+                return factorsList;
+            }
+
             else if (n%2 == 0)
             {
                 factorsList.Add(2);
@@ -32,12 +38,17 @@ namespace Exercises
                     factorsList.Add(2);
                     factorsList.Add(m / 2);
                 }
-                
+                else
+                {
+                    factorsList.Add(m);
+                }
                 return factorsList;
             }
-            else if (n == 7)
+            else if (n%3 == 0)
             {
-                factorsList.Add(n);
+                factorsList.Add(3);
+                int m = n / 3;
+                factorsList.Add(m);
                 return factorsList;
             }
 
