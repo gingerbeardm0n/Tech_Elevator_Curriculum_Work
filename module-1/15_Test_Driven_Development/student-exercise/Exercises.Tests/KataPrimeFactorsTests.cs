@@ -16,7 +16,7 @@ namespace Exercises.Tests
         }
 
         [TestMethod]
-        public void FactorizeTest_two()
+        public void FactorizeTest_2()
         {
 
             //----Act-----------------------------------------------
@@ -26,7 +26,7 @@ namespace Exercises.Tests
 
         }
         [TestMethod]
-        public void FactorizeTest_three()
+        public void FactorizeTest_3()
         {
             //----Act-----------------------------------------------
             List<int> testList = testObj.Factorize(3);
@@ -34,7 +34,7 @@ namespace Exercises.Tests
             Assert.AreEqual(3, testList[0]);
         }
         [TestMethod]
-        public void FactorizeTest_four()
+        public void FactorizeTest_4()
         {
             //----Act-----------------------------------------------
             List<int> testList = testObj.Factorize(4);
@@ -43,7 +43,7 @@ namespace Exercises.Tests
             Assert.AreEqual(2, testList[1]);
         }
         [TestMethod]
-        public void FactorizeTest_six()
+        public void FactorizeTest_6()
         {
             //----Act-----------------------------------------------
             List<int> testList = testObj.Factorize(6);
@@ -52,7 +52,7 @@ namespace Exercises.Tests
             Assert.AreEqual(3, testList[1]);
         }
         [TestMethod]
-        public void FactorizeTest_seven()
+        public void FactorizeTest_7()
         {
             //----Act-----------------------------------------------
             List<int> testList = testObj.Factorize(7);
@@ -61,7 +61,7 @@ namespace Exercises.Tests
             
         }
         [TestMethod]
-        public void FactorizeTest_eight()
+        public void FactorizeTest_8()
         {
             //----Act-----------------------------------------------
             List<int> testList = testObj.Factorize(8);
@@ -71,7 +71,7 @@ namespace Exercises.Tests
             Assert.AreEqual(2, testList[2]);
         }
         [TestMethod]
-        public void FactorizeTest_nine()
+        public void FactorizeTest_9()
         {
             //----Act-----------------------------------------------
             List<int> testList = testObj.Factorize(9);
@@ -80,7 +80,7 @@ namespace Exercises.Tests
             Assert.AreEqual(3, testList[1]);
         }
         [TestMethod]
-        public void FactorizeTest_ten()
+        public void FactorizeTest_10()
         {
             //----Act-----------------------------------------------
             List<int> testList = testObj.Factorize(10);
@@ -89,7 +89,7 @@ namespace Exercises.Tests
             Assert.AreEqual(5, testList[1]);
         }
         [TestMethod]
-        public void FactorizeTest_thrity()
+        public void FactorizeTest_30()
         {
             //----Act-----------------------------------------------
             List<int> testList = testObj.Factorize(30);
