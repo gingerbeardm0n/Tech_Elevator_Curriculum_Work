@@ -22,6 +22,12 @@ namespace Exercises
                 factorsList.Add(n);
                 return factorsList;
             }
+            else if (n%2 == 0)
+            {
+                factorsList.Add(2);
+                factorsList.Add(n/2);
+                return factorsList;
+            }
 
             return null;
         }
