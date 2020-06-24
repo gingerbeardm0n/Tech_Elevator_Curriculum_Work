@@ -76,7 +76,7 @@ namespace Locations.Controllers
         [HttpGet("random")]
         public Location Random()
         {
-            return locations[new Random().Next(1, locations.Count)];
+            return locations[new Random().Next(0, locations.Count)];
         }
     }
 }

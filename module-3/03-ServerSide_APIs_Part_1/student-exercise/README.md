@@ -64,6 +64,15 @@ If completed properly, the `CreateMethod_ExpectSuccess` test passes.
 
 ## Step Five: Add searching by title
 
+https://localhost:12345/auctions?title_like=watch
+
+```
+[HTTPGet]
+
+List<Auction> List(string title_like = "")
+```
+
+
 This method's purpose is to enable searching by title. You'll pass in an optional query string parameter that returns all auctions with the search term in the title.
 
 In `AuctionsController.cs`, return to the `List()` action method. Add a `string` parameter with the name `title_like`. You'll need to make this parameter optional, which means you set a default value for it in the parameter declaration. In this case, you want to set the default value to an empty string `""`. Your parameter declaration should look like `string title_like = ""`.
