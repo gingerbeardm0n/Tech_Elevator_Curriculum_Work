@@ -12,21 +12,12 @@ namespace Exercises
         public List<int> Factorize(int n)
         {
             List<int> factorsList = new List<int>();
-            if (n == 2)
+            if (n == 2 || n == 3 || n == 7)
             {
                 factorsList.Add(n);
                 return factorsList;
             }
-            else if (n == 3)
-            {
-                factorsList.Add(n);
-                return factorsList;
-            }
-            else if (n == 7)
-            {
-                factorsList.Add(n);
-                return factorsList;
-            }
+            
 
             else if (n%2 == 0)
             {

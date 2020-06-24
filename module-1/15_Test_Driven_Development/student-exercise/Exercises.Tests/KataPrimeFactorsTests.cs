@@ -88,6 +88,16 @@ namespace Exercises.Tests
             Assert.AreEqual(2, testList[0]);
             Assert.AreEqual(5, testList[1]);
         }
+        [TestMethod]
+        public void FactorizeTest_thrity()
+        {
+            //----Act-----------------------------------------------
+            List<int> testList = testObj.Factorize(30);
+            //----Assert--------------------------------------------
+            Assert.AreEqual(2, testList[0]);
+            Assert.AreEqual(3, testList[1]);
+            Assert.AreEqual(5, testList[2]);
+        }
 
 
 
