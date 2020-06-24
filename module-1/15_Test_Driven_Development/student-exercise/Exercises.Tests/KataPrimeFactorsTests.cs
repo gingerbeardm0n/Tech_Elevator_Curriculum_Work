@@ -98,6 +98,19 @@ namespace Exercises.Tests
             Assert.AreEqual(3, testList[1]);
             Assert.AreEqual(5, testList[2]);
         }
+        [TestMethod]
+        public void FactorizeTest_2500()
+        {
+            //----Act-----------------------------------------------
+            List<int> testList = testObj.Factorize(2500);
+            //----Assert--------------------------------------------
+            Assert.AreEqual(2, testList[0]);
+            Assert.AreEqual(2, testList[1]);
+            Assert.AreEqual(5, testList[2]);
+            Assert.AreEqual(5, testList[3]);
+            Assert.AreEqual(5, testList[4]);
+            Assert.AreEqual(5, testList[5]);
+        }
 
 
 
