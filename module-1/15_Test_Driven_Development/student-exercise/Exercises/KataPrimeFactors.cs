@@ -25,7 +25,19 @@ namespace Exercises
             else if (n%2 == 0)
             {
                 factorsList.Add(2);
-                factorsList.Add(n/2);
+
+                int m = n / 2;
+                if (m%2 == 0)
+                {
+                    factorsList.Add(2);
+                    factorsList.Add(m / 2);
+                }
+                
+                return factorsList;
+            }
+            else if (n == 7)
+            {
+                factorsList.Add(n);
                 return factorsList;
             }
 

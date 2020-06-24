@@ -50,7 +50,6 @@ namespace Exercises.Tests
             //----Assert--------------------------------------------
             Assert.AreEqual(2, testList[0]);
             Assert.AreEqual(3, testList[1]);
-
         }
         [TestMethod]
         public void FactorizeTest_seven()
@@ -61,7 +60,25 @@ namespace Exercises.Tests
             Assert.AreEqual(7, testList[0]);
             
         }
-
+        [TestMethod]
+        public void FactorizeTest_eight()
+        {
+            //----Act-----------------------------------------------
+            List<int> testList = testObj.Factorize(8);
+            //----Assert--------------------------------------------
+            Assert.AreEqual(2, testList[0]);
+            Assert.AreEqual(2, testList[1]);
+            Assert.AreEqual(2, testList[2]);
+        }
+        [TestMethod]
+        public void FactorizeTest_nine()
+        {
+            //----Act-----------------------------------------------
+            List<int> testList = testObj.Factorize(9);
+            //----Assert--------------------------------------------
+            Assert.AreEqual(3, testList[0]);
+            Assert.AreEqual(3, testList[1]);
+        }
 
 
 
