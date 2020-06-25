@@ -3,8 +3,8 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:52916",
-      "sslPort": 44387
+      "applicationUrl": "http://localhost:49673",
+      "sslPort": 44322
     }
   },
   "$schema": "http://json.schemastore.org/launchsettings.json",
@@ -12,15 +12,15 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "locations",
+      "launchUrl": "hotels",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Locations": {
+    "HotelReservations": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "locations",
+      "launchUrl": "hotels",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
