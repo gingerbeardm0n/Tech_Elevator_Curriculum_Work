@@ -45,16 +45,22 @@ namespace Locations.Controllers
         }
 
         [HttpPost]
-        public Location Add(Location location)
+        public ActionResult<Location> Add(Location location)
         {
-            if (location != null)
-            {
-                Location returnLocation = _dao.Create(location);
-                return returnLocation;
-            }
-            return null;
+            Location returnLocation = _dao.Create(location);
+            return Created($"/locations/{returnLocation.Id}", returnLocation);
         }
 
-
+        [HttpPut("{id}")]
+        public ActionResult<Location> Update(int id, Location location)
+        {
+            Location existingLocation = _dao.Get(id);
+            if (existingLocation == null)
+            {
+                return NotFound("Location does not exist, please try harder");
+            }
+            Location result = _dao.Update(id, location);
+            return Ok(result);
+        }
     }
 }
