@@ -9,12 +9,16 @@ namespace HotelReservations.Models
 
         [Required(ErrorMessage = "The field `HotelID` is required.")]
         public int HotelID { get; set; }
+
         [Required(ErrorMessage = "The field `FullName` is required.")]
         public string FullName { get; set; }
+
         [Required(ErrorMessage = "The field `CheckinDate` is required.")]
         public string CheckinDate { get; set; }
+
         [Required(ErrorMessage = "The field `CheckoutDate` is required.")]
         public string CheckoutDate { get; set; }
+
         [Range(1,5, ErrorMessage = "The minimum number of guests is 1 and the maximum number is 5.")]
         public int Guests { get; set; }
 

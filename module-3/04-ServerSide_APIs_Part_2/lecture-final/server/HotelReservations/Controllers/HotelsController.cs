@@ -25,6 +25,13 @@ namespace HotelReservations.Controllers
             }
         }
 
+        [HttpGet]
+        public ActionResult GiveError()
+        {
+            return NotFound("Must use /hotels");
+        }
+
+
         [HttpGet("hotels")]
         public List<Hotel> ListHotels()
         {
@@ -63,7 +70,7 @@ namespace HotelReservations.Controllers
                         filteredHotels.Add(hotel);
                     }
                 }
-                else
+                else if(state != null) 
                 {
                     if (hotel.Address.State.ToLower().Equals(state.ToLower()))
                     {
