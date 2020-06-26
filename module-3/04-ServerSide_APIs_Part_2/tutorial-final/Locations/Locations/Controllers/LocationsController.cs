@@ -30,17 +30,23 @@ namespace Locations.Controllers
             return _dao.List();
         }
 
+        [HttpGet("v2")]
+        public List<Location> List2()
+        {
+            return _dao.List();
+        }
+
         [HttpGet("{id}")]
         public ActionResult<Location> Get(int id)
         {
             Location location = _dao.Get(id);
             if (location != null)
             {
-                return Ok(location);
+                return Ok("Found it, but I'm not telling");
             }
             else
             {
-                return NotFound("Location does not exist");
+                return NotFound();
             }
         }
 
@@ -76,7 +82,5 @@ namespace Locations.Controllers
             _dao.Delete(id);
             return NoContent();
         }
-
-
     }
 }
