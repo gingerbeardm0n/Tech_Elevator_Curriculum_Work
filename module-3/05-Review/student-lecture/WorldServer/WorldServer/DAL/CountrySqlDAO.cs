@@ -43,6 +43,7 @@ namespace WorldServer.DAL
             }
             catch (SqlException ex)
             {
+                //todo john doesn't like this, don't catcth this here - fix exception
                 Console.WriteLine("An error occurred communicating with the database. ");
                 Console.WriteLine(ex.Message);
                 throw;

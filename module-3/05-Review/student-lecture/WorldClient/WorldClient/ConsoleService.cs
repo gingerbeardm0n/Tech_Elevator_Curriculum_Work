@@ -19,7 +19,7 @@ namespace WorldClient
         }
         const string Command_GetCountries = "1";
         const string Command_GetCountry = "2";
-        //const string Command_CitiesByCountryCode = "3";
+        const string Command_CitiesByCountryCode = "3";
         //const string Command_LanguagesByCountryCode = "4";
         //const string Command_AddNewLanguage = "5";
         //const string Command_RemoveLanguage = "6";
@@ -58,9 +58,9 @@ namespace WorldClient
                             GetCountry();
                             break;
 
-                        //case Command_CitiesByCountryCode:
-                        //   // GetCitiesByCountryCode();
-                        //    break;
+                        case Command_CitiesByCountryCode:
+                            // GetCitiesByCountryCode();
+                            break;
 
                         //case Command_LanguagesByCountryCode:
                         //   // GetLanguagesForCountry();
@@ -118,7 +118,7 @@ namespace WorldClient
             Console.WriteLine("Main-Menu Type in a command");
             Console.WriteLine(" 1 - Get all of the countries");
             Console.WriteLine(" 2 - Get details about a country");
-            //Console.WriteLine(" 3 - Get a list of the cities by country code");
+            Console.WriteLine(" 3 - Get a list of the cities by country code");
             //Console.WriteLine(" 4 - Get a list of the languages by country code");
             //Console.WriteLine(" 5 - Add a new language");
             //Console.WriteLine(" 6 - Remove language");
@@ -182,6 +182,22 @@ namespace WorldClient
             }
         }
 
+        private void GetCitiesByCountryCode()
+        {
+            string countryCode = ConsoleHelper.GetString("Enter the country code for the cities that you want to retrieve:");
+
+            IList<City> cities = cityAPIService.GetCitiesByCountryCode(countryCode);
+
+            Console.WriteLine();
+            Console.WriteLine($"Printing {cities.Count} cities for {countryCode}");
+
+            foreach (var city in cities)
+            {
+                Console.WriteLine(city);
+            }
+        }
+
+
         //private void AddCity()
         //{
         //    string name = ConsoleHelper.GetString("Name of the city:");
@@ -217,20 +233,6 @@ namespace WorldClient
         //    }
         //}
 
-        //private void GetCitiesByCountryCode()
-        //{
-        //    string countryCode = ConsoleHelper.GetString("Enter the country code that you want to retrieve:");
-
-        //    IList<City> cities = cityDAO.GetCitiesByCountryCode(countryCode);
-
-        //    Console.WriteLine();
-        //    Console.WriteLine($"Printing {cities.Count} cities for {countryCode}");
-
-        //    foreach (var city in cities)
-        //    {
-        //        Console.WriteLine(city);
-        //    }
-        //}
 
         //private void AddNewLanguage()
         //{

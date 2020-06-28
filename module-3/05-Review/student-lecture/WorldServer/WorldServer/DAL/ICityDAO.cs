@@ -12,7 +12,7 @@ namespace WorldServer.DAL
         /// </summary>
         /// <param name="countryCode">The country code to search for.</param>
         /// <returns></returns>
-        IList<City> GetCitiesByCountryCode(string countryCode);
+        List<City> GetCitiesByCountryCode(string countryCode);
 
         /// <summary>
         /// Adds a new city.
