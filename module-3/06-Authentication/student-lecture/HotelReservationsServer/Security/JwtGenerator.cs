@@ -4,7 +4,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace Locations.Security
+namespace HotelReservations.Security
 {
     public class JwtGenerator : ITokenGenerator
     {
@@ -19,24 +19,23 @@ namespace Locations.Security
         {
             Claim[] claims = new Claim[]
             {
-                new Claim(JwtRegisteredClaimNames.Sub, userId.ToString()),
+                new Claim("sub", userId.ToString()),
                 new Claim("name", username),
                 new Claim(ClaimTypes.Role, role),
-                new Claim("iat", DateTimeOffset.Now.ToUnixTimeSeconds().ToString())
             };
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claims),
-                Expires = DateTime.UtcNow.AddMinutes(1),
-                // Expires = DateTime.UtcNow.AddDays(7),
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.ASCII.GetBytes(JwtSecret)), SecurityAlgorithms.HmacSha256Signature)
+                IssuedAt = DateTime.UtcNow,
+                Expires = DateTime.UtcNow.AddDays(7),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.ASCII.GetBytes(JwtSecret)), SecurityAlgorithms.HmacSha256Signature),
             };
 
             var tokenHandler = new JwtSecurityTokenHandler();
             var token = tokenHandler.CreateToken(tokenDescriptor);
 
-            return  tokenHandler.WriteToken(token);
+            return tokenHandler.WriteToken(token);
         }
     }
 }
