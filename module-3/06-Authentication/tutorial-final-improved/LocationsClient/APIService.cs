@@ -9,7 +9,9 @@ namespace Locations
     {
         const string API_BASE = "https://localhost:44387";
         const string API_URL = API_BASE + "/locations";
+
         private API_User user = new API_User();
+
         private static RestClient authClient = new RestClient();
 
         public bool LoggedIn { get { return !string.IsNullOrWhiteSpace(user.Token); } }
