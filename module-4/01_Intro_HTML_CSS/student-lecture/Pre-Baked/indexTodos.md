@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <!-- TODO: Add page title -->
-</head>
 
-<body>
     <!-- TODO: Add a navigation header-->
 
     <!-- TODO: Include SquirrelPhone.jpg with attribution to one Junkyardmax -->
@@ -25,6 +16,3 @@
     -->
 
     <!-- TODO: Add navigation footer -->
-</body>
-
-</html>
