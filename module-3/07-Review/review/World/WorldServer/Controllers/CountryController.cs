@@ -27,6 +27,7 @@ namespace WorldServer.Controllers
         [HttpGet]
         public List<Country> GetCountries()
         {
+            //owner?
             var user = User.Identity.Name;
 
             List<Country> countries = countryDAO.GetCountries();
