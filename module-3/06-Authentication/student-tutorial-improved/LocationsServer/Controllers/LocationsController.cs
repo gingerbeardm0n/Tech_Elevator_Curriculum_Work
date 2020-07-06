@@ -8,7 +8,7 @@ namespace Locations.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    [Authorize]  // <-- This is what causes us to require a vaid token
+    [Authorize]  // <-- This is what causes us to require a valid token
     public class LocationsController : ControllerBase
     {
         private readonly ILocationDao _dao;
