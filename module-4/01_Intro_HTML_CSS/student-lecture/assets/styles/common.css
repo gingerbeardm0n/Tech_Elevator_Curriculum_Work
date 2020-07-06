@@ -11,18 +11,19 @@ Gold:       #FFCB48
 Red:        #c63f3f
 */
 
-/* General CSS Demos */
-
-/* TODO: Demo an element selector */
-/* TODO: Demo a class selector */
-/* TODO: Demo an id selector */
-/* TODO: Demo an inline style */
-
 /* Document Styling */
 
 /* TODO: Give a standard foreground color */
 /* TODO: Give a standard background color */
-/* TODO: Give a TE approved font. We want Proxima Nova if possible. If that's unavailable, go with Tahoma, then Arial or any generic sans seriff font */
+/* TODO: Give a TE approved font. We want Proxima Nova. If that's missing, use Tahoma, then Arial or any sans serif */
+
+/* Sidebar Styling */
+
+/* TODO: Make sure images don't get out of control */
+
+/* General Header / Footer Styling */
+
+/* TODO: Add a background color and / or border color to the header, footer, and/or main body area
 
 /* Link Styling */
 
@@ -30,9 +31,12 @@ Red:        #c63f3f
 /* TODO: Do not render links with underlines */
 /* TODO: The active link should have a different color to it */
 
-/* Sidebar Styling */
+/* General CSS Demos */
 
-/* TODO: Make sure images don't get out of control */
+/* TODO: Demo an element selector */
+/* TODO: Demo a class selector */
+/* TODO: Demo an id selector */
+/* TODO: Demo an inline style */
 
 /* Table Styling */
 
