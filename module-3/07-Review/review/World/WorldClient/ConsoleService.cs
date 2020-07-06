@@ -18,6 +18,7 @@ namespace WorldClient
             Console.WriteLine("Welcome to World Client! Please make a selection:");
             RunCLI();
         }
+
         const string Command_GetCountries = "1";
         const string Command_GetCountry = "2";
         const string Command_CitiesByCountryCode = "3";
