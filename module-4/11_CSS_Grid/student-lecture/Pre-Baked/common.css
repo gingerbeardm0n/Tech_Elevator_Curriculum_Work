@@ -19,11 +19,15 @@ Red:        #c63f3f
 }
 
 /* Give the main content area enough padding to look acceptable */
-/* TODO: Make the main body area use CSS Grid */
 body {
     color: #363E8B;
     background-color: #999999;
     font-family: 'Proxima Nova', Tahoma, Arial, sans-serif;
+    display: grid;
+    grid-template-areas: 'header'
+                         'aside'
+                         'main'
+                         'footer';
 }
 
 html {
@@ -34,6 +38,7 @@ html {
 main {
     background-color: white;
     padding: 1rem;
+    grid-area: main;
 }
 
 /* If a section starts with a H1, set its margin-top to 0 and instead give it a padding-top. */
@@ -58,9 +63,8 @@ aside {
     margin-left: auto;
     margin-right: auto;
     max-width: 20rem;
+    grid-area: aside;
     padding: 0.1rem;
-    /* TODO: Remove float */
-    float: right;
 }
 
 aside cite {
@@ -98,13 +102,6 @@ blockquote cite {
     font-style: normal;
 }
 
-/* TODO Remove: Clearfix is a standard hack for getting things back to normal after float */
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
 /* General Header / Footer Styling */
 
 header,
@@ -115,6 +112,7 @@ footer {
 
 header {
     border-bottom: 5px solid #FFCB48;
+    grid-area: header;
 }
 
 .active {
@@ -126,22 +124,26 @@ footer {
     border-top: 5px solid #FFCB48;
     text-align: center;
     padding: 1rem;
+    grid-area: footer;
 }
 
 footer nav {
     margin-bottom: 1rem;
+    text-align: left;
 }
 
 /* Header nav should display positioned appropriately (not on the bottom border) */
 header nav {
     display: inline-block;
-    position: relative;
-    left: 1rem;
-    top: -1.75rem;
+}
+
+nav {
+    width: 100%;
 }
 
 nav a {
     padding: 1rem;
+    display: block;
 }
 
 /* Link Styling */
@@ -180,4 +182,32 @@ a:hover {
 
 ::-webkit-scrollbar-thumb:hover {
     background: #ffcb48;
+}
+
+/* Responsiveness */
+@media only screen and (min-width: 768px) {
+
+    body {
+        grid-template-areas: 'header header'
+        'main aside'
+        'main ...'
+        'footer footer';
+    }
+
+    nav a {
+        display: inline-block;
+        padding: 0.5rem;
+    }
+
+    footer nav {
+        text-align: center;
+    }
+
+    header nav {
+        display: inline-block;
+        position: relative;
+        left: 1rem;
+        top: -1.75rem;        
+        width: auto;
+    }
 }
