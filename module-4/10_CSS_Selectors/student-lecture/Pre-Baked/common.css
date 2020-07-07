@@ -13,30 +13,53 @@ Red:        #c63f3f
 
 /* Document Styling */
 
-/* TODO-1 Move everything to use border box box sizing */
-/* TODO-1 Use #999999 for the body's background color and white for the main content area's background color */
-/* TODO-1 Give the main content area and footer enough padding to look acceptable */
+* {
+    box-sizing: border-box;
+}
 
 body {
     color: #363E8B;
-    background-color: white;
+    background-color: #999999;
     font-family: 'Proxima Nova', Tahoma, Arial, sans-serif;
 }
 
-/* TODO-2: If a section starts with a H1, set its margin-top to 0 and instead give it a padding-top. */
-/* TODO-2: Sections should have their last child not have a margin bottom */
+main {
+    background-color: white;
+    padding: 1rem;
+}
+
+section>h1:first-child {
+    margin-top: 0;
+    padding-top: 1rem;
+}
+
+section>*:last-child {
+    margin-bottom: 0;
+}
 
 /* Sidebar Styling */
 
-/* TODO-1: Asides should use a background color, a max-width of 20rem, and float right */
+aside {
+    background-color: #3B3E42;
+    color: #999999;
+    float: right;
+    margin: 0.5rem;
+    max-width: 20rem;
+    padding: 0.25rem;
+    text-align: center;
+}
 
-/* TODO-1: Images iside of asides should have a max-width of 100% */
 aside img {
-    max-width: 250px;
+    max-width: 100%;
     margin-bottom: 0.25rem;
 }
 
-/* TODO-1: Block quotes inside of asides should use some form of non-solid border top */
+aside blockquote {
+    border-top: #8CC63F dotted 1px;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    color: #999999;
+}
 
 cite {
     font-size: x-small;
@@ -49,22 +72,21 @@ blockquote {
     margin-right: 1rem;
 }
 
-/* TODO-1: Cites inside of block quotes should be on the next line */
 blockquote cite {
+    display: block;
     text-align: right;
     margin-top: 0.5rem;
     color: #FFCB48;
     font-style: normal;
 }
 
-/* TODO-1: Review this: Clearfix is a standard hack for getting things back to normal after float */
-/*
+/* Clearfix is a standard hack for getting things back to normal after float */
+
 .clearfix::after {
     content: "";
     clear: both;
     display: table;
 }
-*/
 
 /* General Header / Footer Styling */
 
@@ -93,9 +115,11 @@ footer nav {
     margin-bottom: 1rem;
 }
 
-/* TODO-1: Header nav should display positioned appropriately (not on the bottom border) */
 header nav {
     display: inline-block;
+    position: relative;
+    top: -1.75rem;
+    left: 2rem;
 }
 
 nav a {
@@ -103,6 +127,7 @@ nav a {
 }
 
 /* Link Styling */
+
 a {
     color: #8CC63F;
     text-decoration: none;
@@ -111,13 +136,17 @@ a {
 }
 
 /* Links inside the main content area should be blue instead of green */
+
 main a {
     color: #00ADEE;
 }
 
-/* TODO-2: The link should be a different color when you hover over it */
+/* The link should be a different color when you hover over it */
+a:hover {
+    color: #F6931D;
+}
 
-/* TODO-2 Customized Scrollbar Style 
+/* Customized Scrollbar Style */
 
 ::-webkit-scrollbar {
     width: 0.5rem;
@@ -136,4 +165,3 @@ main a {
 ::-webkit-scrollbar-thumb:hover {
     background: #ffcb48;
 }
-*/

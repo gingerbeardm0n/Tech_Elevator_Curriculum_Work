@@ -10,19 +10,32 @@
 </head>
 
 <body>
-        <!-- Navigation header-->
-        <header>
-            <nav>
-                <a href="index.html">
-                    <img src="assets/Images/LogoGold.png" alt="Sally the Squirrel Logo" />
-                </a>
-                <a href="questions.html">Questions</a>
-                <a href="askaquestion.html">Ask a Question</a>
-                <a href="services.html">Services</a>
-                <a href="about.html">About</a>
-                <a href="contact.html" class="active">Contact</a>
-            </nav>
-        </header>
+    <!-- Navigation header-->
+    <header>
+        <a href="index.html">
+            <img src="assets/Images/LogoGold.png" alt="Sally the Squirrel Logo" />
+        </a>
+        <nav>
+            <a href="questions.html">Questions</a>
+            <a href="askaquestion.html">Ask a Question</a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About</a>
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+    </header>
+
+    <aside class="clearfix">
+        <img src="assets/Images/Contact.jpg" alt="A squirrel standing and staring attentively" />
+        <cite><span>Photo by <a
+                    href="https://unsplash.com/@alexxsvch?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Alexey
+                    Savchenko</a> on <a
+                    href="/s/photos/squirrel-letter?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></cite>
+        <blockquote>
+            Don't talk to me; I'm practicing social distancing. <cite>- Sally
+                the Squirrel</cite>
+        </blockquote>
+
+    </aside>
 
     <main>
         <section id="opening">
@@ -32,18 +45,7 @@
             <p>Yep. This web site is essentially a class project to help students learn how to create web applications.
                 Don't believe me? Check out our <a href="about.html#noteToVisitors">About Us</a> page.</p>
         </section>
-        <aside class="featuredImage">
-            <img src="assets/Images/Contact.jpg" alt="A squirrel standing and staring attentively" />
-            <cite><span>Photo by <a
-                        href="https://unsplash.com/@alexxsvch?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Alexey
-                        Savchenko</a> on <a
-                        href="/s/photos/squirrel-letter?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></cite>
-            <blockquote>
-                Don't talk to me; I'm practicing social distancing. <cite>- Sally
-                    the Squirrel</cite>
-            </blockquote>
-    
-        </aside>    
+
         <section id="contactForm">
             <h2>Want to Try Anyway?</h2>
             <p>Okay, even after hearing all that you still want to try? Fine. Have at it. Here's a contact form. *</p>
@@ -67,12 +69,12 @@
 
                 <div class="form-group">
                     <label for="creditcard">Credit Card:</label>
-                    <input type="number" id="creditcard" placeholder="Your credit card">
+                    <input type="number" id="creditcard" placeholder="Your credit card" required>
                 </div>
 
                 <div class="form-group">
                     <label for="cv3">Credit Card Security Number:</label>
-                    <input type="number" id="cv3" placeholder="Your 3-digit credit card security code">
+                    <input type="number" id="cv3" placeholder="Your 3-digit credit card security code" required>
                 </div>
 
                 <div class="form-group">
@@ -98,7 +100,7 @@
         </section>
 
     </main>
-        <!-- Navigation footer -->
+    <!-- Navigation footer -->
     <footer>
         <nav>
             <a href="index.html">Home</a>

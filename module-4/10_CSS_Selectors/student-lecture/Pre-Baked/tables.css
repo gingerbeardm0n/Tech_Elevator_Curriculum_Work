@@ -16,7 +16,6 @@ table {
     border: 2px solid #8CC63F;
     text-shadow: #999999 1px 1px;
     background-color: #999999;
-    /* TODO-2: Review this */
     border-collapse: collapse;
 }
 
@@ -46,6 +45,10 @@ td {
     text-shadow: #3B3E42 1px 1px;
 }
 
-/* TODO-2: Alternating rows should use a different background */
+tr:nth-child(even) {
+    background-color: #3B3E42;
+}
 
-/* TODO-2: Hovered rows should use a different background */
+tr:hover {
+    background-color: #F6931D;
+}
