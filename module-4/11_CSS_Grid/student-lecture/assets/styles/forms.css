@@ -69,8 +69,3 @@ input[type="submit"]:hover, input[type="button"]:hover {
 input, textarea {
     border: 1px solid #3B3E42;
 }
-
-/* Inputs that do not have the required attribute on them should use a gray border */
-input:not([required]), textarea:not([required]) {
-    border: #8CC63F solid 2px;
-}
