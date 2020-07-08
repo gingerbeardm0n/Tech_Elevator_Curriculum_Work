@@ -14,7 +14,9 @@ Red:        #c63f3f
 /* Document Styling */
 
 /* Move everything to use border box box sizing */
-* {
+html {
+    font-size: 16px;
+    font-family: 'Proxima Nova', Tahoma, Arial, sans-serif;
     box-sizing: border-box;
 }
 
@@ -22,7 +24,7 @@ Red:        #c63f3f
 body {
     color: #363E8B;
     background-color: #999999;
-    font-family: 'Proxima Nova', Tahoma, Arial, sans-serif;
+    
     min-width: 300px;
 
     display: grid;
@@ -31,10 +33,6 @@ body {
                          "mainBody"
                          "footer";
     row-gap: 0.5rem;
-}
-
-html {
-    font-size: 16px;
 }
 
 /* Use #999999 for the body's background color and white for the main content area's background color */
