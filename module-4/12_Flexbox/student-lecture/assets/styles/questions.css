@@ -44,11 +44,6 @@ aside {
     grid-area: notEnough;
 }
 
-.questionContainer {
-    display: grid;
-    /* grid-auto-columns: 300px; */
-}
-
 /* List item styling */
 
 article {
@@ -194,6 +189,10 @@ main aside {
     margin-top: 1rem;
 }
 
+#flexBoxHack {
+    visibility: hidden;
+}
+
 /* Responsive Layout Rules */
 @media screen and (min-width: 768px) {
     main {
@@ -203,7 +202,14 @@ main aside {
     }    
 
     .questionContainer {
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: stretch;
+    }
+
+    article {
+        flex-basis: 350px;
+        flex-grow: 1;
     }
 }
 
