@@ -105,13 +105,6 @@ blockquote cite {
     font-style: normal;
 }
 
-/* TODO Remove: Clearfix is a standard hack for getting things back to normal after float */
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
 /* General Header / Footer Styling */
 
 header,
@@ -122,7 +115,14 @@ footer {
 
 header {
     grid-area: navBar;
+    text-align: center;
+
     border-bottom: 5px solid #FFCB48;
+}
+
+header > a {
+    margin: 0;
+    display: inline-block;
 }
 
 .active {
@@ -169,8 +169,17 @@ a:hover {
 /* Responsive Design Rules */
 
 @media screen and (min-width: 707px) {
+
+    header {
+        text-align: left;
+    }
+
     header nav {
         text-align: center;
+    }
+
+    header > a {
+        margin: 0.5rem 0 0 0.5rem;
     }
 
     nav a {
@@ -179,6 +188,7 @@ a:hover {
 
     html body {
         column-gap: 0.5rem;
+        grid-template-columns: 1fr auto;
         grid-template-areas: "navBar navBar" 
                              "mainBody squirrelPic"
                              "mainBody ..."
@@ -213,29 +223,3 @@ a:hover {
 ::-webkit-scrollbar-thumb:hover {
     background: #ffcb48;
 }
-
-/* Examples from review 
-.classname {
-
-}
-
-section.classname {
-
-}
-
-section .classname {
-
-}
-
-section > .classname {
-    
-}
-
-:not(section) {
-
-}
-
-:hover {
-
-}
-*/
