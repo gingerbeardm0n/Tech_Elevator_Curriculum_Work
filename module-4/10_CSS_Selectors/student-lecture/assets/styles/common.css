@@ -14,13 +14,29 @@ Red:        #c63f3f
 /* Document Styling */
 
 /* TODO-1 Move everything to use border box box sizing */
+*{
+    box-sizing: border-box;
+}
+
+
 /* TODO-1 Use #999999 for the body's background color and white for the main content area's background color */
 /* TODO-1 Give the main content area and footer enough padding to look acceptable */
 
 body {
-    color: #363E8B;
+    color: #999999;
     background-color: white;
     font-family: 'Proxima Nova', Tahoma, Arial, sans-serif;
+
+    
+}
+html{
+    font-size: 16px;
+}
+
+main{
+    background-color: white;
+    padding: 10 rem;
+
 }
 
 /* TODO-2: If a section starts with a H1, set its margin-top to 0 and instead give it a padding-top. */

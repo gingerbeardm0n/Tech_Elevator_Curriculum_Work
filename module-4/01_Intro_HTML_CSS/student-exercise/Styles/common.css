@@ -1,0 +1,36 @@
+/*
+Dark Gray           #494b4b	        (73,75,75)
+Dark Green          #0e5135	        (14,81,53)
+Green               #0d9263	        (13,146,99)
+Light Blue Green    #4aba91	        (74,186,145)
+Yellow Gold         #d4ce46	        (212,206,70)
+
+*/
+html{
+    font-size: 16px;
+}
+body {
+    color: #494b4b;
+    background-color: #4aba91;
+    font-family: 'Dank Mono', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    line-height: inherit;
+    text-align: center;
+    
+}
+
+main {
+    text-align: center;
+    font-size: 2rem;
+    
+}
+
+.section-headers{
+    text-decoration: underline;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: #d4ce46;
+  }
