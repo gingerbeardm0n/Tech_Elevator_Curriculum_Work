@@ -7,5 +7,13 @@ Faded Red   #FE5F55
 
 */
 body{
-    background-color: #7A9E9F;
+    background-color: #EEF5DB;
+}
+
+input{
+    margin: 10px;
+    
+}
+label {
+    color: #FE5F55;
 }
