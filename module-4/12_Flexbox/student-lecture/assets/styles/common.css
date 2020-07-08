@@ -184,6 +184,7 @@ a:hover {
 
     nav a {
         display: inline-block;
+        padding: 0 1rem;
     }
 
     html body {
@@ -201,7 +202,7 @@ a:hover {
         display: inline-block;
         position: relative;
         left: 1rem;
-        top: -1.75rem;    
+        top: -2rem;    
     }
 }
 
