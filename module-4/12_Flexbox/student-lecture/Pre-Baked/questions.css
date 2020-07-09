@@ -15,16 +15,14 @@ Red:        #c63f3f
 
 html body {
     grid-template-columns: 1fr;
-    grid-template-areas:
-        "navBar"
+    grid-template-areas: "navBar"
         "mainBody"
         "footer";
 }
 
 main {
     display: grid;
-    grid-template-areas:
-        "aFriendlyNote"
+    grid-template-areas: "aFriendlyNote"
         "yet-another-squirrel"
         "questionsList"
         "notEnough";
@@ -44,11 +42,6 @@ aside {
 
 #closing {
     grid-area: notEnough;
-}
-
-.questionContainer {
-    display: grid;
-    /* grid-auto-columns: 300px; */
 }
 
 /* List item styling */
@@ -88,19 +81,32 @@ article:hover {
     min-height: 37px;
 }
 
-/* Question Card Footer Styling */
+/* Command Area (lower left) */
+
 .questionFooter {
-    display: inline-block;
+    display: flex;
+    font-size: small;
     padding: 0.25rem;
 }
 
-.questionFooter>div {
-    display: inline-block;
-    border: 3px dotted #1e2227;
+.questionFooter a {
+    color: white;
+    margin: 0.25rem;
 }
 
-.questionFooter a {
-    color: #ffffff;
+.questionFooter>div {
+    min-height: 2rem;
+    flex-grow: 1;
+    display: flex;
+    align-content: center;
+}
+
+.questionFooter> :last-child {
+    justify-content: flex-end;
+}
+
+.questionFooter>div a:hover {
+    color: #FFCB48;
 }
 
 /* Blur the answer text by default */
@@ -124,29 +130,40 @@ article.blur .answer {
 }
 
 /* Correct / Incorrect Styling */
-article.correct {
-    background-color: #8CC63F;
+
+.questionFooter a.markCorrect:hover {
+    color: #8CC63F
 }
 
-article.incorrect {
-    background-color: #c63f3f;
+.questionFooter a.markIncorrect:hover {
+    color: #c63f3f
 }
 
 main aside {
     margin-top: 1rem;
 }
 
+#flexBoxHack {
+    visibility: hidden;
+}
+
 /* Responsive Layout Rules */
 @media screen and (min-width: 768px) {
     main {
-        grid-template-areas:
-            "aFriendlyNote yet-another-squirrel"
+        grid-template-areas: "aFriendlyNote yet-another-squirrel"
             "questionsList questionsList"
             "notEnough notEnough";
     }
 
     .questionContainer {
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: stretch;
+    }
+
+    article {
+        flex-basis: 350px;
+        flex-grow: 1;
     }
 }
 
