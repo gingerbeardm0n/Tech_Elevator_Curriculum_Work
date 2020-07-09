@@ -14,17 +14,18 @@ Red:        #c63f3f
 /* Styling for the list container */
 
 html body {
-    grid-template-areas: "navBar" 
-                         "mainBody"
-                         "footer";
+    grid-template-columns: 1fr;
+    grid-template-areas: "navBar"
+        "mainBody"
+        "footer";
 }
 
 main {
     display: grid;
     grid-template-areas: "aFriendlyNote"
-                         "yet-another-squirrel"                         
-                         "questionsList"
-                         "notEnough";
+        "yet-another-squirrel"
+        "questionsList"
+        "notEnough";
 }
 
 #opening {
@@ -41,11 +42,6 @@ aside {
 
 #closing {
     grid-area: notEnough;
-}
-
-.questionContainer {
-    display: grid;
-    /* grid-auto-columns: 300px; */
 }
 
 /* List item styling */
@@ -85,46 +81,32 @@ article:hover {
     min-height: 37px;
 }
 
+/* Command Area (lower left) */
+
 .questionFooter {
     display: flex;
-    flex-direction: row;
-    color: #1e2227;
     font-size: small;
-    align-items: baseline;
     padding: 0.25rem;
 }
 
 .questionFooter a {
-    color: #ffffff;
+    color: white;
+    margin: 0.25rem;
 }
 
-/* Command Area (lower left) */
-
-.questionCommands {
-    display: flex;
-    flex-direction: row;
-}
-
-.questionCommands a {
-    margin-right: 0.5rem;
-}
-
-/* Tag Styling (lower right) */
-
-.tagsContainer {
-    display: flex;
+.questionFooter>div {
+    min-height: 2rem;
     flex-grow: 1;
-    flex-direction: row-reverse;
-    align-items: baseline;
+    display: flex;
+    align-content: center;
 }
 
-.tag {
-    background-color: #3B3E42;
-    color: #ffffff;
-    padding: 0.25rem;
-    border: 1px solid #3B3E42;
-    border-radius: 0.5rem;
-    margin-left: 0.25rem;
+.questionFooter> :last-child {
+    justify-content: flex-end;
+}
+
+.questionFooter>div a:hover {
+    color: #FFCB48;
 }
 
 /* Blur the answer text by default */
@@ -147,67 +129,46 @@ article.blur .answer {
     text-shadow: 0 0 5px #ffffff;
 }
 
-article.blur .markCorrect {
-    /* Do not show the mark correct button if we haven't displayed the answer */
-    display: none;
-}
-
-article.blur .markIncorrect {
-    /* Do not show the mark incorrect button if we haven't displayed the answer */
-    display: none;
-}
-
-/* Show Answer Command */
-
-.showAnswer {
-    display: none;
-    /* Do not show the show answer button by default */
-}
-
-article.blur .showAnswer {
-    display: inline;
-    /* If the question is blurred, show the "show answer" link */
-}
-
 /* Correct / Incorrect Styling */
 
-article.correct .questionCommands {
-    /* If the question is answered, commands are now irrelevant */
-    display: none;
+.questionFooter a.markCorrect:hover {
+    color: #8CC63F
 }
 
-article.incorrect .questionCommands {
-    /* If the question is answered, commands are now irrelevant */
-    display: none;
-}
-
-article.correct {
-    background-color: #8CC63F;
-}
-
-article.incorrect {
-    background-color: #c63f3f;
+.questionFooter a.markIncorrect:hover {
+    color: #c63f3f
 }
 
 main aside {
     margin-top: 1rem;
 }
 
+#flexBoxHack {
+    visibility: hidden;
+}
+
 /* Responsive Layout Rules */
 @media screen and (min-width: 768px) {
     main {
         grid-template-areas: "aFriendlyNote yet-another-squirrel"
-                             "questionsList questionsList"
-                             "notEnough notEnough";
-    }    
+            "questionsList questionsList"
+            "notEnough notEnough";
+    }
 
     .questionContainer {
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: stretch;
+    }
+
+    article {
+        flex-basis: 350px;
+        flex-grow: 1;
     }
 }
 
 @media screen and (min-width: 1024px) {
     .questionContainer {
         grid-template-columns: 1fr 1fr 1fr;
-    }   
+    }
 }

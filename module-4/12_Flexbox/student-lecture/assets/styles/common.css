@@ -14,50 +14,52 @@ Red:        #c63f3f
 /* Document Styling */
 
 /* Move everything to use border box box sizing */
-* {
+
+html {
+    font-size: 16px;
+    font-family: 'Proxima Nova', Tahoma, Arial, sans-serif;
     box-sizing: border-box;
 }
 
 /* Give the main content area enough padding to look acceptable */
+
 body {
     color: #363E8B;
     background-color: #999999;
-    font-family: 'Proxima Nova', Tahoma, Arial, sans-serif;
+    /* Specify the minimum mobile resolution we'll support */
     min-width: 300px;
-
     display: grid;
-    grid-template-areas: "navBar" 
-                         "squirrelPic"
-                         "mainBody"
-                         "footer";
+    grid-template-areas: "navBar" "squirrelPic" "mainBody" "footer";
     row-gap: 0.5rem;
 }
 
-html {
-    font-size: 16px;
-}
-
 /* Use #999999 for the body's background color and white for the main content area's background color */
+
 main {
     background-color: white;
     padding: 1rem;
     grid-area: mainBody;
+    /* Specify the minimum height for this region. On small pages it can loop wierd if we don't do this */
+    min-height: 400px;
 }
 
 /* If a section starts with a H1, set its margin-top to 0 and instead give it a padding-top. */
-section > h1:first-child {
+
+section>h1:first-child {
     margin-top: 0.25rem;
     padding-top: 0.25rem;
 }
 
 /* Sections should have their last child not have a margin bottom */
-section > :last-child {
+
+section> :last-child {
     margin-bottom: 0;
 }
 
 /* Sidebar Styling */
 
 /* Asides should use a background color, a max-width of 20rem, and float right */
+
 aside {
     grid-area: squirrelPic;
     background-color: #3B3E42;
@@ -66,7 +68,6 @@ aside {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    max-width: 20rem;
     padding: 0.1rem;
 }
 
@@ -75,12 +76,14 @@ aside cite {
 }
 
 /* Images inside of asides should have a max-width of 100% */
+
 aside img {
     max-width: 100%;
     margin-bottom: 0.25rem;
 }
 
 /* Block quotes inside of asides should use some form of non-solid border top */
+
 aside blockquote {
     border-top: 3px dotted #FFCB48;
     padding-top: 0.5rem;
@@ -98,6 +101,7 @@ blockquote {
 }
 
 /* Cites inside of block quotes should be on the next line */
+
 blockquote cite {
     text-align: right;
     margin-top: 0.5rem;
@@ -107,8 +111,7 @@ blockquote cite {
 
 /* General Header / Footer Styling */
 
-header,
-footer {
+header, footer {
     background-color: #3B3E42;
     color: #999999;
 }
@@ -116,11 +119,10 @@ footer {
 header {
     grid-area: navBar;
     text-align: center;
-
     border-bottom: 5px solid #FFCB48;
 }
 
-header > a {
+header>a {
     margin: 0;
     display: inline-block;
 }
@@ -148,6 +150,7 @@ nav a {
 }
 
 /* Link Styling */
+
 a {
     color: #8CC63F;
     text-decoration: none;
@@ -157,11 +160,13 @@ a {
 }
 
 /* Links inside the main content area should be blue instead of green */
+
 main a {
     color: #00ADEE;
 }
 
 /* The link should be a different color when you hover over it */
+
 a:hover {
     color: #F6931D;
 }
@@ -169,44 +174,37 @@ a:hover {
 /* Responsive Design Rules */
 
 @media screen and (min-width: 707px) {
-
     header {
         text-align: left;
+        display: flex;
+        align-items: stretch;
     }
-
     header nav {
         text-align: center;
+        flex-grow: 1;
     }
-
-    header > a {
-        margin: 0.5rem 0 0 0.5rem;
+    nav {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
     }
-
+    header>a {
+        margin: 0;
+        padding: 0.5rem;
+    }
     nav a {
         display: inline-block;
-        padding: 0 1rem;
+        padding: 0;
     }
-
     html body {
         column-gap: 0.5rem;
-        grid-template-columns: 1fr auto;
-        grid-template-areas: "navBar navBar" 
-                             "mainBody squirrelPic"
-                             "mainBody ..."
-                             "footer footer";
-    }
-}
-
-@media screen and (min-width: 904px) {
-    header nav {
-        display: inline-block;
-        position: relative;
-        left: 1rem;
-        top: -2rem;    
+        grid-template-columns: 1fr 20rem;
+        grid-template-areas: "navBar navBar" "mainBody squirrelPic" "mainBody ..." "footer footer";
     }
 }
 
 /* Customized Scrollbar Style */
+
 ::-webkit-scrollbar {
     width: 1rem;
 }
