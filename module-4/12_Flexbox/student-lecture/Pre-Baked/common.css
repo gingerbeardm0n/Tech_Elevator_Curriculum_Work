@@ -22,16 +22,14 @@ html {
 }
 
 /* Give the main content area enough padding to look acceptable */
+
 body {
     color: #363E8B;
     background-color: #999999;
     /* Specify the minimum mobile resolution we'll support */
     min-width: 300px;
     display: grid;
-    grid-template-areas: "navBar"
-        "squirrelPic"
-        "mainBody"
-        "footer";
+    grid-template-areas: "navBar""squirrelPic""mainBody""footer";
     row-gap: 0.5rem;
 }
 
@@ -46,12 +44,14 @@ main {
 }
 
 /* If a section starts with a H1, set its margin-top to 0 and instead give it a padding-top. */
+
 section>h1:first-child {
     margin-top: 0.25rem;
     padding-top: 0.25rem;
 }
 
 /* Sections should have their last child not have a margin bottom */
+
 section> :last-child {
     margin-bottom: 0;
 }
@@ -59,6 +59,7 @@ section> :last-child {
 /* Sidebar Styling */
 
 /* Asides should use a background color, a max-width of 20rem, and float right */
+
 aside {
     grid-area: squirrelPic;
     background-color: #3B3E42;
@@ -67,7 +68,6 @@ aside {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    max-width: 20rem;
     padding: 0.1rem;
 }
 
@@ -76,12 +76,14 @@ aside cite {
 }
 
 /* Images inside of asides should have a max-width of 100% */
+
 aside img {
     max-width: 100%;
     margin-bottom: 0.25rem;
 }
 
 /* Block quotes inside of asides should use some form of non-solid border top */
+
 aside blockquote {
     border-top: 3px dotted #FFCB48;
     padding-top: 0.5rem;
@@ -99,6 +101,7 @@ blockquote {
 }
 
 /* Cites inside of block quotes should be on the next line */
+
 blockquote cite {
     text-align: right;
     margin-top: 0.5rem;
@@ -108,7 +111,8 @@ blockquote cite {
 
 /* General Header / Footer Styling */
 
-header, footer {
+header,
+footer {
     background-color: #3B3E42;
     color: #999999;
 }
@@ -147,6 +151,7 @@ nav a {
 }
 
 /* Link Styling */
+
 a {
     color: #8CC63F;
     text-decoration: none;
@@ -156,11 +161,13 @@ a {
 }
 
 /* Links inside the main content area should be blue instead of green */
+
 main a {
     color: #00ADEE;
 }
 
 /* The link should be a different color when you hover over it */
+
 a:hover {
     color: #F6931D;
 }
@@ -168,41 +175,42 @@ a:hover {
 /* Responsive Design Rules */
 
 @media screen and (min-width: 707px) {
-
     header {
         text-align: left;
+        display: flex;
+        align-items: stretch;
     }
 
     header nav {
         text-align: center;
+        flex-grow: 1;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
     }
 
     header>a {
-        margin: 0.5rem 0 0 0.5rem;
+        margin: 0;
+        padding: 0.5rem;
     }
 
     nav a {
         display: inline-block;
-        padding: 0 1rem;
+        padding: 0;
     }
 
     html body {
         column-gap: 0.5rem;
         grid-template-columns: 1fr 20rem;
-        grid-template-areas: "navBar navBar" "mainBody squirrelPic" "mainBody ..." "footer footer";
-    }
-}
-
-@media screen and (min-width: 904px) {
-    header nav {
-        display: inline-block;
-        position: relative;
-        left: 1rem;
-        top: -2rem;
+        grid-template-areas: "navBar navBar""mainBody squirrelPic""mainBody ...""footer footer";
     }
 }
 
 /* Customized Scrollbar Style */
+
 ::-webkit-scrollbar {
     width: 1rem;
 }
