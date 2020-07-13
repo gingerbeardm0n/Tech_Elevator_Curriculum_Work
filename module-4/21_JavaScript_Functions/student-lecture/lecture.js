@@ -1,17 +1,4 @@
 /**
- * All named functions will have the function keyword and
- * a name followed by parentheses.
- */
-function buildMyCar() {
-  return {
-    make: 'Honda',
-    model: 'Civic',
-    year: 2017,
-    color: 'Blue',
-  };
-}
-
-/**
  * Write a function called multiplyTogether that multiplies two numbers together. But 
  * what happens if we don't pass a value in? What happens if the value is not a number?
  *
@@ -53,6 +40,24 @@ function returnBeforeEnd(firstParameter, secondParameter) {
 }
 
 /**
+ * Create and return a new object representing a car
+ * @returns {Object} the new car
+ */
+function buildMyCar() {
+  return {
+    make: 'Honda',
+    model: 'Civic',
+    year: 2017,
+    color: 'Blue',
+
+    // Functions are just a data type, so any property can hold a function.
+    honk: function honkHorn() { // honkHorn here is essentially meaningless, but may show up in a stack trace
+      console.warn('Beep beep!');
+    },
+  };
+}
+
+/**
  * Scope is defined as where a variable is available to be used.
  *
  * If a variable is declare inside of a block, it will only exist in
@@ -66,7 +71,7 @@ function scopeTest() {
   {
     // this variable lives inside this block and doesn't
     // exist outside of the block
-    let scopedToBlock = inScopeInScopeTest;
+    let scopedToBlock = true;
   }
 
   // scopedToBlock doesn't exist here so an error will be thrown
