@@ -1,51 +1,6 @@
 let should = chai.should();
 
-describe('exercises', () => {
-  describe('isSummer', () => {
-    it('should be summer if July', () => {
-      isSummer(7).should.be.true;
-    });
-    it('should be summer in south if January', () => {
-      isSummer(1, 1, 'southern').should.be.true;
-    });
-    it('should be summer if after June 20', () => {
-      isSummer(6, 21).should.be.true;
-    });
-    it('should be summer if June 20', () => {
-      isSummer(6, 20).should.be.true;
-    });
-    it('should not be summer if June 19', () => {
-      isSummer(6, 19).should.be.false;
-    });
-    it('should not be summer if Sept 21', () => {
-      isSummer(9, 21).should.be.false;
-    });
-    it('should be summer if Sept 20', () => {
-      isSummer(9, 20).should.be.true;
-    });
-    it('should be summer if Sept 19', () => {
-      isSummer(9, 19).should.be.true;
-    });
-
-    it('should be summer in south if after Dec 20', () => {
-      isSummer(12, 21, 'southern').should.be.true;
-    });
-    it('should be summer in south if Dec 20', () => {
-      isSummer(12, 20, 'southern').should.be.true;
-    });
-    it('should not be summer in south if Dec 19', () => {
-      isSummer(12, 19, 'southern').should.be.false;
-    });
-    it('should not be summer in south if Mar 21', () => {
-      isSummer(3, 21, 'southern').should.be.false;
-    });
-    it('should be summer in south if Mar 20', () => {
-      isSummer(3, 20, 'southern').should.be.true;
-    });
-    it('should be summer in south if Mar 19', () => {
-      isSummer(3, 19, 'southern').should.be.true;
-    });
-  });
+describe('Exercises', () => {
 
   describe('isAdmitted', () => {
     it('should accept anyone with high gpa', () => {

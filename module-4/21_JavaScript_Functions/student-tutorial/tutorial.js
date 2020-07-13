@@ -3,7 +3,7 @@
  *
  * This function should return the boolean true.
  *
- * @returns {number} 1
+ * @returns {boolean} true
  */
 
 /**

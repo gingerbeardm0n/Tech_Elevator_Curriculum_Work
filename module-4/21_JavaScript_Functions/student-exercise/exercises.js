@@ -1,37 +1,16 @@
-/*
- * Document this function
- */
-function isSummer(month, day = 1, hemisphere = 'northern') {
-  if (month === 7 || month === 8) {
-    return hemisphere === 'northern';
-  } else if (month === 6 && day >= 20) {
-    return hemisphere === 'northern';
-  } else if (month === 9 && day <= 20) {
-    return hemisphere === 'northern';
-  } else if (month === 1 || month === 2) {
-    return hemisphere === 'southern';
-  } else if (month === 12 && day >= 20) {
-    return hemisphere === 'southern';
-  } else if (month === 3 && day <= 20) {
-    return hemisphere === 'southern';
-  } else {
-    return false;
-  }
-}
-
 /**
  * Write a function called isAdmitted. It will check entrance
- * scores and return true if the students is admitted and
+ * scores and return true if the student is admitted and
  * false if rejected. It takes three parameters:
  *
  *     * gpa
  *     * satScore (optional)
  *     * recommendation (optional)
  *
- * We admit them--return true--if:
+ * Admit them--return true--if:
  * gpa is above 4.0 OR
  * SAT score is above 1300 OR
- * gpa above 3.0 and they have a recommendation OR
+ * gpa is above 3.0 and they have a recommendation OR
  * SAT score is above 1200 and they have a recommendation
  * OTHERWISE reject it
  *
@@ -42,8 +21,8 @@ function isSummer(month, day = 1, hemisphere = 'northern') {
  */
 
 /**
- * Write a function called useParameterToFilterArray so that it takes an anonymous
- * function and uses that in `unfilteredArray` filter function. Return the result.
+ * Write a function called useParameterToFilterArray that takes an anonymous
+ * function and uses that in the `unfilteredArray` filter function. Return the result.
  *
  * @param {function} filterFunction the function to filter with
  * @returns {number[]} the filtered array
@@ -51,12 +30,12 @@ function isSummer(month, day = 1, hemisphere = 'northern') {
 let unfilteredArray = [1, 2, 3, 4, 5, 6];
 
 /**
- * Write a function called makeNumber to take two strings
- * of digits, concatenate them together, and then return
- * the value back as a number.
+ * Write a function called makeNumber that takes two strings
+ * of digits, concatenates them together, and returns
+ * the value as a number.
  *
  * So if two strings are passed in "42293" and "443", then this function
- * should return the number 42293443.
+ * returns the number 42293443.
  *
  * @param {string} first the first string of digits to concatenate
  * @param {string} [second=''] the second string of digits to concatenate
@@ -65,7 +44,7 @@ let unfilteredArray = [1, 2, 3, 4, 5, 6];
 
 /**
  * Write a function called addAll that takes an unknown number of parameters
- * and adds them all together. Return the result.
+ * and adds all of them together. Return the sum.
  *
  * @param {...number} num a series of numbers to add together
  * @returns {number} the sum of all the parameters (or arguments)
@@ -89,32 +68,32 @@ let unfilteredArray = [1, 2, 3, 4, 5, 6];
  *     * zip
  *
  * and returns an array of strings that turns the JavaScript objects
- * into mailing addresses in the form of:
+ * into a mailing address in the form of:
  *     streetNumber streetName streetType city state zip
  *
  * Use `map` and an anonymous function.
  */
 
 /*
- * Create and document a function called findLargest.
+ * Write and document a function called findLargest.
  *
  * Using `forEach`, find the largest element in an array.
- * It should work for strings and numbers.
+ * It must work for strings and numbers.
  */
 
 /*
  * CHALLENGE
- * Create and document a function called getSumOfSubArrayValues.
+ * Write and document a function called getSumOfSubArrayValues.
  *
- * Take an array of arrays and add up all sub values and return
- * the sum. For instance, if you got this array as a parameter:
+ * Take an array of arrays, adds up all sub values, and returns
+ * the sum. For example, if you got this array as a parameter:
  * [
  *   [1, 2, 3],
  *   [2, 4, 6],
  *   [5, 10, 15]
  * ];
  *
- * You would return 48. To do this, you will use two nested `reduce`
+ * The function returns 48. To do this, you will use two nested `reduce`
  * calls with two anonymous functions.
  *
  * Read the tests to verify you have the correct behavior.

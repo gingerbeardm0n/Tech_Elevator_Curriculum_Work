@@ -158,7 +158,7 @@ Since you want to multiply all the values together, and you don't care what orde
 
 ## `filterStringArrayForSon()`
 
-These functions are limited to just numbers. You can use arrays of any type with these functions.
+These functions aren't limited to just numbers. You can use arrays of any type with these functions.
 
 ``` javascript
 function filterStringArrayForSon(arrayToFilter) {
