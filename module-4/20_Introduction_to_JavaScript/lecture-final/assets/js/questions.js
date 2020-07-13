@@ -243,13 +243,13 @@ function noFours(someArray) {
   return newArray;
 }
 
-const someArray = [1, 2, 3];
+const someOtherArray = [1, 2, 3];
 
 function noSecondElement(someArray) {
-  const newArray = someArray.slice();
+  const newArray = someArray.slice(); // Get a copy of someArray
 
   if (newArray.length > 1) {
-    newArray.splice(1, 1);
+    newArray.splice(1, 1); // Remove 1 element starting at index 1
   }
 
   return newArray;
