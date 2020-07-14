@@ -51,7 +51,15 @@
 		seeColor("xxred") → ""
         seeColor("blueTimes") → "blue"
 */
-
+		function seeColor(colorString){
+			if (colorString.startsWith('red')) {
+				return 'red';
+			}
+			else if (colorString.startsWith('blue')) {
+				return 'blue';
+			}
+			return "";
+		}
 /*
 5. **oddOnly** Write a function that given an array of integer of any length, filters out 
     the even number, and returns a new array of just the the odd numbers.
@@ -78,7 +86,15 @@
 		frontAgain("edit") → false
 		frontAgain("ed") → true
 */
+		function frontAgain(str){
+			startingTwo = str.substr(0,2);
+			lastTwo = str.substr(str.length - 2, 2);
 
+			if (startingTwo === lastTwo){
+				return true;
+			}
+			return false;
+		}
 /*
 7. **cigarParty** When squirrels get together for a party, they like to have cigars. 
 A squirrel party is successful when the number of cigars is between 40 and 60, inclusive. 
@@ -108,7 +124,18 @@ or false otherwise.
 		fizzBuzz(15) → "FizzBuzz"
 		fizzBuzz(8) → 8
 */
-
+		function fizzBuzz(num){
+			if (num % 5 === 0 && num % 3 === 0){
+				return 'FizzBuzz';
+			}
+			else if (num % 5 === 0){
+				return 'Buzz';
+			}
+			else if (num % 3 === 0){
+				return 'Fizz'
+			}
+			return num;
+		}
 /*
 9. **filterEvens** Write a function that filters an array to only include even numbers.
 
@@ -169,11 +196,11 @@ parameter, `x` passed in.
 firstName, lastName, and age. Populate the properties with your values.
 
 */
-	function createObject() 
-
-	{
-		firstName: Joel;
-		lastName: Birdsall;
-		age: 31;
-		
+	function createObject() {
+		let person = {
+			firstName: Joel,
+			lastName: Birdsall,
+			age: 31
+		}
+		return person;
 	}
