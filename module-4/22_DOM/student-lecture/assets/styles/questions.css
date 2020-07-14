@@ -51,6 +51,17 @@ aside {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
+.question-header {
+    color: #F6931D;
+}
+
+.questionContainer.ugly {
+    background-color:yellow;
+    border: 1rem solid purple;
+    color: yellow;
+    padding: 1rem;
+}
+
 /* List item styling */
 
 article {
@@ -117,7 +128,9 @@ article:hover {
 }
 
 /* Blur the answer text by default */
-
+article {
+    background-color: #00ADEE;
+}
 article.blur {
     background-color: #00ADEE;
 }
