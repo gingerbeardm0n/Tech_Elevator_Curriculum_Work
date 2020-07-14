@@ -45,7 +45,7 @@ const questions = [
 document.addEventListener('DOMContentLoaded', () => {
   console.log('Hello from Questions.js');
 
-  // TODO: Find the question container
+  // TODO: Find the question container (questionContainer class or divQuestions id)
 
   // TODO: Log the question container to the console
 
