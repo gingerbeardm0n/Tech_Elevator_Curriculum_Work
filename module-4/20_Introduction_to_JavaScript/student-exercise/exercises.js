@@ -5,13 +5,15 @@
 		sumDouble(1, 2) → 3
 		sumDouble(3, 2) → 5
 		sumDouble(2, 2) → 8
+		*/
 
 		function sumDouble(x, y) {
-			// do logic here
-			// return result;
+			if (x == y)
+			{
+				return 2 * (x + y);
+			}
 			return x + y;
         }
-*/
 
 /*
 2. **hasTeen** We'll say that a number is "teen" if it is in the range 13..19 inclusive. 
@@ -21,7 +23,12 @@
 		hasTeen(20, 19, 10) → true
 		hasTeen(20, 10, 13) → true
 */
-
+		function hasTeen(n1, n2, n3) {	
+			if (n1 > 12 & n1 < 20 || n2 > 12 & n2 < 20 || n3 > 12 & n3 < 20) {
+				return true;
+			}
+			return false;
+		}
 /* 
 3. **lastDigit** Given two non-negative int values, return true if they have the same 
     last digit, such as with 27 and 57.
@@ -30,7 +37,12 @@
 		lastDigit(6, 17) → false
 		lastDigit(3, 113) → true
 */
-
+		function lastDigit(n1, n2){
+			if(n1%10 === n2%10){
+				return true;
+			}
+			return false;
+		}
 /*
 4. **seeColor** Given a string, if the string begins with "red" or "blue" return that color 
     string, otherwise return the empty string.
@@ -47,7 +59,17 @@
 		oddOnly([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]) → [1, 3, 5, 7, 9, 11];
 		oddOnly([2, 4, 8, 32, 256]); → []
 */
+		function oddOnly(someArray){
 
+			oddAndJudgeyArray = [];
+
+			for (let index of someArray) {
+				if (index % 2 !== 0) {
+					oddAndJudgeyArray.push(index);
+				}
+			}
+			return oddAndJudgeyArray;
+		}
 /*
 6. **frontAgain** Given a string, return true if the first 2 chars in the string also appear 
     at the end of the string, such as with "edited".
@@ -68,7 +90,15 @@ or false otherwise.
 		cigarParty(50, false) → true
 		cigarParty(70, true) → true
 */
-
+		function cigarParty(cigarCount, isWeekend){
+			if (isWeekend && cigarCount >= 40){
+				return true
+			}
+			else if (isWeekend == false && (cigarCount >= 40 && cigarCount <= 60)) {
+				return true;
+			}
+			return false;
+		}
 /*
 8. **fizzBuzz** Because you know you can't live without it, FizzBuzz.
 
@@ -87,7 +117,17 @@ or false otherwise.
 	filterEvens([2, 4, 6]) → [2, 4, 6]
 	filterEvens([100, 8, 21, 24, 62, 9, 7]) → [100, 8, 24, 62]
 */
+		function filterEvens(someArray){
 
+			evenArray = [];
+
+			for (let index of someArray) {
+				if (index % 2 === 0) {
+					evenArray.push(index);
+				}
+			}
+			return evenArray;
+}
 /*
 10. **filterBigNumbers** Write a function that filters numbers greater than or equal to 100.
 
@@ -95,7 +135,17 @@ or false otherwise.
 	filterBigNumbers([3, 2, 7, 1, -100, -120]) → []
 	filterBigNumbers([]) → []
 */
+		function filterBigNumbers(someArray) {
 
+			bigNumberArray = [];
+
+			for(let int of someArray){
+				if(int >= 100){
+					bigNumberArray.push(int);
+				}
+			}
+			return bigNumberArray;
+		}
 /*
 11. **filterMultiplesOfX** Write a function to filter numbers that are a multiple of a 
 parameter, `x` passed in.
@@ -103,16 +153,27 @@ parameter, `x` passed in.
 	filterMultiplesOfX([3, 5, 1, 9, 18, 21, 42, 67], 3) → [3, 9, 18, 21, 42]
 	filterMultiplesOfX([3, 5, 10, 20, 18, 21, 42, 67], 5) → [5, 10, 20]
 */
+		function filterMultiplesOfX(someArray, num) {
+			
+			newArray = [];
 
+			for (let int of someArray) {
+				if (int % num === 0) {
+					newArray.push(int);
+				}
+			}
+			return newArray;
+		}
 /*
 12. **createObject** Write a function that creates an object with a property called 
 firstName, lastName, and age. Populate the properties with your values.
 
-	createObject() →
+*/
+	function createObject() 
 
 	{
-		firstName,
-		lastName,
-		age
+		firstName: Joel;
+		lastName: Birdsall;
+		age: 31;
+		
 	}
-*/
