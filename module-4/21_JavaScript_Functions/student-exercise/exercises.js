@@ -35,11 +35,16 @@
  */
 let unfilteredArray = [1, 2, 3, 4, 5, 6];
 
-    function useParameterToFilterArray(num, unfilteredArray){
-        const filterNum = unfilteredArray.filter((index) => index === num);
+   function useParameterToFilterArray(filterFunction){
+      
+       return unfilteredArray.filter(filterFunction);
+   }
 
-        return filterNum;
-    }
+//function useParameterToFilterArray(num, unfilteredArray){
+    //    const filterNum = unfilteredArray.filter((index) => index === num);
+
+    //    return filterNum;
+    
 /**
  * Write a function called makeNumber that takes two strings
  * of digits, concatenates them together, and returns
@@ -82,6 +87,16 @@ let unfilteredArray = [1, 2, 3, 4, 5, 6];
  * words and returns them as a new array. Use the `map` function.
  */
 
+/**
+ * @param {array[]} strArray The initial unchanged array of strings
+ * @returns {array[]} The original string array but with "Happy " added to the beginning of each index
+ */
+
+    function makeHappy(strArray){
+        const happyArray = strArray.map((i) => "Happy " + i);
+        return happyArray;
+    }
+
 /*
  * Write and document a function called getFullAddressesOfProperties
  * that takes an array of JavaScript objects containing the
@@ -99,6 +114,22 @@ let unfilteredArray = [1, 2, 3, 4, 5, 6];
  *
  * Use `map` and an anonymous function.
  */
+
+/**
+ * @param {object[]} addresses The original array of addresses in object form that needs to be converted to single line string form
+ * @returns {string[]} The final array which has just the values of the address objects printed in one line string form.
+ * 
+ */
+
+    function getFullAddressesOfProperties(addresses){
+        const FullAddressArray = addresses.map((i) => i.streetNumber + ' ' +
+                                                      i.streetName + ' ' +  
+                                                      i.streetType + ' ' +
+                                                      i.city + ' ' +
+                                                      i.state + ' ' +
+                                                      i.zip)
+        return FullAddressArray;
+    }
 
 /*
  * Write and document a function called findLargest.
