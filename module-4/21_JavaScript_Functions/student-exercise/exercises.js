@@ -19,7 +19,13 @@
  * @param {boolean} [recommendation=false] does the student have a recommendation
  * @returns {boolean} true if they are admitted
  */
-
+    function isAdmitted(gpa, satScore = 0, recommendation = false) {
+        if (gpa > 4.0 || satScore > 1300 || gpa > 3.0 && recommendation == true || satScore > 1200 && recommendation == true) {
+            return true
+        }
+    
+        return false;
+    }
 /**
  * Write a function called useParameterToFilterArray that takes an anonymous
  * function and uses that in the `unfilteredArray` filter function. Return the result.
@@ -41,7 +47,10 @@ let unfilteredArray = [1, 2, 3, 4, 5, 6];
  * @param {string} [second=''] the second string of digits to concatenate
  * @returns {number} the resultant number
  */
-
+    function makeNumber(first, second = "") {
+        let sumString = first + second;
+        return parseInt(sumString);
+    }
 /**
  * Write a function called addAll that takes an unknown number of parameters
  * and adds all of them together. Return the sum.
@@ -49,6 +58,18 @@ let unfilteredArray = [1, 2, 3, 4, 5, 6];
  * @param {...number} num a series of numbers to add together
  * @returns {number} the sum of all the parameters (or arguments)
  */
+//use arguments for this one probably
+
+    function addAll(){
+        let sum = 0;
+
+        //return arguments;
+
+        for (let param of arguments){
+            sum += param;
+        }
+        return sum;
+    }
 
 /*
  * Write and document a function called makeHappy that takes

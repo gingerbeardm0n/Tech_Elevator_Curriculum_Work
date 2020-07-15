@@ -198,8 +198,8 @@ firstName, lastName, and age. Populate the properties with your values.
 */
 	function createObject() {
 		let person = {
-			firstName: Joel,
-			lastName: Birdsall,
+			firstName: 'Joel',
+			lastName: 'Birdsall',
 			age: 31
 		}
 		return person;
