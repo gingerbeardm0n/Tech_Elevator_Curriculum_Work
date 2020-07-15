@@ -40,11 +40,6 @@ let unfilteredArray = [1, 2, 3, 4, 5, 6];
        return unfilteredArray.filter(filterFunction);
    }
 
-//function useParameterToFilterArray(num, unfilteredArray){
-    //    const filterNum = unfilteredArray.filter((index) => index === num);
-
-    //    return filterNum;
-    
 /**
  * Write a function called makeNumber that takes two strings
  * of digits, concatenates them together, and returns
@@ -138,6 +133,23 @@ let unfilteredArray = [1, 2, 3, 4, 5, 6];
  * It must work for strings and numbers.
  */
 
+/**
+ * @param {array} inputArray The array that we will search through to find the largest element
+ * @returns {number|string} The single largest element in the array
+ */
+
+    function findLargest(inputArray){
+        inputArray.forEach(isItLarger);
+    }
+
+    function isItLarger(myArray, i) {
+        let currentHigh = 0;
+        
+        if (myArray[i] >= currentHigh) {
+            currentHigh = myArray[i];
+        }
+        return currentHigh;
+    }
 /*
  * CHALLENGE
  * Write and document a function called getSumOfSubArrayValues.

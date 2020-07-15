@@ -1,10 +1,16 @@
 // add pageTitle
 
+const pageTitle= "";
+
 // add groceries
+
+const groceries = []
 
 /**
  * This function will get a reference to the title and set its text to the value
- * of the pageTitle variable that was set above.
+ * of the pageTitle variable that was set above. 
+ * 
+ * Find the title in the HTML
  */
 function setPageTitle() {}
 
@@ -16,6 +22,8 @@ function displayGroceries() {}
 /**
  * This function will be called when the button is clicked. You will need to get a reference
  * to every list item and add the class completed to each one
+ * 
+ * find every li on page, add class "completed" to it
  */
 function markCompleted() {}
 
