@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Loop over the questions array
   questions.forEach((quest) => {
 
-    /*
+    
     // Create a new h1 element
     let h1 = document.createElement('h1');
     h1.innerText = quest.question;
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Append this element as a child element to the document
     // container.appendChild(h1);
     container.insertAdjacentElement('beforeend', h1); // same as appendChild(h1)
-    */
+  
 
     // (PART 4 - Templates)
 
