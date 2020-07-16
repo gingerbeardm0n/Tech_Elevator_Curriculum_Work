@@ -120,10 +120,6 @@ article:hover {
     color: #c63f3f;
 }
 
-/* Blur the answer text by default */
-article {
-    background-color: #00ADEE;
-}
 article.blur {
     background-color: #00ADEE;
 }
@@ -132,14 +128,34 @@ article.blur:hover {
     background-color: #F6931D;
 }
 
+/* Disabling this now that we'll have button handling code
 article.blur:hover .answer {
     color: #ffffff;
     text-shadow: none;
 }
+*/
 
+/* Blur the answer text by default */
 article.blur .answer {
     color: transparent;
     text-shadow: 0 0 5px #ffffff;
+}
+
+/* Hide buttons that shouldn't be present */
+article.blur .hideAnswer {
+    display: none;
+}
+article:not(.blur) .showAnswer {
+    display: none;
+}
+article .editAnswer { /* For now, edit is never available */
+    display: none;
+}
+article.correct .markCorrect {
+    display: none;
+}
+article.incorrect .markIncorrect {
+    display: none;
 }
 
 /* Correct / Incorrect Styling */
