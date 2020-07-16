@@ -44,20 +44,12 @@ function displayGroceries() {
  * find every li on page, add class "completed" to it
  */
 function markCompleted() {
-  groceries.forEach((item) => {
-    let li = document.createElement('li');
-    li.innerText = item;
-    li.classList.add('completed');
-
-    groceryContainer.insertAdjacentElement('beforeend', li);
-
-  })
-  
+  const liItems = document.querySelectorAll('li');
+  liItems.forEach( (li) => { 
+      li.classList.add('completed')
+    }
+  );
 }
-
-
-
-
 
 setPageTitle();
 

@@ -42,7 +42,7 @@ function parseNumber(num) {
  * Capture the previous value and the clicked operator
  * so that an operation can be performed.
  */
-function clickOperator() {
+function clickOperator() { //possible add the event parameter?
   operator = event.target.value;
   previous = display.value;
   operatorClicked = true;
@@ -96,4 +96,4 @@ document.addEventListener('LOADED_EVENT_GOES_HERE', () => {
   // should call the function performOperation
 
 });
-
+//use event.target & event.target.value

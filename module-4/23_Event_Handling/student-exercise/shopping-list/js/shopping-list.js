@@ -34,6 +34,11 @@ function displayGroceries() {
     checkCircle.setAttribute('class', 'far fa-check-circle');
     li.appendChild(checkCircle);
     ul.appendChild(li);
+
+    //TODO a click event handler, mark it as completed (set the i and the li to completed ca)
+    //TODO add a double click event handler, remove completed from i / li
+    
+    
   });
 }
 
