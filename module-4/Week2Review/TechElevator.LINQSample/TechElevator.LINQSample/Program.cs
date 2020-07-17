@@ -28,6 +28,11 @@ namespace TechElevator.LINQSample
             int sum = people.Aggregate(0, (total, person) => total + person.Id);
             // JS: const sum = people.reduce((total, person) => total + person.id, 0);
             // EASIER LINQ: people.Sum(p => p.Id);
+
+            int totalIds = people.Sum(p => p.Id);
+            double average = people.Average(p => p.Id);
+            int max = people.Max(p => p.Id);
+            int min = people.Min(p => p.Id);
         }
 
         private static List<Person> GetPeople()
