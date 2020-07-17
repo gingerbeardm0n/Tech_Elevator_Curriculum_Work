@@ -52,9 +52,9 @@ function resetGame() {
         ship.classList.remove('boat');
     }
 
+    // Change the text to its default state
     const announce = document.querySelector('.announce');
     announce.classList.remove('winText');
-    
     announce.innerText = "Play!";
 
     const frame = document.getElementById('frame');
