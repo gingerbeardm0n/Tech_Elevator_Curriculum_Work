@@ -35,12 +35,34 @@ function displayGroceries() {
     li.appendChild(checkCircle);
     ul.appendChild(li);
 
-    //TODO a click event handler, mark it as completed (set the i and the li to completed ca)
+    //TODO a click event handler, mark it as completed (set the i and the li to completed class)
+
+    li.addEventListener('click', event => {
+       li.classList.add('completed')
+      });
+
+      checkCircle.addEventListener('click', event => {
+        checkCircle.classList.add('completed')
+      });
+    
     //TODO add a double click event handler, remove completed from i / li
-    
-    
+
+    li.addEventListener('dblclick', event => {
+      li.classList.remove('completed')
+    });
+
+    checkCircle.addEventListener('dblclick', event => {
+      checkCircle.classList.remove('completed')
+    });
+
   });
 }
+
+function toggleAllComplete(){
+
+}
+
+
 
 setPageTitle();
 displayGroceries();

@@ -13,12 +13,12 @@ const groceries = ['chicken','OJ','honey','thyme','beer','LaCroix','marshmallows
  * Find the title in the HTML
  */
 function setPageTitle() {
-  const containter = document.getElementById('title');
+  const container = document.getElementById('title');
 
   const element = document.createElement('title');
   element.innerText = pageTitle;
 
-  containter.appendChild(element);
+  container.appendChild(element);
 
 }
 
