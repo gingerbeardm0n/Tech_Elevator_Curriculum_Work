@@ -1,6 +1,6 @@
 // add pageTitle
 
-const pageTitle= "My Shopping List";
+const pageTitle= 'My Shopping List';
 
 // add groceries
 
@@ -15,7 +15,7 @@ const groceries = ['chicken','OJ','honey','thyme','beer','LaCroix','marshmallows
 function setPageTitle() {
   const container = document.getElementById('title');
 
-  const element = document.createElement('title');
+  const element = document.createElement('div');
   element.innerText = pageTitle;
 
   container.appendChild(element);
