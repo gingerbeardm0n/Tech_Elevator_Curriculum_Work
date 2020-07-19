@@ -55,14 +55,41 @@ function displayGroceries() {
       checkCircle.classList.remove('completed')
     });
 
+    
+
   });
 }
 
 function toggleAllComplete(){
+    const liContainer = document.querySelectorAll('li');
+    liContainer.forEach(li => {li.classList.toggle('completed')});
 
+    const circleContainer = document.querySelectorAll('i');
+    circleContainer.forEach( i => {i.classList.toggle('completed')});
 }
 
+const button = document.getElementById('toggleAll');
+button.addEventListener('click', event => {
+  toggleAllComplete();
+  
+  toggleButtonText();
+  
+  
+  
+})
 
+function toggleButtonText() {
+  if(allItemsIncomplete == true) 
+  {
+      allItemsIncomplete = false;
+      button.innerText = "Mark All Incomplete";
+  }
+  else if (allItemsIncomplete == false) 
+  {
+    allItemsIncomplete = true;
+    button.innerText = "Mark All Complete";
+  }
+}
 
 setPageTitle();
 displayGroceries();
