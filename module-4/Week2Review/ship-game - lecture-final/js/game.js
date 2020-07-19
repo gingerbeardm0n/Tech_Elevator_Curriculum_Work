@@ -9,18 +9,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Listen to keyup events on the body. We care about ArrowRight, ArrowLeft, ArrowDown, and ArrowUp
     document.querySelector('body').addEventListener('keyup', (event) => {
+        console.log(event);
         switch (event.key) {
             case 'ArrowRight':
                 moveShipRight();
+                event.preventDefault();
                 break;
             case 'ArrowLeft':
                 moveShipLeft();
+                event.preventDefault();
                 break;
             case 'ArrowDown':
                 moveShipDown();
+                event.preventDefault();
                 break;
             case 'ArrowUp':
                 moveShipUp();
+                event.preventDefault();
                 break;
         }
     });
@@ -44,11 +49,12 @@ function handleGameWon() {
 }
 
 /**
- * Reset the Game
+ * Reset the Game. Moves the ship back to the upper left, restores the treasure to its 
+ * position, and resets the status text.
  */
 function resetGame() {
     const ship = getShipLocation();
-    if (ship != null) {
+    if (ship) {
         ship.classList.remove('boat');
     }
 
