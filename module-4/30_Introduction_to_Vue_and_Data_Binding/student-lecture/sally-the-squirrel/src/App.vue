@@ -1,21 +1,26 @@
+<!-- Template defines the way the component renders on the web page -->
 <template>
   <div id="app">
-    <Header />
-    <Questions />
-    <Footer />
+    <!-- These are custom components we've created -->
+    <app-header />
+    <questions />
+    <app-footer />
   </div>
 </template>
 
+<!-- Script is the core data and logic associated with the component. It is required -->
 <script>
-import Header from "./components/Header.vue";
-import Footer from "./components/Footer.vue";
+// Import allows us to import exported resources from .js and .vue files
+import AppHeader from "./components/AppHeader.vue";
+import AppFooter from "./components/AppFooter.vue";
 import Questions from "./components/Questions.vue";
 
 export default {
   name: "App",
+  // Components defines the components that must be referenced in the template
   components: {
-    Header,
-    Footer,
+    AppHeader,
+    AppFooter,
     Questions
   }
 };
@@ -117,39 +122,11 @@ blockquote cite {
   font-style: normal;
 }
 
-/* General Header / Footer Styling */
-
-header,
-footer {
-  background-color: #3b3e42;
-  color: #999999;
-}
-
-header {
-  grid-area: navBar;
-  text-align: center;
-  border-bottom: 5px solid #ffcb48;
-}
-
-header > a {
-  margin: 0;
-  display: inline-block;
-}
+/* General Link Styling */
 
 .active {
   color: #00adee;
   font-size: 110%;
-}
-
-footer {
-  border-top: 5px solid #ffcb48;
-  text-align: center;
-  padding: 1rem;
-  grid-area: footer;
-}
-
-footer nav {
-  margin-bottom: 1rem;
 }
 
 nav a {
@@ -158,7 +135,6 @@ nav a {
   text-align: center;
 }
 
-/* Link Styling */
 a {
   color: #8cc63f;
   text-decoration: none;
@@ -180,30 +156,6 @@ a:hover {
 /* Responsive Design Rules */
 
 @media screen and (min-width: 707px) {
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    justify-items: stretch;
-  }
-
-  header > a {
-    margin: 0.5rem 0 0 0.5rem;
-    flex-grow: 0;
-  }
-
-  footer nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-  }
-
-  header nav {
-    display: flex;
-    justify-content: space-evenly;
-    flex-grow: 1;
-  }
-
   nav a {
     display: inline-block;
     padding: 0 1rem;
@@ -239,17 +191,6 @@ a:hover {
 /* Form Groups should have a bottom margin */
 .form-group {
   margin-bottom: 1rem;
-}
-
-.form-group.form-inline {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-
-/* Inline forms are forms meant to display on a single line. Anything inside of them should display inline-block */
-.form-inline * {
-  display: inline-block;
 }
 
 /* labels inside of form-groups should take the entire row and have some bottom margin */

@@ -48,13 +48,18 @@
         <div>
           <label for="search">Search</label>
           <!-- TODO: Filter on search text -->
-          <input type="search" id="search" placeholder="Search questions or tags" />
+          <input
+            type="search"
+            id="search"
+            v-model="filter.searchText"
+            placeholder="Search questions or tags"
+          />
         </div>
       </div>
       <div class="form-group">
         <label for="difficulty">Difficulty</label>
         <!-- TODO: Filter on difficulty -->
-        <select id="difficulty">
+        <select id="difficulty" v-model="filter.difficulty">
           <option value selected>Show All</option>
           <option value="1">Easy</option>
           <option value="2">Medium</option>
@@ -64,9 +69,9 @@
 
       <div class="questionContainer" id="divQuestions">
         <!-- TODO: Cards go here -->
-        <article class="blur">
-          <div class="question">Question Goes Here</div>
-          <div class="answer">Answer Goes Here</div>
+        <article class="blur" v-for="item of filteredItems" v-bind:key="item.id">
+          <div class="question">{{item.question}}</div>
+          <div class="answer">{{item.answer}}</div>
         </article>
       </div>
     </section>
@@ -152,7 +157,14 @@ export default {
       // NOTE: The 'this' keyword is very important to refer to things inside of your data
       let results = this.questions;
 
-      // TODO: If the user typed in some search parameters, filter via search
+      // If the user typed in some search parameters, filter via search
+      if (this.filter.searchText) {
+        results = results.filter(item => {
+          return item.question
+            .toLowerCase()
+            .includes(this.filter.searchText.toLowerCase());
+        });
+      }
 
       // If the user selected a difficulty, filter down to that difficulty only
       if (this.filter.difficulty) {
