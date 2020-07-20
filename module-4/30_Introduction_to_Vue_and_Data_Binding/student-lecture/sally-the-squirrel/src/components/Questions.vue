@@ -64,6 +64,7 @@
 
       <div class="questionContainer" id="divQuestions">
         <!-- TODO: Cards go here -->
+        <!-- TODO: Bind classes. Always include blur, but only include hard if difficulty == 3 -->
         <article class="blur">
           <div class="question">Question Goes Here</div>
           <div class="answer">Answer Goes Here</div>
@@ -252,6 +253,9 @@ article:hover {
 
 article.blur {
   background-color: #00adee;
+}
+article.hard {
+  background-color: #c63f3f;
 }
 
 article.blur:hover {

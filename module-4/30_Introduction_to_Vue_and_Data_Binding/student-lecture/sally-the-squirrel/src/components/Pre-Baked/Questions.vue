@@ -69,7 +69,12 @@
 
       <div class="questionContainer" id="divQuestions">
         <!-- TODO: Cards go here -->
-        <article class="blur" v-for="item of filteredItems" v-bind:key="item.id">
+        <!-- TODO: Bind classes. Always include blur, but only include hard if difficulty == 3 -->
+        <article
+          v-bind:class="{blur: true, hard: item.difficulty == 3}"
+          v-for="item of filteredItems"
+          v-bind:key="item.id"
+        >
           <div class="question">{{item.question}}</div>
           <div class="answer">{{item.answer}}</div>
         </article>
@@ -264,6 +269,9 @@ article:hover {
 
 article.blur {
   background-color: #00adee;
+}
+article.hard {
+  background-color: #c63f3f;
 }
 
 article.blur:hover {
