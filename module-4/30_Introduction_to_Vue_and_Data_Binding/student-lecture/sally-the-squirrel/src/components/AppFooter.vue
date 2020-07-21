@@ -10,7 +10,7 @@
       <a href="contact.html">Contact</a>
     </nav>
     <!-- TODO: Bind these to data -->
-    <small>Copyright &copy; 2019, MattCo Side Projects</small>
+    <small>Copyright &copy; {{year}}, {{companyName}}</small>
   </footer>
 </template>
 
@@ -22,7 +22,7 @@ export default {
   // Data contains information specific to our application
   data() {
     return {
-      // TODO: Add the company here
+      companyName : "JayBizzle Jazzy Productions"
     };
   },
   // Computed contains the Vue.js equivalent of getters that rely on other data to compute results.

@@ -23,7 +23,13 @@
           </select>
         </td>
       </tr>
-      <!-- user listing goes here -->
+      <!-- user listing goes here  --   use a VFOR to render the table
+      diplay data first
+      get the disabled
+      then fitler it 
+      will need to add things to data in order to do the V-model technique
+      -->
+      
     </tbody>
   </table>
 </template>

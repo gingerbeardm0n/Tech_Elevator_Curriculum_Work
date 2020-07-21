@@ -48,13 +48,17 @@
         <div>
           <label for="search">Search</label>
           <!-- TODO: Filter on search text -->
-          <input type="search" id="search" placeholder="Search questions or tags" />
+          <input type="search" 
+                 id="search"
+                 v-model="filter.searchText" 
+                 placeholder="Search questions or tags" />
         </div>
       </div>
       <div class="form-group">
         <label for="difficulty">Difficulty</label>
         <!-- TODO: Filter on difficulty -->
-        <select id="difficulty">
+        <select id="difficulty"
+                v-model="filter.difficulty">
           <option value selected>Show All</option>
           <option value="1">Easy</option>
           <option value="2">Medium</option>
@@ -65,9 +69,12 @@
       <div class="questionContainer" id="divQuestions">
         <!-- TODO: Cards go here -->
         <!-- TODO: Bind classes. Always include blur, but only include hard if difficulty == 3 -->
-        <article class="blur">
-          <div class="question">Question Goes Here</div>
-          <div class="answer">Answer Goes Here</div>
+        <article v-for="item of filteredItems" 
+                 v-bind:class="{blur: true, hard: item.difficulty == 3}" 
+                 v-bind:key="item.id"
+                 v-bind:title="item.answer">
+          <div class="question">{{item.question}}</div>
+          <div class="answer">{{item.answer}}</div>
         </article>
       </div>
     </section>
@@ -94,8 +101,8 @@ export default {
   data() {
     return {
       filter: {
-        searchText: "",
-        difficulty: 0
+        searchText: "", //TODO: remove me for fun later
+        difficulty: ""
       },
       questions: [
         {
@@ -154,6 +161,11 @@ export default {
       let results = this.questions;
 
       // TODO: If the user typed in some search parameters, filter via search
+      if(this.filter.searchText){
+        const lowerCaseSearch = this.filter.searchText.toLowerCase();
+        results = results.filter(item => {
+          return item.question.toLowerCase().includes(lowerCaseSearch)})
+      }
 
       // If the user selected a difficulty, filter down to that difficulty only
       if (this.filter.difficulty) {
