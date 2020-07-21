@@ -47,7 +47,6 @@
       <div class="form-group">
         <div>
           <label for="search">Search</label>
-          <!-- TODO: Filter on search text -->
           <input type="search" 
                  id="search" 
                  v-model="filter.searchText"
@@ -56,10 +55,9 @@
       </div>
       <div class="form-group">
         <label for="difficulty">Difficulty</label>
-        <!-- TODO: Filter on difficulty -->
         <select id="difficulty"
                 v-model="filter.difficulty">
-          <option value selected>Show All</option>
+          <option>Show All</option>
           <option value="1">Easy</option>
           <option value="2">Medium</option>
           <option value="3">Hard</option>
@@ -67,7 +65,6 @@
       </div>
 
       <div class="questionContainer" id="divQuestions">
-        <!-- Cards go here -->
         <!-- Bind classes. Always include blur, but only include hard if difficulty == 3 -->
         <article v-for="item of filteredItems" 
                  v-bind:class="{blur: true, hard: item.difficulty == 3}"
@@ -82,12 +79,30 @@
       <h2>Not Enough?</h2>
       <p>
         Think we're missing something?
-        <a href="askaquestion.html">Submit a Question</a> and help us out!
+        <a v-on:click="showQuestionForm">Submit a Question</a> and help us out!
       </p>
-      <p>
-        Don't like something you see?
-        <a href="contact.html">Contact us</a> and let us know!
-      </p>
+      <form id="addQuestion" v-show="showAddQuestion">
+        <div class="form-group">
+          <label>Question</label>
+          <input type="text" required id="newQuestion" v-model="newQuestion.question">
+        </div>
+        <div class="form-group">
+          <label>Answer</label>
+          <textarea id="newAnswer" v-model.number="newQuestion.answer">
+          </textarea>
+        </div>
+        <div class="form-group">
+          <label for="newDifficulty">Difficulty</label>
+          <select id="newDifficulty"
+                  v-model="newQuestion.difficulty">
+            <option value="1">Easy</option>
+            <option value="2">Medium</option>
+            <option value="3">Hard</option>
+          </select>          
+        </div>
+        <input type="submit" value="Add Question">
+        <input type="button" value="Cancel" v-on:click="hideQuestionForm">
+      </form>
     </section>
   </main>
 </template>
@@ -97,14 +112,34 @@
 export default {
   // Name is optional, but usually a good idea. This shows up in dev tools
   name: "QuestionsPage",
+  // Methods contain functions which can be invoked from event handlers or other code
+  methods: {
+    /**
+     * Shows the add new question region
+     */
+    showQuestionForm() {
+      this.showAddQuestion = true;
+    },
+    /**
+     * Hides the add new question region
+     */
+    hideQuestionForm() {
+      this.showAddQuestion = false;
+    }
+  },
   // Data contains information specific to our application
   data() {
     return {
       filter: {
-        searchText: "", // TODO: Remove me for fun
+        searchText: "",
         difficulty: ""
       },
-      someOtherSearchText: "",
+      showAddQuestion: false,
+      newQuestion: {
+        question: '',
+        answer: '',
+        difficulty: 2
+      },
       questions: [
         {
           id: 1,
@@ -115,15 +150,13 @@ export default {
         {
           id: 2,
           question: "What is the Virtual Keyword?",
-          answer:
-            "The virtual keyword allows a method to be overridden in an inheriting class.",
+          answer: "The virtual keyword allows a method to be overridden in an inheriting class.",
           difficulty: 1
         },
         {
           id: 3,
           question: "What do you need to do to override a method in C#?",
-          answer:
-            "Mark the method as virtual, inherit from the class, and use the overrides keyword to override it in the inheriting class.",
+          answer: "Mark the method as virtual, inherit from the class, and use the overrides keyword to override it in the inheriting class.",
           difficulty: 2
         },
         {
@@ -135,15 +168,13 @@ export default {
         {
           id: 5,
           question: "How does a Unit Test Work?",
-          answer:
-            "The test runner discovers and calls each test method. If an exception occurs and is unhandled, the test fails. Asserts throw exceptions when they fail.",
+          answer: "The test runner discovers and calls each test method. If an exception occurs and is unhandled, the test fails. Asserts throw exceptions when they fail.",
           difficulty: 3
         },
         {
           id: 6,
           question: "What is the purpose of semantic HTML?",
-          answer:
-            "Semantic HTML helps tools understand the structure of a web page",
+          answer: "Semantic HTML helps tools understand the structure of a web page",
           difficulty: 1
         }
       ]
@@ -182,8 +213,6 @@ export default {
 };
 </script>
 
-<!-- Style contains the styling data for this component. 
-     Scoped means that classes should affect only this component and not others on the page -->
 <style>
 /* Styling for the list container */
 
@@ -289,6 +318,10 @@ article.blur .answer {
 
 main aside {
   margin-top: 1rem;
+}
+
+input[type="button"] {
+  margin-left: 0.5rem;
 }
 
 /* Responsive Layout Rules */
