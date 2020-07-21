@@ -3,12 +3,10 @@
   <main>
     <section id="opening">
       <h1>A Friendly Note</h1>
-
       <p>
         Don't worry if you can't give great answers to all or even most of these. Aim for being able to
         successfully answer around 70% or less of the questions asked of you.
       </p>
-
       <p>Focus on conveying a good impression as someone responsible, competent, and able to learn and grow.</p>
       <p>Remember that people are looking for someone who is:</p>
       <ul>
@@ -25,12 +23,8 @@
         <li>Able and willing to continue to learn and grow</li>
       </ul>
     </section>
-
     <aside>
-      <img
-        src="../assets/images/SquirrelStone.jpg"
-        title="A squirrel looking confused in a crowd of people"
-      />
+      <img src="../assets/images/SquirrelStone.jpg" title="A squirrel looking confused in a crowd of people" />
       <cite>
         <span>Photo by Bram Naus on Unsplash</span>
       </cite>
@@ -39,10 +33,8 @@
         <cite>- Sally the Squirrel</cite>
       </blockquote>
     </aside>
-
     <section id="questionList">
       <h2>Questions</h2>
-
       <p>Use the form below to search questions. Hover over a question to reveal the answer.</p>
       <div class="form-group">
         <div>
@@ -55,53 +47,58 @@
       </div>
       <div class="form-group">
         <label for="difficulty">Difficulty</label>
-        <select id="difficulty"
-                v-model="filter.difficulty">
+        <select id="difficulty" v-model="filter.difficulty">
           <option>Show All</option>
           <option value="1">Easy</option>
           <option value="2">Medium</option>
           <option value="3">Hard</option>
         </select>
       </div>
-
       <div class="questionContainer" id="divQuestions">
-        <!-- Bind classes. Always include blur, but only include hard if difficulty == 3 -->
-        <article v-for="item of filteredItems" 
-                 v-bind:class="{blur: true, hard: item.difficulty == 3}"
-                 v-bind:key="item.id"
-                 v-bind:title="item.answer">
-          <div class="question">{{item.question}}</div>
-          <div class="answer">{{item.answer}}</div>
-        </article>
+        <!-- NOTE: Questions have been moved into a QuestionCard component -->
+        <question-card v-for="item of filteredItems" 
+                       v-bind:key="item.id"
+                       v-bind:item="item" />
       </div>
     </section>
     <section id="closing">
       <h2>Not Enough?</h2>
       <p>
         Think we're missing something?
-        <a v-on:click="showQuestionForm">Submit a Question</a> and help us out!
+        <!-- TODO: show the form when this is clicked -->
+        <a>Submit a Question</a> 
+        and help us out!
       </p>
-      <form id="addQuestion" v-show="showAddQuestion">
+      <!-- TODO: Only show this form sometimes -->
+      <!-- TODO: handle the submit and discuss preventDefault -->
+      <form id="addQuestion">
         <div class="form-group">
           <label>Question</label>
-          <input type="text" required id="newQuestion" v-model="newQuestion.question">
+          <!-- TODO: Add a key handler and log the $event via the recordKey method -->
+          <input type="text" required id="newQuestion" 
+                 v-model="newQuestion.question">
         </div>
         <div class="form-group">
           <label>Answer</label>
-          <textarea id="newAnswer" v-model.number="newQuestion.answer">
+          <textarea id="newAnswer" 
+                 v-model="newQuestion.answer">
           </textarea>
         </div>
         <div class="form-group">
           <label for="newDifficulty">Difficulty</label>
-          <select id="newDifficulty"
-                  v-model="newQuestion.difficulty">
-            <option value="1">Easy</option>
-            <option value="2">Medium</option>
-            <option value="3">Hard</option>
-          </select>          
+          <!-- Ideally this should be a select instead of an input, but this lets us demo modifiers -->
+          <!-- TODO: This should convert the value typed in to a number -->
+          <input type="number" min="1" max="3" 
+                 id="newDifficulty"
+                 v-model="newQuestion.difficulty">
         </div>
+
+        <!-- We could add a click handler here, but a click on a type="submit" will submit
+             the form, so it's better to handle the form's submit event instead -->
         <input type="submit" value="Add Question">
-        <input type="button" value="Cancel" v-on:click="hideQuestionForm">
+
+        <!-- TODO: Add click handler here -->
+        <input type="button" value="Cancel">
       </form>
     </section>
   </main>
@@ -109,24 +106,57 @@
 
 <!-- Script is the core data and logic associated with the component. It is required -->
 <script>
+// Import allows us to reference other files. "export default" defines what we import
+// and the name immediately after import is what we call it. In the case of components,
+// this also defines what tag we use for them in our template.
+import QuestionCard from './QuestionCard.vue';
+
 export default {
   // Name is optional, but usually a good idea. This shows up in dev tools
   name: "QuestionsPage",
+  // Components declares the list of child components which will be referenced in the template
+  components: {
+    QuestionCard
+  },
   // Methods contain functions which can be invoked from event handlers or other code
-  methods: {
+  methods: {    
     /**
-     * Shows the add new question region
+     * Calculates and returns the next available question id. This should be 1 greater than
+     * the maximum current question id.
+     * @returns {number} the next available question id
      */
-    showQuestionForm() {
-      this.showAddQuestion = true;
+    calculateNextAvailableId() {
+      return this.questions.reduce((prev, question) => Math.max(prev, question.id + 1), 1);
     },
     /**
-     * Hides the add new question region
+     * Adds the contents of data's newQuestion object to the questions array
      */
-    hideQuestionForm() {
-      this.showAddQuestion = false;
-    }
+    addQuestion() {
+      // Build out an object representing the new question we'll be adding
+      const toAdd = {
+        question: this.newQuestion.question,
+        answer: this.newQuestion.answer,
+        difficulty: this.newQuestion.difficulty,
+        id: this.calculateNextAvailableId()
+      };
+
+      // Add the question to our list
+      this.questions.push(toAdd);
+
+      // Default us to good values for the next time we show the form
+      this.newQuestion.question = '';
+      this.newQuestion.answer = '';
+      this.newQuestion.difficulty = 2;
+
+      // Hide the form since we've just added our question
+      this.setAddVisibility(false);
+    },
+
+    // TODO: We'll want something to change the visibility. We called it setAddVisibility elsewhere
+
+    // TODO: Add a key logging method
   },
+
   // Data contains information specific to our application
   data() {
     return {
@@ -135,6 +165,7 @@ export default {
         difficulty: ""
       },
       showAddQuestion: false,
+      lastKeyEvent: null,
       newQuestion: {
         question: '',
         answer: '',
@@ -252,68 +283,6 @@ main aside {
 .questionContainer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.question-header {
-  color: #f6931d;
-}
-
-/* List item styling */
-
-article {
-  border: #3b3e42 solid 1px;
-  border-radius: 0.5rem;
-  background-color: #ffcb48;
-  overflow: none;
-  color: #ffffff;
-  text-shadow: 2px 2px #999999;
-  padding: 0;
-  margin: 0.5rem;
-  box-shadow: 0.25rem 0.25rem #999999;
-}
-
-article:hover {
-  background-color: #f6931d;
-}
-
-/* Styling areas of the list items */
-
-.answer {
-  padding: 0.5rem;
-  background-color: #3b3e42;
-  text-shadow: none;
-  height: 8rem;
-  overflow: auto;
-  font-size: small;
-}
-
-.question {
-  height: 2rem;
-  padding: 0.5rem;
-  font-weight: bold;
-  min-height: 37px;
-}
-
-article.blur {
-  background-color: #00adee;
-}
-article.hard {
-  background-color: #c63f3f;
-}
-
-article.blur:hover {
-  background-color: #f6931d;
-}
-
-article.blur:hover .answer {
-  color: #ffffff;
-  text-shadow: none;
-}
-
-/* Blur the answer text by default */
-article.blur .answer {
-  color: transparent;
-  text-shadow: 0 0 5px #ffffff;
 }
 
 main aside {
