@@ -66,7 +66,7 @@
       <p>
         Think we're missing something?
         <!-- TODO: show the form when this is clicked -->
-        <a>Submit a Question</a> 
+        <a v-on:click="showAddQuestion">Submit a Question</a> 
         and help us out!
       </p>
       <!-- TODO: Only show this form sometimes -->
@@ -221,7 +221,7 @@ export default {
      */
     filteredItems() {
       // NOTE: The 'this' keyword is very important to refer to things inside of your data
-      let results = this.questions;
+      let rebinsults = this.questions;
 
       // If the user typed in some search parameters, filter via search
       if (this.filter.searchText) {
