@@ -40,7 +40,6 @@
 
     <section id="questionList">
       <h2>Questions</h2>
-
       <p>Use the form below to search questions. Hover over a question to reveal the answer.</p>
       <div class="form-group">
         <div>
@@ -55,7 +54,7 @@
         <label for="difficulty">Difficulty</label>
         <select id="difficulty"
                 v-model="filter.difficulty">
-          <option>Show All</option>
+          <option value>Show All</option>
           <option value="1">Easy</option>
           <option value="2">Medium</option>
           <option value="3">Hard</option>
@@ -63,21 +62,17 @@
       </div>
 
       <div class="questionContainer" id="divQuestions">
-        <question-card v-for="item of filteredItems" 
-                       v-bind:key="item.id"
-                       
+        <question-card v-for="item of filteredItems" v-bind:key="item.id"                       
                        v-bind:cardData="item" />
       </div>
     </section>
     <section id="closing">
-      <h2 v-show="showAddQuestion == false">Not Enough?</h2>
+      <h2>Add Question?</h2>
       <p v-if="showAddQuestion == false">
         Think we're missing something?
-        <a href="somethingelse.html" v-on:click.prevent.stop="setAddVisibility(true)">Submit a Question</a> and help us out!
+        <a v-on:click="setAddVisibility(true)">Submit a Question</a> and help us out!
       </p>
       <form id="addQuestion" 
-            action="https://127.0.0.1/SomeDataPoint"
-            method="POST"
             v-on:submit.prevent="addQuestion()"
             v-else > <!-- Same thing as v-if="showAddQuestion == true" -->
         <div class="form-group">
