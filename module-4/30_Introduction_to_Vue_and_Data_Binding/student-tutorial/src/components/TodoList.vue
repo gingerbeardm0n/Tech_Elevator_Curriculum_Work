@@ -3,7 +3,7 @@
     <input type="text" v-model="filterText" />
     <h1>My Daily Routine</h1>
     <ul>
-        <li v-for="todo in filteredTodos" v-bind:key="todo.name"
+        <li v-for="todo in filteredtodos" v-bind:key="todo.name"
             v-bind:class="{ finished: todo.done}">
             <input type="checkbox" v-model="todo.done" /> 
             {{todo.name}}
