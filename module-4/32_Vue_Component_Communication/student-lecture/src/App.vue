@@ -4,7 +4,7 @@
     <!-- These are custom components we've created -->
     <AppHeader />
     <questions />
-    <meat-computer someMadeUpText="Grrr. Dev tools made me nervous" />
+    <meat-computer someMadeUpText="Any problem can be solved with another layer of abstraction" />
   </div>
 </template>
 
