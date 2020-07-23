@@ -12,7 +12,7 @@
     <!-- Bind these to data -->
     <small>Copyright &copy; {{year}}, {{companyName}}</small>
 
-    <p>{{someMadeUpText}}</p>
+    <blockquote>"{{myPropName}}" <cite>- Someone (allegedly)</cite></blockquote>
   </footer>
 </template>
 
@@ -22,7 +22,7 @@ export default {
   // Name is optional, but usually a good idea. This shows up in dev tools
   name: "AppFooter",
   // A list of properties that can be passed in
-  props: ['someMadeUpText'],
+  props: ['myPropName'],
   // Data contains information specific to our application
   data() {
     return {

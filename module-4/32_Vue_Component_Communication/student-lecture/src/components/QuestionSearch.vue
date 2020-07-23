@@ -22,7 +22,7 @@
                 <option value="3">Hard</option>
             </select>
         </div>
-        <input type="button" value="Search" v-on:click="filterChanged()">
+        <!--<input type="button" value="Search" v-on:click="filterChanged()">-->
     </div>
 </template>
 

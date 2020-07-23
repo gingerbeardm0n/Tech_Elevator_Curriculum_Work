@@ -46,11 +46,6 @@ export default {
             const questions = this.$store.state.questions;
             return questions.reduce((prev, question) => Math.max(prev, question.id + 1), 1);
         },
-        clearForm() {
-            this.newQuestion.question = '';
-            this.newQuestion.answer = '';
-            this.newQuestion.difficulty = 2;
-        },
         /**
          * Adds the contents of data's newQuestion object to the questions array
          */
@@ -67,11 +62,10 @@ export default {
             this.$store.state.questions.push(toAdd); // TODO: Don't do this. This is bad
 
             // Default us to good values for the next time we show the form
-            this.clearForm();
+            this.newQuestion.question = '';
+            this.newQuestion.answer = '';
+            this.newQuestion.difficulty = 2;
         }, 
-        /**
-         * Hides the add question form
-         */
         hideForm() {
             this.$store.commit('HIDE_ADD_QUESTION');
         } 

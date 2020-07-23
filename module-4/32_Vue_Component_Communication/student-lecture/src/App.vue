@@ -4,7 +4,7 @@
     <!-- These are custom components we've created -->
     <AppHeader />
     <questions />
-    <meat-computer someMadeUpText="Any problem can be solved with another layer of abstraction" />
+    <app-footer myPropName="Any problem can be solved with another layer of abstraction" />
   </div>
 </template>
 
@@ -13,7 +13,7 @@
 // Import allows us to import exported resources from .js and .vue files
 import AppHeader from "./components/AppHeader.vue";
 import Questions from "./components/Questions.vue";
-import MeatComputer from "./components/AppFooter.vue";
+import AppFooter from "./components/AppFooter.vue";
 
 export default {
   name: "App",
@@ -21,7 +21,7 @@ export default {
   components: {
     AppHeader,
     Questions,
-    MeatComputer
+    AppFooter
   }
 };
 </script>
