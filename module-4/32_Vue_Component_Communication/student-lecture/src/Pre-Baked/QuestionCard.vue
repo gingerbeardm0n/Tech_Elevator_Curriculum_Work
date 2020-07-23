@@ -52,9 +52,8 @@ export default {
      * @param {boolean} correct whether or not the answer was correct
      */      
     grade(correct) {
-        console.log('Set question ' + this.cardData.id + ' to correct: ' + correct);
-
-        // TODO: Send something to Vuex with the question ID and whether it's correct
+        const payload = {id: this.cardData.id, isCorrect: correct};
+        this.$store.commit('GRADE_QUESTION', payload);
     },
 
     /**
@@ -62,9 +61,8 @@ export default {
      * @param {boolean} shouldShow whether or not the answer should show up
      */
     setAnswerVisibility(shouldShow) {
-        console.log('Set question ' + this.cardData.id + ' to visiblility: ' + shouldShow);
-
-        // TODO: Send something to Vuex with the question ID and whether its answer should show
+        const payload = {id: this.cardData.id, visible: shouldShow};
+        this.$store.commit('SET_ANSWER_VISIBILITY', payload);
     },
   },
   // Data contains information specific to our application

@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   // When strict is set to true, state can ONLY be mutated from the store. This should be true.
-  strict: true,
+  strict: false, // TODO: Enable strict mode
 
   // State contains the global application state. Think of it as app-wide data
   state: {
@@ -65,23 +65,37 @@ export default new Vuex.Store({
       }
     ],
   },
-
   // Mutations are used to make discrete changes to state from a central place
   mutations: {
-    // Search-related mutations
-    SET_SEARCH(state, search) {
-      state.filter = search;
-    },
 
     // Question List State
     SHOW_ADD_QUESTION(state) {
       state.isAddQuestionVisible = true;
     },
-    // TODO: Add a HIDE_ADD_QUESTION mutation
-    
+    HIDE_ADD_QUESTION(state) {
+      state.isAddQuestionVisible = false;
+    },
     // TODO: Add a method to add a question to the list of questions
+    ADD_QUESTION(state, question) {
+      state.questions.push(question);
+      state.isAddQuestionVisible = false;
+    },    
+
+    // Used by QuestionSearch.vue
+    SET_SEARCH(state, search) {
+      state.filter = search;
+    },
 
     // TODO: Add methods for Grading questions and setting answer visibility
+    GRADE_QUESTION(state, payload) {
+      const question = state.questions.find(q => q.id === payload.id);
+      question.isCorrect = payload.isCorrect;
+      question.isAnswerVisible = true;
+    },
+    SET_ANSWER_VISIBILITY(state, payload) {
+      const question = state.questions.find(q => q.id === payload.id);
+      question.isAnswerVisible = payload.visible;
+    },
   },
 
   // The items below are not covered by TE's curriculum, but recommended for larger apps
