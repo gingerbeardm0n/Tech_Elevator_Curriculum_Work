@@ -1,27 +1,26 @@
 <template>
   <div>
     <span
-      v-for="(char, index) in move.guess"
-      :key="'slot' + index"
-      :title="getTitle(char)"
-      :class="'color' + char"
-    >
+      v-for="char in move.guess"
+      v-bind:key="char"
+      v-bind:title="getTitle(char)"
+      v-bind:class="'color' + char">
       {{ char }}
     </span>
     <span class="grading">
       <span
         v-for="num in move.numCorrect"
-        :key="'exact' + num"
+        v-bind:key="num"
         class="correct"
-        :title="move.numCorrect + ' exactly correct'"
+        v-bind:title="move.numCorrect + ' exactly correct'"
       >
         &#10003; <!-- This is a character code for a check mark -->
       </span>
       <span
         v-for="num in move.numMisplaced"
-        :key="'partial' + num"
+        v-bind:key="'partial' + num"
         class="partial"
-        :title="move.numMisplaced + ' partially correct'"
+        v-bind:title="move.numMisplaced + ' partially correct'"
       >
         &#9675; <!-- This is a character code for a light circle -->
       </span>

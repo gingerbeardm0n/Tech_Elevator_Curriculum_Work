@@ -1,11 +1,10 @@
 <template>
-  <div v-show="moves.length">
+  <div v-if="moves.length">
     <h2>Past Guesses</h2>
     <history-entry
-      v-for="(move, index) of moves"
-      v-bind:key="index"
-      :move="move"
-    />
+      v-for="move of moves"
+      v-bind:key="move.id"
+      v-bind:move="move" />
   </div>
 </template>
 
@@ -18,7 +17,7 @@ export default {
   },
   computed: {
     moves() {
-      return this.$store.getters.guesses;
+      return this.$store.state.history;
     }
   }
 };

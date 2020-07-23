@@ -14,7 +14,7 @@
       <enter-guess />
     </div>
     <div class="restart">
-      <a @click="reset" href="#">Restart Game</a>
+      <a v-on:click="reset" href="#">Restart Game</a>
     </div>
   </div>
 </template>
@@ -31,19 +31,19 @@ export default {
   },
   methods: {
     reset() {
-      this.$store.dispatch("restart");
+      this.$store.commit("RESTART_GAME");
     }
   },
   computed: {
     isGameOver() {
-      return this.$store.getters.isGameOver;
+      return this.$store.state.isGameOver;
     },
     message() {
-      return this.$store.getters.message;
+      return this.$store.state.message;
     }
   },
-  created: () => {
-    // this.$store.dispatch("restart");
+  created() {
+    this.$store.commit("RESTART_GAME");
   },
 }
 </script>

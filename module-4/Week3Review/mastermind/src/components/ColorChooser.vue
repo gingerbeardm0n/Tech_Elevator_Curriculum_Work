@@ -1,6 +1,8 @@
 <template>
-  <select v-model="choice" :id="'slot' + index" @change="onSelected">
-    <option v-for="option of options" v-bind:key="option" :value="option">
+  <select v-model="choice" 
+          v-on:change="onSelected">
+    <option v-for="option of options" v-bind:key="option" 
+            v-bind:value="option">
       {{ option }}
     </option>
   </select>
@@ -14,17 +16,17 @@ export default {
   },
   computed: {
     options() {
-      return this.$store.getters.availableOptions;
+      return this.$store.state.choices;
     }
   },
   methods: {
     onSelected() {
-      const choice = {index: this.index, color: this.choice};
-      this.$store.dispatch("changeColor", choice);
+      const payload = {index: this.index, color: this.choice};
+      this.$store.commit("CHANGE_COLOR", payload);
     }
   },
   created() {
-    this.choice = this.$store.getters.guess[this.index];
+    this.choice = this.$store.state.guess[this.index];
   }
 };
 </script>

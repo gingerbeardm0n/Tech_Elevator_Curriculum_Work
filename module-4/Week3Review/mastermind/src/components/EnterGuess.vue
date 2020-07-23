@@ -1,15 +1,18 @@
 <template>
   <div>
-    <form @submit.prevent="submitGuess">
+    <form v-on:submit.prevent="submitGuess">
       <p class="prompt">What is your guess?</p>
 
       <color-chooser
         class="colorChooser"
-        v-for="(slot, index) in slots"
+        v-for="index in numColors"
         v-bind:key="index"
-        :index="index" />
+        v-bind:index="index - 1" />
 
-      <button type="submit" :disabled="isGameOver">Guess</button>
+      <button type="submit" 
+              v-bind:disabled="isGameOver">
+              Guess
+      </button>
     </form>
     <p>{{ movesLeft }}</p>
   </div>
@@ -21,24 +24,21 @@ import ColorChooser from "./ColorChooser.vue";
 export default {
   methods: {
     submitGuess() {
-      this.$store.dispatch("guess");
+      this.$store.commit("GUESS");
     }
   },
   components: {
     ColorChooser
   },
   computed: {
-    guessLength() {
-      return this.$store.getters.solutionLength;
+    numColors() {
+      return this.$store.state.solution.length;
     },
     isGameOver() {
-      return this.$store.getters.isGameOver;
+      return this.$store.state.isGameOver;
     },
     movesLeft() {
-      return this.$store.getters.remainingGuesses;
-    },
-    slots() {
-      return this.$store.getters.guess;
+      return this.$store.state.movesLeft;
     }
   }
 };
