@@ -77,11 +77,25 @@ export default new Vuex.Store({
     SHOW_ADD_QUESTION(state) {
       state.isAddQuestionVisible = true;
     },
-    // TODO: Add a HIDE_ADD_QUESTION mutation
+    HIDE_ADD_QUESTION(state) {
+      state.isAddQuestionVisible = false;
+    },
     
-    // TODO: Add a method to add a question to the list of questions
+    // Add a method to add a question to the list of questions
+    ADD_QUESTION(state, payload) {
+      state.questions.push(payload);
+    },
 
-    // TODO: Add methods for Grading questions and setting answer visibility
+    // Add methods for Grading questions and setting answer visibility
+    TOGGLE_ANSWER_VISIBILITY(state, id) {
+      const question = state.questions.find(q => q.id === id);
+      question.isAnswerVisible = !question.isAnswerVisible;
+    },
+    GRADE_QUESTION(state, payload) {
+      const question = state.questions.find(q => q.id === payload.id);
+      question.isCorrect = payload.isCorrect;
+      question.isAnswerVisible = true;
+    },
   },
 
   // The items below are not covered by TE's curriculum, but recommended for larger apps
