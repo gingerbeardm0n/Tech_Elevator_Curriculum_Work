@@ -1,10 +1,9 @@
 <template>
   <div>
     <form v-on:submit.prevent="submitGuess">
-      <p class="prompt">What is your guess?</p>
+      <p>What is your guess?</p>
 
       <color-chooser
-        class="colorChooser"
         v-for="index in numColors" v-bind:key="index"
         v-bind:colorIndex="index - 1" />
 
@@ -35,7 +34,13 @@ export default {
       return this.$store.state.isGameOver;
     },
     movesLeft() {
-      return this.$store.state.movesLeft;
+      const numMoves = this.$store.state.movesLeft;
+
+      if (numMoves === 1) {
+        return 'Only 1 move left!';
+      } else {
+        return `${numMoves} moves left`;
+      }
     }
   }
 };
@@ -46,7 +51,7 @@ export default {
 button {
   margin-right: 0.5rem;
 }
-.colorChooser {
+form > * {
   margin-right: 1rem;
 }
 </style>
