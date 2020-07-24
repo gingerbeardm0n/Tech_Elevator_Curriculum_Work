@@ -15,7 +15,7 @@
       <tbody>
         <tr>
           <td>
-            <input type="checkbox" id="selectAll" />
+            <input type="checkbox" id="selectAll" v-on:change="changeBoxes($event)" />
           </td>
           <td>
             <input type="text" id="firstNameFilter" v-model="filter.firstName" />
@@ -44,7 +44,10 @@
           v-bind:class="{ disabled: user.status === 'Disabled' }"
         >
           <td>
-            <input type="checkbox" v-bind:id="user.id" v-bind:value="user.id" />
+            <input type="checkbox" 
+            v-bind:id="user.id" 
+            v-bind:value="user.id" 
+            v-model="selectedUserIDs"/>
           </td>
           <td>{{ user.firstName }}</td>
           <td>{{ user.lastName }}</td>
@@ -52,38 +55,52 @@
           <td>{{ user.emailAddress }}</td>
           <td>{{ user.status }}</td>
           <td>
-            <button class="btnEnableDisable">Enable or Disable</button>
+            <button class="btnEnable"
+                    v-if="user.status == 'Disabled'" 
+                    v-on:click="flipstatus(user)"
+                    >Enable
+            </button>
+            <button class="btnDisable"
+                    v-if="user.status == 'Active'"  
+                    v-on:click="flipstatus(user)"
+                    >Disable
+            </button>
           </td>
         </tr>
       </tbody>
     </table>
 
     <div class="all-actions">
-      <button>Enable Users</button>
-      <button>Disable Users</button>
-      <button>Delete Users</button>
+      <button v-bind:disabled="areButtonsDisabled" v-on:click="setStatusToActive">Enable Users</button>
+      <button v-bind:disabled="areButtonsDisabled" v-on:click="setStatusToDisabled">Disable Users</button>
+      <button v-bind:disabled="areButtonsDisabled" v-on:click="deleteUser">Delete Users</button>
     </div>
 
-    <button>Add New User</button>
+    <button v-on:click="makeAddUserFormVisible(true)">Add New User</button>
 
-    <form id="frmAddNewUser">
+    <form id="frmAddNewUser" 
+      v-on:submit.prevent="saveUser()"
+      v-show="showForm == true">
       <div class="field">
         <label for="firstName">First Name:</label>
-        <input type="text" name="firstName" />
+        <input type="text" name="firstName" v-model="newUser.firstName" />
       </div>
       <div class="field">
         <label for="lastName">Last Name:</label>
-        <input type="text" name="lastName" />
+        <input type="text" name="lastName"  v-model="newUser.lastName" />
       </div>
       <div class="field">
         <label for="username">Username:</label>
-        <input type="text" name="username" />
+        <input type="text" name="username"  v-model="newUser.username" />
       </div>
       <div class="field">
         <label for="emailAddress">Email Address:</label>
-        <input type="text" name="emailAddress" />
+        <input type="text" name="emailAddress"  v-model="newUser.emailAddress" />
       </div>
-      <button type="submit" class="btn save">Save User</button>
+      <button 
+        type="submit" 
+        class="btn save"
+        v-on:click="makeAddUserFormVisible(false)">Save User</button>
     </form>
   </div>
 </template>
@@ -93,6 +110,8 @@ export default {
   name: "user-list",
   data() {
     return {
+      showForm : '',
+      selectedUserIDs: [],
       filter: {
         firstName: "",
         lastName: "",
@@ -160,8 +179,71 @@ export default {
       ]
     };
   },
-  methods: {},
+  methods: {
+    makeAddUserFormVisible(visible) {
+      this.showForm = visible;
+    },
+    saveUser() {
+      // setting new object called newUserInfo equal to the user input gathered from the form b/c
+      // they are 2-way bound to the empty object in "data"
+      const newUserInfo = {
+        firstName : this.newUser.firstName,
+        lastName : this.newUser.lastName,
+        username : this.newUser.username,
+        emailAddress : this.newUser.emailAddress
+      };
+
+      // adds the newUserInfo object to the users array
+      this.users.push(newUserInfo);
+      
+      // clears the form for us which is handy
+      this.newUser.firstName = '';
+      this.newUser.lastName = '';
+      this.newUser.username = '';
+      this.newUser.emailAddress = '';
+    },
+    flipstatus(user) {
+      
+      if (user.status == 'Disabled') {
+        user.status = 'Active';
+      }
+      else if (user.status == 'Active') {
+        user.status = 'Disabled';
+      }
+    },
+    setStatusToActive() {
+      this.selectedUserIDs.forEach( (id) => {
+        this.users.find( (user) => user.id == id).status = 'Active'
+        
+      });
+      this.selectedUserIDs.length = 0;
+    },
+    setStatusToDisabled() {
+      this.selectedUserIDs.forEach( (id) => {
+        this.users.find( (user) => user.id == id).status = 'Disabled'
+      });
+      this.selectedUserIDs.length = 0;
+    },
+    deleteUser() {
+      this.selectedUserIDs.forEach( (id) => {
+        this.users = this.users.filter( (user) => user.id !== id)
+      });
+    },
+    changeBoxes(event) {
+      this.selectedUserIDs = [];
+      console.log(event);
+      if (event.target.checked)
+      this.users.forEach( (user) => this.selectedUserIDs.push(user.id))
+    }
+  },
   computed: {
+    areButtonsDisabled() {
+      if (this.selectedUserIDs.length === 0) {
+        return true;
+      }
+      return false;
+    },
+    
     filteredList() {
       let filteredUsers = this.users;
       if (this.filter.firstName != "") {
