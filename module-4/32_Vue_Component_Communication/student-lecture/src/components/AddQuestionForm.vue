@@ -64,7 +64,8 @@ export default {
             };
 
             // Add the question to our list            
-            this.$store.state.questions.push(toAdd); // TODO: Don't do this. This is bad
+            //this.$store.state.questions.push(toAdd); // Don't do this. This is bad
+            this.$store.commit('ADD_QUESTION', toAdd);
 
             // Default us to good values for the next time we show the form
             this.clearForm();

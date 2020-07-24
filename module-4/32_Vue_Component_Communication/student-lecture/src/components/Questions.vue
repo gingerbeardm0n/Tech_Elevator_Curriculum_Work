@@ -1,29 +1,7 @@
 <!-- Template defines the way the component renders on the web page -->
 <template>
   <main>
-    <section id="opening">
-      <!-- TODO: Declare a new component and give it a prop or two -->
-      <h1>A Friendly Note</h1>
-      <p>
-        Don't worry if you can't give great answers to all or even most of these. Aim for being able to
-        successfully answer around 70% or less of the questions asked of you.
-      </p>
-      <p>Focus on conveying a good impression as someone responsible, competent, and able to learn and grow.</p>
-      <p>Remember that people are looking for someone who is:</p>
-      <ul>
-        <li>
-          <em>Professional</em>,
-          <em>Responsible</em>, and
-          <em>Reliable</em>
-        </li>
-        <li>
-          Knows how to program enough to work without
-          <em>constant</em> help (regular check-ins are normal and
-          expected)
-        </li>
-        <li>Able and willing to continue to learn and grow</li>
-      </ul>
-    </section>
+    <note v-bind:headerMessage="someData" />
 
     <aside>
       <img src="../assets/images/SquirrelStone.jpg" title="A squirrel looking confused in a crowd of people" />
@@ -55,6 +33,7 @@
 import QuestionList from './QuestionList.vue';
 import QuestionSearch from './QuestionSearch.vue';
 import AddQuestionForm from './AddQuestionForm.vue';
+import Note from './FriendlyNote.vue';
 
 export default {
   // Name is optional, but usually a good idea. This shows up in dev tools
@@ -63,7 +42,8 @@ export default {
   components: {
     QuestionList,
     QuestionSearch,
-    AddQuestionForm
+    AddQuestionForm,
+    Note
   },
   // Contains properties which are like data, but the value is passed in from another component
   props: [],
@@ -78,7 +58,9 @@ export default {
   },
   // Data contains information specific to our application
   data() {
-    return {};
+    return {
+      someData: 'Hello Data Binding!'
+    };
   },
   // Computed contains the Vue.js equivalent of getters that rely on other data to compute results.
   // Think of computed as computed or auto-calculated properties that are bound to from the template.

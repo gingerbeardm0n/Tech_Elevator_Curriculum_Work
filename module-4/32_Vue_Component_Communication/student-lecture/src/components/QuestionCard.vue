@@ -54,7 +54,13 @@ export default {
     grade(correct) {
         console.log('Set question ' + this.cardData.id + ' to correct: ' + correct);
 
-        // TODO: Send something to Vuex with the question ID and whether it's correct
+        const payload = {
+            id: this.cardData.id,
+            isCorrect: correct
+        };
+
+        // Send something to Vuex with the question ID and whether it's correct
+        this.$store.commit('GRADE_QUESTION', payload);
     },
 
     /**
@@ -64,7 +70,8 @@ export default {
     setAnswerVisibility(shouldShow) {
         console.log('Set question ' + this.cardData.id + ' to visiblility: ' + shouldShow);
 
-        // TODO: Send something to Vuex with the question ID and whether its answer should show
+        // Send something to Vuex with the question ID and whether its answer should show
+        this.$store.commit('TOGGLE_ANSWER_VISIBILITY', this.cardData.id);
     },
   },
   // Data contains information specific to our application
