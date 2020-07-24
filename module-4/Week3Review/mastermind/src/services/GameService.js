@@ -1,9 +1,10 @@
+// We can export more than just Vue components. Any JS code can be exported.
 export default {
 
     /**
     * Grades the user's guess against the correct solution, then returns a GameMove indicating the amount of correct and incorrect answers
-    * @param {string} guess the user's guess, in the format of 'ROYG' for Red, Orange, Yellow, Green
-    * @param {string} solution the solution, in the same format as the guess
+    * @param {string[]} guess the user's guess
+    * @param {string[]} solution the solution
     * @returns {Object} an object representing the game move
     */
     evaluateGuess(guess, solution) {
@@ -49,13 +50,21 @@ export default {
     /**
      * Builds a solution from the available choices where each choice is randomly ordered and no choice is repeated. 
      * Solutions will only have the first character of each choice.
-     * @returns {string} a four-character solution
+     * @param {number} solutionLength the number of available options
+     * @param {string[]} choices the available colors to pick from.
+     * @returns {string} the solution
      */
     generateSolution(solutionLength, choices) {
         return this.sortArray(choices) // Perform an unbiased sort on the array
                     .slice(0, solutionLength); // Take the first X of the answers, now that they're in random order
     },
 
+    /**
+     * Builds and returns an initial guess to populate the user interface
+     * @param {number} solutionLength the number of available options
+     * @param {string[]} choices the available colors to pick from.
+     * @returns {string[]} the selected colors
+     */
     buildInitialGuess(solutionLength, choices) {
         return choices.slice(0, solutionLength);
     }

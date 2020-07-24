@@ -1,10 +1,8 @@
 <template>
   <div v-if="moves.length">
     <h2>Past Guesses</h2>
-    <history-entry
-      v-for="move of moves"
-      v-bind:key="move.id"
-      v-bind:move="move" />
+    <history-entry v-for="move of moves" v-bind:key="move.id"
+                   v-bind:move="move" />
   </div>
 </template>
 

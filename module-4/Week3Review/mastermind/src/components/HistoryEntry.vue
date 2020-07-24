@@ -1,28 +1,21 @@
 <template>
   <div>
-    <span
-      v-for="char in move.guess"
-      v-bind:key="char"
-      v-bind:title="getTitle(char)"
-      v-bind:class="'color' + char">
-      {{ char }}
+    <span v-for="guess in move.guess" v-bind:key="guess"
+          v-bind:title="guess"
+          v-bind:class="'color' + guess">
+      {{ guess[0] /* First character */ }}
     </span>
-    <span class="grading">
-      <span
-        v-for="num in move.numCorrect"
-        v-bind:key="num"
-        class="correct"
-        v-bind:title="move.numCorrect + ' exactly correct'"
-      >
-        &#10003; <!-- This is a character code for a check mark -->
+    <span class="grading"
+          v-bind:title="`${move.numCorrect} exactly correct, ${move.numMisplaced} partially correct`">
+
+      <!-- Check marks for exactly correct colors-->
+      <span v-for="num in move.numCorrect" v-bind:key="'correct' + num">        
+        &#10003;  <!-- Character code for a check mark -->
       </span>
-      <span
-        v-for="num in move.numMisplaced"
-        v-bind:key="'partial' + num"
-        class="partial"
-        v-bind:title="move.numMisplaced + ' partially correct'"
-      >
-        &#9675; <!-- This is a character code for a light circle -->
+
+      <!-- Light Circles for misplaced colors -->
+      <span v-for="num in move.numMisplaced" v-bind:key="'partial' + num">        
+        &#9675; <!-- Character code for a light circle -->
       </span>
     </span>
   </div>
@@ -31,30 +24,9 @@
 <script>
 export default {
   props: ['move'],
-  methods: {
-    getTitle(char) {
-      switch (char) {
-        case "R":
-          return "Red";
-        case "O":
-          return "Orange";
-        case "G":
-          return "Green";
-        case "B":
-          return "Blue";
-        case "V":
-          return "Violet";
-        case "Y":
-          return "Yellow";
-        default:
-          return char;
-      }
-    }
-  }
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 span {
     font-size: larger;
@@ -69,22 +41,22 @@ span {
   font-weight: bold;
 }
 
-.colorR {
+.colorRed {
   color: red;
 }
-.colorG {
+.colorGreen {
   color: green;
 }
-.colorB {
+.colorBlue {
   color: blue;
 }
-.colorV {
+.colorViolet {
   color: purple;
 }
-.colorY {
-  color: goldenrod;
+.colorYellow {
+  color: rgb(143, 140, 0);
 }
-.colorO {
-  color: orange;
+.colorOrange {
+  color: rgb(255, 123, 0);
 }
 </style>

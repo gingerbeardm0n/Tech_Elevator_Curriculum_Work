@@ -25,15 +25,18 @@ import EnterGuess from './components/EnterGuess.vue'
 
 export default {
   name: 'Mastermind',
+  
   components: {
     HistoryList,
     EnterGuess
   },
+
   methods: {
     reset() {
       this.$store.commit("RESTART_GAME");
     }
   },
+
   computed: {
     isGameOver() {
       return this.$store.state.isGameOver;
@@ -42,6 +45,8 @@ export default {
       return this.$store.state.message;
     }
   },
+
+  // Created is a special method that fires when the component initially loads
   created() {
     this.$store.commit("RESTART_GAME");
   },

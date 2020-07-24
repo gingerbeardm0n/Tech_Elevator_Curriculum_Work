@@ -5,14 +5,10 @@
 
       <color-chooser
         class="colorChooser"
-        v-for="index in numColors"
-        v-bind:key="index"
-        v-bind:index="index - 1" />
+        v-for="index in numColors" v-bind:key="index"
+        v-bind:colorIndex="index - 1" />
 
-      <button type="submit" 
-              v-bind:disabled="isGameOver">
-              Guess
-      </button>
+      <button type="submit" v-bind:disabled="isGameOver">Guess</button>
     </form>
     <p>{{ movesLeft }}</p>
   </div>
@@ -24,7 +20,8 @@ import ColorChooser from "./ColorChooser.vue";
 export default {
   methods: {
     submitGuess() {
-      this.$store.commit("GUESS");
+      // Dispatch fires off a Vuex ACTION. Actions call individual mutations as needed.
+      this.$store.dispatch("guess");
     }
   },
   components: {
