@@ -46,19 +46,24 @@ body {
     display: grid;
   grid-template-areas:
     "navBar"
-    "squirrelPic"
     "mainBody"
     "footer";
   row-gap: 0.5rem;
 
 }
 
+main {
+  grid-area: mainBody;
+}
+
 /* Use #999999 for the body's background color and white for the main content area's background color */
 
-main {
+.pageRoot {
   background-color: white;
   padding: 1rem;
+  display: grid;
   grid-area: mainBody;
+  grid-template-areas: "squirrelPic" "mainBody";
   /* Specify the minimum height for this region. On small pages it can loop wierd if we don't do this */
   min-height: 400px;
 }
@@ -163,10 +168,11 @@ a:hover {
     padding: 0 1rem;
   }
 
-  html body {
+  .pageRoot {
     column-gap: 0.5rem;
     grid-template-columns: 1fr 20rem;
-    grid-template-areas: "navBar navBar" "mainBody squirrelPic" "mainBody ..." "footer footer";
+    grid-template-areas: "mainBody squirrelPic" 
+                         "mainBody ...";
   }
 }
 

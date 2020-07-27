@@ -5,11 +5,11 @@
       <img src="../assets/images/LogoGold.png" alt="Sally the Squirrel Logo" />
     </router-link>
     <nav>
-      <router-link to="Questions">Questions</router-link>
-      <router-link to="AskQuestion">Ask a Question</router-link>
-      <router-link to="Services">Services</router-link>
-      <router-link to="About">About</router-link>
-      <router-link to="Contact">Contact</router-link>
+      <router-link to="Questions" active-class="active">Questions</router-link>
+      <router-link to="AskQuestion" active-class="active">Ask a Question</router-link>
+      <router-link to="Services" active-class="active">Services</router-link>
+      <router-link to="About" active-class="active">About</router-link>
+      <router-link to="Contact" active-class="active">Contact</router-link>
     </nav>
   </header>
 </template>

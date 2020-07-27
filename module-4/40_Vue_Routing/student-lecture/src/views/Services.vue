@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="pageRoot">
         <aside>
                 <img src="../assets/images/Services.jpg" alt="A squirrel taking shelter inside a feeder" />
                 <cite>Photo by Joakim Honkasalo on Unsplash</cite>

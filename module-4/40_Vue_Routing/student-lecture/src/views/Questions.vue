@@ -89,6 +89,11 @@ main {
     "yet-another-squirrel"
     "questionsList"
     "notEnough";
+
+  background-color: white;
+  padding: 1rem;
+  /* Specify the minimum height for this region. On small pages it can loop wierd if we don't do this */
+  min-height: 400px;    
 }
 
 #opening {
