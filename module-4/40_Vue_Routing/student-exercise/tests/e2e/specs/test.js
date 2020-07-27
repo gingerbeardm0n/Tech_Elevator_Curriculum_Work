@@ -3,9 +3,9 @@
 describe('Routing Exercise', () => {
 
   describe('Step One Tests', () => {
-    it('should show the bestsellers at /', () => {
+    it('should show the best sellers at /', () => {
       cy.visit('/');
-      cy.get('.bestseller-list');
+      cy.get('.best-seller-list');
     });
 
     it('should show the new releases at /', () => {

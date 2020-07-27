@@ -27,7 +27,7 @@ export default {
         },
         addToReadingList(book) {
             let addedBook = Object.assign({ read: false }, book);
-            delete addedBook.bestseller;
+            delete addedBook.bestSeller;
             delete addedBook.newRelease;
             this.$store.commit('SAVE_BOOK', addedBook);
         }
