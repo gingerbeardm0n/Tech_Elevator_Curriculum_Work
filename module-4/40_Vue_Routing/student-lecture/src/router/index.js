@@ -12,58 +12,40 @@ import Services from '../views/Services.vue'
 
 Vue.use(VueRouter)
 
-  const routes = [
+const routes = [
   {
     path: '/',
     name: 'Home',
     component: Home
   },
-  {
-    path: '/About',
-    name: 'About',
-    component: About
-  },
-  {
-    path: '/Services',
-    name: 'Services',
-    component: Services
-  },
-  {
-    path: '/Questions',
-    name: 'Questions',
-    component: Questions
-  },  
-  {
-    path: '/Questions/:id',
-    name: 'QuestionDetails',
-    component: QuestionDetails
-  },
-  {
-    path: '/Questions/:id/Edit',
-    name: 'EditQuestion',
-    component: QuestionEdit
-  },
-  {
-    path: '/AskQuestion',
-    name: 'AskQuestion',
-    component: AskQuestion
-  },
-  {
-    path: '/Contact',
-    name: 'Contact',
-    component: Contact
-  },
-  {
-    path: '*',
-    name: 'NotFound',
-    component: NotFound
-  }
-]
+  // TODO: Add more routes
+
+  // TODO: Add a wildcard route for NotFound
+
+  // TODO: Add a route for question details and question edit
+];
 
 const router = new VueRouter({
-  mode: 'history', // TODO: Talk about Hash vs History
+  mode: 'hash', // TODO: Talk about Hash vs History
   base: process.env.BASE_URL,
   routes
-})
+});
 
-export default router
+export default router;
+
+
+
+
+
+
+
+
+
+
+
+// You'll never see the lines below in the real world, so don't worry about it. 
+// I have these lines here to let me import our components before using them in the demo
+if (router === false) {
+  const shushEsLint = [About, Questions, QuestionDetails, QuestionEdit, NotFound, AskQuestion, Contact, Services]
+  console.log(shushEsLint);
+}

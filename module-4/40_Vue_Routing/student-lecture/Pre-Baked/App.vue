@@ -1,8 +1,8 @@
 <!-- Template defines the way the component renders on the web page -->
 <template>
   <div id="app">
-    <app-header />
-    <!-- TODO: Display the current page here -->
+    <AppHeader />
+    <router-view />
     <app-footer />
   </div>
 </template>

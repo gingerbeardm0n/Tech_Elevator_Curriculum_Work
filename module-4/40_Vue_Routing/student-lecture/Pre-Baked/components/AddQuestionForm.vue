@@ -72,7 +72,9 @@ export default {
             // Default us to good values for the next time we show the form
             this.clearForm();
 
-            // TODO: Navigate us to Questions if we're not currently there
+            if (this.$route.path !== '/Questions') {
+                this.$router.push('Questions');
+            }
         }, 
         /**
          * Hides the add question form

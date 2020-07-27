@@ -6,11 +6,12 @@
                 <question-card v-bind:cardData="question" />
             </section>
             <section id="editForm">
-                <form id="editQuestion" v-on:submit.prevent="addQuestion()">
+                <form id="editQuestion" 
+                        v-on:submit.prevent="addQuestion()"> <!-- Same thing as v-if="showAddQuestion == true" -->
                     <div class="form-group">
                     <label>Question</label>
                     <input type="text" required id="newQuestion" 
-                           v-model.trim="question.question">
+                            v-model.trim="question.question">
                     </div>
                     <div class="form-group">
                     <label>Answer</label>
@@ -38,15 +39,16 @@ export default {
     components: {
         QuestionCard
     },
-    data() {
-        return {
-            
-        }
-    },
     computed: {
     },
-    // TODO: Handle created by grabbing the question from questions
-    // TODO: Redirect to NotFound if the question ID is not found
+    created() {
+        const id = this.$route.params.id;
+        this.question = this.$store.state.questions.find(q => q.id === id);
+
+        if (!this.question) {
+            this.$router.push({name: 'NotFound'});
+        }
+    }
 }
 </script>
 

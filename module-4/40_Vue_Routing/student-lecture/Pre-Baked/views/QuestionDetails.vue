@@ -27,5 +27,12 @@ export default {
     },
     computed: {
     },
+    created() {
+        this.question = this.$store.state.questions.find(q => q.id === this.$route.params.id);
+
+        if (!this.question) {
+            this.$router.push({name: 'NotFound'});
+        }
+    }
 }
 </script>

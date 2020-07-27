@@ -3,7 +3,9 @@
     <article v-bind:class="{blur: !isAnswerVisible,
                             correct: isCorrect == true,
                             incorrect: isCorrect == false}">
-        <div class="question">{{cardData.question}}</div>
+        <div class="question">
+            <router-link :to="{name: 'QuestionDetails', params: {id: cardData.id}}">{{cardData.question}}</router-link>
+            </div>
         <div class="answer">{{cardData.answer}}</div>
         <div class="questionFooter">
             <div>
@@ -52,7 +54,14 @@ export default {
      * @param {boolean} correct whether or not the answer was correct
      */      
     grade(correct) {
-        const payload = {id: this.cardData.id, isCorrect: correct};
+        console.log('Set question ' + this.cardData.id + ' to correct: ' + correct);
+
+        const payload = {
+            id: this.cardData.id,
+            isCorrect: correct
+        };
+
+        // Send something to Vuex with the question ID and whether it's correct
         this.$store.commit('GRADE_QUESTION', payload);
     },
 
@@ -61,8 +70,10 @@ export default {
      * @param {boolean} shouldShow whether or not the answer should show up
      */
     setAnswerVisibility(shouldShow) {
-        const payload = {id: this.cardData.id, visible: shouldShow};
-        this.$store.commit('SET_ANSWER_VISIBILITY', payload);
+        console.log('Set question ' + this.cardData.id + ' to visiblility: ' + shouldShow);
+
+        // Send something to Vuex with the question ID and whether its answer should show
+        this.$store.commit('TOGGLE_ANSWER_VISIBILITY', this.cardData.id);
     },
   },
   // Data contains information specific to our application

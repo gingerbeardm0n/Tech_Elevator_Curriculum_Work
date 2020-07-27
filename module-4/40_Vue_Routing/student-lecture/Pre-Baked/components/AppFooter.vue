@@ -2,12 +2,12 @@
 <template>
   <footer>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="questions.html">Questions</a>
-      <a href="ask.html">Ask a Question</a>
-      <a href="services.html">Services</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+      <router-link :to="{name: 'Home'}" exact>Home</router-link>
+      <router-link :to="{name: 'Questions'}" exact>Questions</router-link>
+      <router-link :to="{name: 'AskQuestion'}">Ask a Question</router-link>
+      <router-link :to="{name: 'Services'}">Services</router-link>
+      <router-link :to="{name: 'About'}">About</router-link>
+      <router-link :to="{name: 'Contact'}">Contact</router-link>
     </nav>
     <!-- Bind these to data -->
     <small>Copyright &copy; {{year}}, {{companyName}}</small>
