@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Questions from '../views/Questions.vue'
+import QuestionDetails from '../views/QuestionDetails.vue'
+import QuestionEdit from '../views/QuestionEdit.vue'
 import NotFound from '../views/NotFound.vue'
 import AskQuestion from '../views/AskQuestion.vue'
 import Contact from '../views/Contact.vue'
@@ -30,6 +32,16 @@ Vue.use(VueRouter)
     path: '/Questions',
     name: 'Questions',
     component: Questions
+  },  
+  {
+    path: '/Questions/:id',
+    name: 'QuestionDetails',
+    component: QuestionDetails
+  },
+  {
+    path: '/Questions/:id/Edit',
+    name: 'EditQuestion',
+    component: QuestionEdit
   },
   {
     path: '/AskQuestion',
@@ -43,13 +55,13 @@ Vue.use(VueRouter)
   },
   {
     path: '*',
-    name: '404',
+    name: 'NotFound',
     component: NotFound
   }
 ]
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: 'history', // TODO: Talk about Hash vs History
   base: process.env.BASE_URL,
   routes
 })

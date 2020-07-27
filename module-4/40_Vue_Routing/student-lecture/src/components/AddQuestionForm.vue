@@ -60,6 +60,8 @@ export default {
                 question: this.newQuestion.question,
                 answer: this.newQuestion.answer,
                 difficulty: this.newQuestion.difficulty,
+                isAnswerVisible: false,
+                isCorrect: null,                
                 id: this.calculateNextAvailableId()
             };
 
@@ -69,6 +71,10 @@ export default {
 
             // Default us to good values for the next time we show the form
             this.clearForm();
+
+            if (this.$route.path !== '/Questions') {
+                this.$router.push('Questions');
+            }
         }, 
         /**
          * Hides the add question form

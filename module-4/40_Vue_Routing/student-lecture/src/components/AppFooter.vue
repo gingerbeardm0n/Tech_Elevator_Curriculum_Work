@@ -2,12 +2,12 @@
 <template>
   <footer>
     <nav>
-      <router-link v-bind:to="{name: 'Home'}" active-class="active" exact>Home</router-link>
-      <router-link to="Questions" active-class="active">Questions</router-link>
-      <router-link to="AskQuestion" active-class="active">Ask a Question</router-link>
-      <router-link to="Services" active-class="active">Services</router-link>
-      <router-link to="About" active-class="active">About</router-link>
-      <router-link to="Contact" active-class="active">Contact</router-link>
+      <router-link :to="{name: 'Home'}" active-class="active" exact>Home</router-link>
+      <router-link :to="{name: 'Questions'}" active-class="active" exact>Questions</router-link>
+      <router-link :to="{name: 'AskQuestion'}" active-class="active">Ask a Question</router-link>
+      <router-link :to="{name: 'Services'}" active-class="active">Services</router-link>
+      <router-link :to="{name: 'About'}" active-class="active">About</router-link>
+      <router-link :to="{name: 'Contact'}" active-class="active">Contact</router-link>
     </nav>
     <!-- Bind these to data -->
     <small>Copyright &copy; {{year}}, {{companyName}}</small>

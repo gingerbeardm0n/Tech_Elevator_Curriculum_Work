@@ -53,8 +53,8 @@
                     </table>
                     <p>
                         <small>* - Sally the Squirrel, Tech Elevator, and its staff do not condone
-                            violent, criminal, or unethical behavior of any sort. See <a href="about.html#noteToVisitors">site
-                                disclaimer</a> for more.</small>
+                            violent, criminal, or unethical behavior of any sort. See <router-link to="About">site
+                                disclaimer</router-link> for more.</small>
                     </p>
                     <p>
                         <small>** - WTYPRT service should not be construed as meaning that we will actually <em>fix</em>
@@ -64,8 +64,7 @@
 
                 <section id="closing">
                     <h2>Request Services</h2>
-                    <p>If you see any service you'd like to pay for or have additional questions, feel free to <a
-                            href="contact.html">contact us</a>.</p>
+                    <p>If you see any service you'd like to pay for or have additional questions, feel free to <router-link to="Contact">contact us</router-link>.</p>
                 </section>
             </main>        
     </div>

@@ -3,7 +3,9 @@
     <article v-bind:class="{blur: !isAnswerVisible,
                             correct: isCorrect == true,
                             incorrect: isCorrect == false}">
-        <div class="question">{{cardData.question}}</div>
+        <div class="question">
+            <router-link :to="{name: 'QuestionDetails', params: {id: cardData.id}}">{{cardData.question}}</router-link>
+            </div>
         <div class="answer">{{cardData.answer}}</div>
         <div class="questionFooter">
             <div>

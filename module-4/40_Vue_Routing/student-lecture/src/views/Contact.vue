@@ -68,8 +68,8 @@
                 <p>
                     <small>* - this form is a joke intended to demonstrate different input types. Do not submit
                         confidential
-                        information to untrusted sources. See <a href="about.html#noteToVisitors">site
-                            disclaimer</a> for more information.</small>
+                        information to untrusted sources. See <router-link to="About">site
+                            disclaimer</router-link> for more information.</small>
                 </p>
 
                 <input type="submit" id="btnSubmit">

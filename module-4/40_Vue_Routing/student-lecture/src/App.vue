@@ -129,6 +129,10 @@ blockquote cite {
   font-style: normal;
 }
 
+article .question a {
+  color: white;
+}
+
 /* General Link Styling */
 
 .active {
