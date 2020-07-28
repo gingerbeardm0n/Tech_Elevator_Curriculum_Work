@@ -1,8 +1,10 @@
 <!-- Template defines the way the component renders on the web page -->
 <template>
   <div id="app">
-    <AppHeader />
-    <router-view />
+    <app-header />
+    <div class="pageRoot">      
+      <router-view /> <!-- Display the current route's component here -->
+    </div>
     <app-footer />
   </div>
 </template>
@@ -19,6 +21,10 @@ export default {
   components: {
     AppHeader,
     AppFooter
+  },
+  created() {
+    console.log('App Created!');
+    // TODO: Fetch data from a server
   }
 };
 </script>
@@ -60,8 +66,11 @@ main {
 .pageRoot {
   background-color: white;
   padding: 1rem;
-  display: grid;
   grid-area: mainBody;
+}
+
+.pageRoot > * {
+  display: grid;
   grid-template-areas: "squirrelPic" "mainBody";
   /* Specify the minimum height for this region. On small pages it can loop wierd if we don't do this */
   min-height: 400px;
@@ -171,7 +180,7 @@ a:hover {
     padding: 0 1rem;
   }
 
-  .pageRoot {
+  .pageRoot > * {
     column-gap: 0.5rem;
     grid-template-columns: 1fr 20rem;
     grid-template-areas: "mainBody squirrelPic" 

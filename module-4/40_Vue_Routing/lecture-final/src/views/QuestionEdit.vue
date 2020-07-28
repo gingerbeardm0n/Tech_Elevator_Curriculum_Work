@@ -1,17 +1,16 @@
 <template>
-    <div class="pageRoot">
+    <div>
         <main>
             <section id="opening">
                 <h1>Edit Question</h1>
                 <question-card v-bind:cardData="question" />
             </section>
             <section id="editForm">
-                <form id="editQuestion" 
-                        v-on:submit.prevent="addQuestion()"> <!-- Same thing as v-if="showAddQuestion == true" -->
+                <form id="editQuestion" v-on:submit.prevent="addQuestion()">
                     <div class="form-group">
                     <label>Question</label>
                     <input type="text" required id="newQuestion" 
-                            v-model.trim="question.question">
+                           v-model.trim="question.question">
                     </div>
                     <div class="form-group">
                     <label>Answer</label>
@@ -39,16 +38,24 @@ export default {
     components: {
         QuestionCard
     },
+    data() {
+        return {
+            question: null
+        }
+    },
     computed: {
     },
+    // Created is called when a component is created. It's a good place to load data.
     created() {
-        const id = this.$route.params.id;
+        const id = this.$route.params.questionId; // Maps to :questionId in the route path
+
         this.question = this.$store.state.questions.find(q => q.id === id);
 
+        // Redirect to NotFound if the question ID is not found
         if (!this.question) {
             this.$router.push({name: 'NotFound'});
         }
-    }
+    },
 }
 </script>
 

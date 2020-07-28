@@ -2,12 +2,18 @@
 <template>
   <footer>
     <nav>
-      <router-link :to="{name: 'Home'}" exact>Home</router-link>
-      <router-link :to="{name: 'Questions'}" exact>Questions</router-link>
-      <router-link :to="{name: 'AskQuestion'}">Ask a Question</router-link>
-      <router-link :to="{name: 'Services'}">Services</router-link>
-      <router-link :to="{name: 'About'}">About</router-link>
-      <router-link :to="{name: 'Contact'}">Contact</router-link>
+      <!-- Add link to Home -->
+      <router-link v-bind:to="{name: 'Home'}" exact>Home</router-link>
+      <!-- Add link to Questions -->
+      <router-link v-bind:to="{name: 'Questions'}" exact>Question</router-link>
+      <!-- Add link to Ask a Question -->
+      <router-link v-bind:to="{name: 'AskQuestion'}">Ask a Question</router-link>
+      <!-- Add link to Services -->
+      <router-link v-bind:to="{name: 'Services'}">Services</router-link>
+      <!-- Add link to About -->
+      <router-link v-bind:to="{name: 'About'}">About</router-link>
+      <!-- Add link to Contact -->
+      <router-link v-bind:to="{name: 'Contact'}">Contact</router-link>
     </nav>
     <!-- Bind these to data -->
     <small>Copyright &copy; {{year}}, {{companyName}}</small>
@@ -43,12 +49,6 @@ export default {
 
 <!-- Style is optional and can be completely omitted if custom styles are not needed -->
 <style scoped>
-/*
-* {
-  color: red !important;
-}
-*/
-
 footer {
   background-color: #3b3e42;
   color: #999999;

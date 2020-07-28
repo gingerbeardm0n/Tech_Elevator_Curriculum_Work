@@ -72,8 +72,12 @@ export default {
             // Default us to good values for the next time we show the form
             this.clearForm();
 
-            if (this.$route.path !== '/Questions') {
-                this.$router.push('Questions');
+            // TODO: Navigate us to Questions if we're not currently there
+            // TODO: Use this.$router.currentRoute to safeguard against duplicate navigation
+            console.log(this.$router.currentRoute);
+
+            if (this.$router.currentRoute.name !== 'Questions') {
+                this.$router.push({name: 'Questions'}); // Navigate to the route with the name of 'Questions'
             }
         }, 
         /**
