@@ -1,10 +1,27 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Home from '../views/Home.vue'
+import Portfolio from '../views/Portfolio.vue'
+import Hobbies from '../views/Hobbies.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
-
+  {
+    path: '/',
+    name: 'home',
+    component: Home
+  },
+  {
+    path: '/portfolio',
+    name: 'portfolio',
+    component: Portfolio
+  },
+  {
+    path: '/soManyHobbies',
+    name: 'hobbies',
+    component: Hobbies
+  }
 ]
 
 const router = new VueRouter({
