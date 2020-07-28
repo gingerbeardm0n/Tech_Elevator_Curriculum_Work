@@ -3,7 +3,7 @@
   <div id="app">
     <app-header />
     <div class="pageRoot">
-      <!-- TODO: Display the current page here -->
+      <router-view />
     </div>
     <app-footer />
   </div>

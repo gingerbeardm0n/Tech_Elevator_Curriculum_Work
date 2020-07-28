@@ -75,6 +75,10 @@ export default {
             // TODO: Navigate us to Questions if we're not currently there
             // TODO: Use this.$router.currentRoute to safeguard against duplicate navigation
             console.log(this.$router.currentRoute);
+
+            if(this.$router.currentroute.name !== "Questions") {
+                this.$router.push({name: 'Questions'});
+            }
         }, 
         /**
          * Hides the add question form

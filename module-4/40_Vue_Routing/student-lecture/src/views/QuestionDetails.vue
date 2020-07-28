@@ -37,6 +37,15 @@ export default {
     computed: {
     },
     // TODO: Handle created by grabbing the question from questions
+
+    created() {
+        console.log('Component created!');
+
+        console.log('Parameters to this component are:', this.$route.prams);
+        
+        const id = this.$route.params.questions;
+        console.log('You requested ID: ' + id)
+    }
     // TODO: Redirect to NotFound if the question ID is not found
 }
 </script>

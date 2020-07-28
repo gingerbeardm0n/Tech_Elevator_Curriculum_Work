@@ -3,11 +3,17 @@
   <footer>
     <nav>
       <!-- TODO: Add link to Home -->
+      <router-link v-bind:to="{name: 'Home'}" exact>Home, Yah Boiieeee</router-link>
       <!-- TODO: Add link to Questions -->
+      <router-link v-bind:to="{name: 'Questions'}">Question</router-link>
       <!-- TODO: Add link to Ask a Question -->
+      <router-link v-bind:to="{name: 'AskQuestion'}">Ask a Question</router-link>
       <!-- TODO: Add link to Services -->
+      <router-link v-bind:to="{name: 'Services'}">Services</router-link>
       <!-- TODO: Add link to About -->
+      <router-link v-bind:to="{name: 'About'}">About</router-link>
       <!-- TODO: Add link to Contact -->
+      <router-link v-bind:to="{name: 'Contact'}">Contact</router-link>
     </nav>
     <!-- Bind these to data -->
     <small>Copyright &copy; {{year}}, {{companyName}}</small>
