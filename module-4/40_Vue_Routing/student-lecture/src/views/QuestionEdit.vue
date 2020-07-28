@@ -1,5 +1,5 @@
 <template>
-    <div class="pageRoot">
+    <div>
         <main>
             <section id="opening">
                 <h1>Edit Question</h1>

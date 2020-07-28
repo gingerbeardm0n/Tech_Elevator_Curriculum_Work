@@ -19,6 +19,7 @@ const routes = [
   // TODO: Talk about case sensitivity on Name / Components
 
   // TODO: Add a wildcard route for NotFound
+  // TODO: This will require a new view that displays the NotFoundMessage component
 
   // TODO: Add a route for question details and question edit
 ];

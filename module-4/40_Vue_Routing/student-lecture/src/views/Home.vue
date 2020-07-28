@@ -1,5 +1,5 @@
 <template>
-    <div class="pageRoot">
+    <div>
         <aside>
             <img src="../assets/images/SquirrelPhone.jpg" alt="A squirrel with a phone" />
             <cite>Photo by Junkyardmax</cite>

@@ -1,5 +1,5 @@
 <template>
-    <div class="pageRoot">
+    <div>
         <main>
             <section id="opening">
                 <question-card v-bind:cardData="question" />
