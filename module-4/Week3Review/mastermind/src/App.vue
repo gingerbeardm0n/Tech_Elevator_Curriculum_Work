@@ -14,7 +14,7 @@
       <enter-guess />
     </div>
     <div class="restart">
-      <a v-on:click="reset" href="#">Restart Game</a>
+      <a @click="reset" href="#">Restart Game</a>
     </div>
   </div>
 </template>
@@ -25,7 +25,7 @@ import EnterGuess from './components/EnterGuess.vue'
 
 export default {
   name: 'Mastermind',
-  
+
   components: {
     HistoryList,
     EnterGuess
