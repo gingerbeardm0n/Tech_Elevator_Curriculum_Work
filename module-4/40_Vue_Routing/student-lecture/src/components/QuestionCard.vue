@@ -4,8 +4,9 @@
                             correct: isCorrect == true,
                             incorrect: isCorrect == false}">
         <div class="question">
-            <router-link :to="{name: 'QuestionDetails', params: {id: cardData.id}}">{{cardData.question}}</router-link>
-            </div>
+            <!-- TODO: Add a router-link here -->
+            {{cardData.question}}
+        </div>
         <div class="answer">{{cardData.answer}}</div>
         <div class="questionFooter">
             <div>

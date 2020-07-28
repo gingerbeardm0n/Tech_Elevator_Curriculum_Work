@@ -2,12 +2,12 @@
 <template>
   <footer>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="questions.html">Questions</a>
-      <a href="ask.html">Ask a Question</a>
-      <a href="services.html">Services</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+      <!-- TODO: Add link to Home -->
+      <!-- TODO: Add link to Questions -->
+      <!-- TODO: Add link to Ask a Question -->
+      <!-- TODO: Add link to Services -->
+      <!-- TODO: Add link to About -->
+      <!-- TODO: Add link to Contact -->
     </nav>
     <!-- Bind these to data -->
     <small>Copyright &copy; {{year}}, {{companyName}}</small>
@@ -43,12 +43,6 @@ export default {
 
 <!-- Style is optional and can be completely omitted if custom styles are not needed -->
 <style scoped>
-/*
-* {
-  color: red !important;
-}
-*/
-
 footer {
   background-color: #3b3e42;
   color: #999999;
