@@ -40,7 +40,13 @@ export default {
     },
     data() {
         return {
-            
+            question: {
+                id: -1,
+                question: 'TODO: Look up the question from the store by id',
+                answer: 'Use $route to look up the item from the store by its id',
+                isCorrect: false,
+                isAnswerVisible: true,
+            }
         }
     },
     computed: {

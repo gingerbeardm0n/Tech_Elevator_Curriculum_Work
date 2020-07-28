@@ -73,6 +73,8 @@ export default {
             this.clearForm();
 
             // TODO: Navigate us to Questions if we're not currently there
+            // TODO: Use this.$router.currentRoute to safeguard against duplicate navigation
+            console.log(this.$router.currentRoute);
         }, 
         /**
          * Hides the add question form

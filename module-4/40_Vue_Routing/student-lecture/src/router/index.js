@@ -1,14 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import About from '../views/About.vue'
-import Questions from '../views/Questions.vue'
-import QuestionDetails from '../views/QuestionDetails.vue'
-import QuestionEdit from '../views/QuestionEdit.vue'
-import NotFound from '../views/NotFound.vue'
-import AskQuestion from '../views/AskQuestion.vue'
-import Contact from '../views/Contact.vue'
-import Services from '../views/Services.vue'
 
 Vue.use(VueRouter)
 
@@ -18,7 +10,13 @@ const routes = [
     name: 'Home',
     component: Home
   },
-  // TODO: Add more routes
+  // TODO: Add a route for Questions
+  // TODO: Add a route for AskQuestion
+  // TODO: Add a route for Services
+  // TODO: Add a route for About
+  // TODO: Add a route for Contact
+
+  // TODO: Talk about case sensitivity on Name / Components
 
   // TODO: Add a wildcard route for NotFound
 
@@ -26,26 +24,9 @@ const routes = [
 ];
 
 const router = new VueRouter({
-  mode: 'hash', // TODO: Talk about Hash vs History
+  // TODO: Talk about Hash vs History
   base: process.env.BASE_URL,
   routes
 });
 
 export default router;
-
-
-
-
-
-
-
-
-
-
-
-// You'll never see the lines below in the real world, so don't worry about it. 
-// I have these lines here to let me import our components before using them in the demo
-if (router === false) {
-  const shushEsLint = [About, Questions, QuestionDetails, QuestionEdit, NotFound, AskQuestion, Contact, Services]
-  console.log(shushEsLint);
-}

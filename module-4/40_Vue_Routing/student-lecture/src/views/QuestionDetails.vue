@@ -3,10 +3,12 @@
         <main>
             <section id="opening">
                 <question-card v-bind:cardData="question" />
-            </section>
-            <section>
+            </section>            
+            <section id="editSection" v-if="showEdit">
                 <p>
-                    <router-link :to="{name: 'EditQuestion', params: {id: question.id}}">Edit this Question</router-link>
+                    <router-link :to="{name: 'EditQuestion', params: {id: question.id}}">
+                        Edit this Question
+                    </router-link>
                 </p>
             </section>
         </main>
@@ -22,7 +24,14 @@ export default {
     },
     data() {
         return {
-            question: null
+            showEdit: true,
+            question: {
+                id: -1,
+                question: 'TODO: Look up the question from the store by id',
+                answer: 'Use $route to look up the item from the store by its id',
+                isCorrect: false,
+                isAnswerVisible: true,
+            }
         }
     },
     computed: {
