@@ -18,7 +18,7 @@
           <input type="number" min="1" max="3" 
                  id="newDifficulty"
                  v-model.number="newQuestion.difficulty">
-        </div>
+        </div
         <input type="submit" value="Add Question">
         <input type="button" value="Cancel" v-on:click="hideForm()">
       </form>    
