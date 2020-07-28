@@ -4,8 +4,11 @@
                             correct: isCorrect == true,
                             incorrect: isCorrect == false}">
         <div class="question">
-            <router-link :to="{name: 'QuestionDetails', params: {id: cardData.id}}">{{cardData.question}}</router-link>
-            </div>
+            <router-link v-bind:to="{name: 'QuestionDetails', 
+                                     params: {questionId: cardData.id}}">
+                {{cardData.question}}
+            </router-link>
+        </div>
         <div class="answer">{{cardData.answer}}</div>
         <div class="questionFooter">
             <div>
