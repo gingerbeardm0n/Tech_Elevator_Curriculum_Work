@@ -25,8 +25,6 @@
 </template>
 
 <script>
-import QuestionService from '../services/QuestionService';
-
 export default {
     name: 'AddQuestionForm',
     data() {
@@ -68,20 +66,17 @@ export default {
             };
 
             // TODO: Create the question on the server
-            QuestionService.create(toAdd)
-                .then(result => {
-                    // Default us to good values for the next time we show the form
-                    this.clearForm();
 
-                    // Tell Vuex that the question has been added
-                    this.$store.commit('ADD_QUESTION', result.data);
+            // Default us to good values for the next time we show the form
+            this.clearForm();
 
-                    // Navigate away as needed
-                    if (this.$router.currentRoute.name !== 'Questions') {
-                        this.$router.push({name: 'Questions'}); // Navigate to the route with the name of 'Questions'
-                    }
-                })
-                .catch(error => console.error('Could not create question', error));
+            // Tell Vuex that the question has been added
+            this.$store.commit('ADD_QUESTION', toAdd);
+
+            // Navigate away as needed
+            if (this.$router.currentRoute.name !== 'Questions') {
+                this.$router.push({name: 'Questions'}); // Navigate to the route with the name of 'Questions'
+            }            
         }, 
         /**
          * Hides the add question form

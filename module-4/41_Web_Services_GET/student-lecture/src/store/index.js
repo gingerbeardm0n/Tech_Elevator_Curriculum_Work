@@ -45,20 +45,39 @@ export default new Vuex.Store({
 
     // Add a method to add a question to the list of questions
     ADD_QUESTION(state, payload) {
-      state.questions.push(cleanseQuestion(payload));
+      // Ensure some custom properties are set or our card buttons won't work
+      payload.isCorrect = null;
+      payload.isAnswerVisible = false;
+
+      // Add the question to our array
+      state.questions.push(payload);
     },
     QUESTIONS_LOADED(state, payload) {
-      state.questions = payload.map(q => cleanseQuestion(q));
+      // Ensure some custom properties are set on each question or our card buttons won't work
+      payload.forEach(question => {
+        question.isCorrect = null;
+        question.isAnswerVisible = false;
+      });
+
+      // Replace the existing array of questions with the new one
+      state.questions = payload;
     },
     QUESTION_UPDATED(state, payload) {
-      const newQuestion = cleanseQuestion(payload);
-      const index = state.questions.findIndex(q => q.id === newQuestion.id);
+      const index = state.questions.findIndex(q => q.id === payload.id);
 
       if (index >= 0) {
         // Replace the old question with the new question
-        state.questions.splice(index, 1, newQuestion);
+        state.questions.splice(index, 1, payload);
       }
     },
+    QUESTION_DELETED(state, payload) {
+      const index = state.questions.findIndex(q => q.id === payload.id);
+
+      // Remove the old question, if present
+      if (index >= 0) {
+        state.questions.splice(index, 1);
+      }
+    }
 
   },
 
@@ -74,10 +93,3 @@ export default new Vuex.Store({
   modules: {
   }
 })
-
-function cleanseQuestion(question) {
-  question.isAnswerVisible = false;
-  question.isCorrect = null;
-
-  return question;
-}
