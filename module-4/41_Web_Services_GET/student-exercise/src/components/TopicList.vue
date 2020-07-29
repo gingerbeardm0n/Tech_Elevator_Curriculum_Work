@@ -1,20 +1,34 @@
 <template>
   <div class="topic-list">
-    <div v-for="topic in topics" v-bind:key="topic.id" class="topic">
-      {{ topic.title }}
-    </div>
+    <router-link v-bind:to="{name: Messages, params: {id: topic.id}}" 
+                 v-for="topic in topics" 
+                 v-bind:key="topic.id" 
+                 class="topic">
+    <div >{{ topic.title }}</div>
+    </router-link>
   </div>
 </template>
 
 <script>
+import TopicsService from "../services/TopicsService.js";
+
 export default {
-  name: 'topic-list',
+  name: "topic-list",
   data() {
     return {
-      topics: []
-    }
-  }
-}
+      topics: [],
+    };
+  },
+  created() {
+     TopicsService.getTopics()
+      .then((response) => {
+        this.topics = response.data;
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  },
+};
 </script>
 
 <style>
