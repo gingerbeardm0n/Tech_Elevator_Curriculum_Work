@@ -4,7 +4,7 @@
             <section id="opening">
                 <question-card v-bind:cardData="question" />
             </section>            
-            <section id="editSection" v-if="showEdit">
+            <section id="editSection">
                 <p>
                     <router-link :to="{name: 'EditQuestion', 
                                        params: {questionId: question.id}}">
@@ -21,7 +21,6 @@
 
 <script>
 import QuestionCard from '../components/QuestionCard.vue';
-import QuestionService from '../services/QuestionService';
 
 export default {
     components: {
@@ -29,7 +28,6 @@ export default {
     },
     data() {
         return {
-            showEdit: true,
             question: null
         }
     },
@@ -38,23 +36,14 @@ export default {
             const confirmed = confirm('Are you sure you want to delete this question? This cannot be undone');
 
             if (confirmed) {
-                QuestionService.delete(this.question)
-                    .then(() => {
-                        alert('Question deleted.');
-                        this.$router.push({name: 'Questions'});
-                    })
-                    .catch(error => {
-                        console.error('Could not delete question', error);
-                    });
+                // TODO: Call out to our web service and have it make the delete
+                this.$store.commit('QUESTION_DELETED', this.question);
+                this.$router.push({name: 'Questions'});
             }
         }
     },
     // Created is called when a component is created. It's a good place to load data.
     created() {
-        console.log('Component created!');
-
-        console.log('Parameters to this component are:', this.$route.params);
-
         const id = this.$route.params.questionId; // Maps to :questionId in the route path
 
         this.question = this.$store.state.questions.find(q => q.id === id);

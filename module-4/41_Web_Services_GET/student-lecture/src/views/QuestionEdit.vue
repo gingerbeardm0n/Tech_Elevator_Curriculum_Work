@@ -34,7 +34,6 @@
 
 <script>
 import QuestionCard from '../components/QuestionCard.vue';
-import QuestionService from '../services/QuestionService';
 
 export default {
     components: {
@@ -47,13 +46,9 @@ export default {
     },
     methods: {
         saveQuestion() {
-            QuestionService.update(this.question)
-                .then(response => {
-                    this.$store.commit('QUESTION_UPDATED', response.data);
-
-                    this.$router.push({name: 'QuestionDetails', params: {questionId: response.data.id}});
-                })
-                .catch(error => console.error('Could not update qustion', error));
+            // TODO: Call to the server instead
+            this.$store.commit('QUESTION_UPDATED', this.question);
+            this.$router.push({name: 'QuestionDetails', params: {questionId: this.question.id}});
         }
     },
     // Created is called when a component is created. It's a good place to load data.

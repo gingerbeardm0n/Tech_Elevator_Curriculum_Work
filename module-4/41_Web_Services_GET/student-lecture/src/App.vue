@@ -14,7 +14,8 @@
 // Import allows us to import exported resources from .js and .vue files
 import AppHeader from "./components/AppHeader.vue";
 import AppFooter from "./components/AppFooter.vue";
-import QuestionService from "./services/QuestionService.js";
+
+// TODO: import axios from 'axios';
 
 export default {
   name: "App",
@@ -26,14 +27,20 @@ export default {
   created() {
     console.log('App Created!');
 
-    // TODO: Fetch data from a server
-    QuestionService.getAllQuestions()
-      .then(response => {
-        this.$store.commit('QUESTIONS_LOADED', response.data);
-      })
-      .catch(error => {
-        console.error('An error occurred trying to load questions', error);
-      });
+    // This is a path to the application we'll be communicating with. It can be any server
+    // that can handle REST requests.
+    const myServerUrl = 'https://sallythesquirrelservice.azurewebsites.net';
+
+
+    // TODO: Fetch data from the server
+
+    // TODO: Create our Axios instance used to communicate with the server and set the baseURL
+
+    // TODO: Do a get call to myServerUrl /questions
+    
+    console.warn('This really should call to ', myServerUrl);
+
+    // TODO: commit a Vuex mutation named QUESTIONS_LOADED when question data is ready
   }
 };
 </script>

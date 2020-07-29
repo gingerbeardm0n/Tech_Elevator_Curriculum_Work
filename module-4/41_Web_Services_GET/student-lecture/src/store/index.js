@@ -45,20 +45,27 @@ export default new Vuex.Store({
 
     // Add a method to add a question to the list of questions
     ADD_QUESTION(state, payload) {
-      state.questions.push(cleanseQuestion(payload));
+      state.questions.push(payload);
     },
     QUESTIONS_LOADED(state, payload) {
-      state.questions = payload.map(q => cleanseQuestion(q));
+      state.questions = payload;
     },
     QUESTION_UPDATED(state, payload) {
-      const newQuestion = cleanseQuestion(payload);
-      const index = state.questions.findIndex(q => q.id === newQuestion.id);
+      const index = state.questions.findIndex(q => q.id === payload.id);
 
       if (index >= 0) {
         // Replace the old question with the new question
-        state.questions.splice(index, 1, newQuestion);
+        state.questions.splice(index, 1, payload);
       }
     },
+    QUESTION_DELETED(state, payload) {
+      const index = state.questions.findIndex(q => q.id === payload.id);
+
+      // Remove the old question, if present
+      if (index >= 0) {
+        state.questions.splice(index, 1);
+      }
+    }
 
   },
 
@@ -74,10 +81,3 @@ export default new Vuex.Store({
   modules: {
   }
 })
-
-function cleanseQuestion(question) {
-  question.isAnswerVisible = false;
-  question.isCorrect = null;
-
-  return question;
-}
