@@ -28,7 +28,11 @@ export default {
                 author: '',
                 read: false,
                 isbn: ''
+                
             };
+            if (this.$router.currentRoute.name !== 'myBooks') {
+                this.$router.push({name: 'myBooks'});
+            }
         }
     }
 }

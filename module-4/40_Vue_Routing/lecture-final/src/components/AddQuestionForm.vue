@@ -77,7 +77,8 @@ export default {
             console.log(this.$router.currentRoute);
 
             if (this.$router.currentRoute.name !== 'Questions') {
-                this.$router.push({name: 'Questions'}); // Navigate to the route with the name of 'Questions'
+                this.$router.push({name: 'Questions'}); 
+                // Navigate to the route with the name of 'Questions'
             }
         }, 
         /**
