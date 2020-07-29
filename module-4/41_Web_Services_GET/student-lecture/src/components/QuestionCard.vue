@@ -83,15 +83,6 @@ export default {
   data() {
     return {};
   },
-  created() {
-    console.log('Question card created', this.cardData);
-    if (this.cardData.isCorrect === undefined) {
-        this.cardData.isCorrect = null;
-    }
-    if (this.cardData.isAnswerVisible === undefined) {
-        this.cardData.isAnswerVisible = false;
-    }
-  },
   // Computed contains the Vue.js equivalent of getters that rely on other data to compute results.
   // Think of computed as computed or auto-calculated properties that are bound to from the template.
   computed: {

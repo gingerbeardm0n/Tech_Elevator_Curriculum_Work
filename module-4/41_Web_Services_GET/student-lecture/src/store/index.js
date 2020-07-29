@@ -45,9 +45,21 @@ export default new Vuex.Store({
 
     // Add a method to add a question to the list of questions
     ADD_QUESTION(state, payload) {
+      // Ensure some custom properties are set or our card buttons won't work
+      payload.isCorrect = null;
+      payload.isAnswerVisible = false;
+
+      // Add the question to our array
       state.questions.push(payload);
     },
     QUESTIONS_LOADED(state, payload) {
+      // Ensure some custom properties are set on each question or our card buttons won't work
+      payload.forEach(question => {
+        question.isCorrect = null;
+        question.isAnswerVisible = false;
+      });
+
+      // Replace the existing array of questions with the new one
       state.questions = payload;
     },
     QUESTION_UPDATED(state, payload) {

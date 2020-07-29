@@ -15,8 +15,6 @@
 import AppHeader from "./components/AppHeader.vue";
 import AppFooter from "./components/AppFooter.vue";
 
-// TODO: import axios from 'axios';
-
 export default {
   name: "App",
   // Components defines the components that must be referenced in the template
@@ -31,14 +29,10 @@ export default {
     // that can handle REST requests.
     const myServerUrl = 'https://sallythesquirrelservice.azurewebsites.net';
 
-
-    // TODO: Fetch data from the server
-
     // TODO: Create our Axios instance used to communicate with the server and set the baseURL
 
-    // TODO: Do a get call to myServerUrl /questions
-    
-    console.warn('This really should call to ', myServerUrl);
+    // TODO: Fetch data from the server via a get call to myServerUrl /questions
+    console.warn('This should make a GET call to ' + myServerUrl + '/questions')
 
     // TODO: commit a Vuex mutation named QUESTIONS_LOADED when question data is ready
   }
