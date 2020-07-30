@@ -31,6 +31,7 @@ namespace Capstone
                 options.AddDefaultPolicy(
                     builder =>
                     {
+                        //builder.SetIsOriginAllowed(origin => origin == "techelevator.com");
                         builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
                     });
             });
