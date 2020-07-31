@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Capstone.DAO;
+﻿using Capstone.DAO;
 using Capstone.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -31,7 +27,7 @@ namespace Capstone.Controllers
         [HttpGet("{id}")]
         public IActionResult StudentDetails(int id)
         {
-            if (id <= 0)
+            if (id > 0)
             {
                 return BadRequest("ID must be positive");
             }

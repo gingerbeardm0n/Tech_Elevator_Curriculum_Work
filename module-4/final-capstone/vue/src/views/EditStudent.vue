@@ -74,7 +74,7 @@ export default {
         saveStudent() {
             StudentService.update(this.student)
                 .then(response => {
-                    this.$store.commit('STUDENT_UPDATED', response.data);
+                    this.$store.commit('STUDENT_UPDATED', response.payload);
                     this.$router.push({name: 'StudentDetails', params: {studentId: response.data.id}});
                 })
                 .catch(error => {
@@ -83,7 +83,7 @@ export default {
         }
     },
     created() {
-        const id = this.$route.params.studentId;
+        const id = this.$route.params.id;
         StudentService.getStudent(id)
             .then(response => {
                 this.student = response.data;
