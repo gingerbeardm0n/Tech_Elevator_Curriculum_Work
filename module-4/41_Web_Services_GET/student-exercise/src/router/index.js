@@ -12,7 +12,7 @@ const routes = [
     component: Home
   },
   {
-    path: '/:id',
+    path: '/topics/:id',
     name: 'Messages',
     component: Messages
   }

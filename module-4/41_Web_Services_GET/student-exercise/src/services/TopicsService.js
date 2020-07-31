@@ -8,7 +8,7 @@ export default {
     getTopics() {
         return http.get('/topics');
     },
-    getTopicID() {
-        return http.get('/topics/:id')
+    getTopicID(id) {
+        return http.get('/topics/' + id)
     }
 }

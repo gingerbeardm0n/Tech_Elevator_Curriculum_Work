@@ -1,7 +1,7 @@
 <template>
   <div class="topic-list">
-    <router-link v-bind:to="{name: Messages, params: {id: topic.id}}" 
-                 v-for="topic in topics" 
+    <router-link v-bind:to="{name: 'Messages', params: {id: topic.id}}" 
+                 v-for="topic in this.topics" 
                  v-bind:key="topic.id" 
                  class="topic">
     <div >{{ topic.title }}</div>

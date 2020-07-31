@@ -16,7 +16,7 @@ import TopicsService from '../services/TopicsService.js'
 export default {
   name: 'topic-details',
   props: {
-    'topicId': Number
+    'TopicId': Number
   },
   data() {
     return {
@@ -28,9 +28,14 @@ export default {
     }
   },
   created() {
-    TopicsService.getTopicID()
-      .then(response =>
-      this.topic.id = response.data);
+    TopicsService.getTopicID(this.TopicId)
+      .then(response => {
+        this.topic.id = response.data.topic.id;
+        this.topic.title = response.data.topic.title;
+        this.topic.meassages = response.data.topic.meassages;
+
+      }
+      );
   }
 
 }
