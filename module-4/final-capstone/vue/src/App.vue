@@ -3,39 +3,31 @@
      See https://getbootstrap.com/docs/4.0/components/alerts/ for reference on bootstrap -->
 <template>
   <div id="app" class="container">
-    <div id="nav">
-      <router-link class="nav-item" v-bind:to="{ name: 'home' }">
-        <i class="fas fa-home"></i> <!-- This is a font awesome icon -->
-        Home 
-      </router-link>
-      <router-link
-        class="nav-item"
-        v-bind:to="{ name: 'register' }"
-        v-if="!$store.state.token">&nbsp;|&nbsp;Register</router-link>
-      <router-link
-        class="nav-item"
-        v-bind:to="{ name: 'login' }"
-        v-if="!$store.state.token">
-        &nbsp;|&nbsp;Login
-      </router-link>
-      <router-link
-        class="nav-item"
-        v-bind:to="{ name: 'logout' }"
-        v-if="$store.state.token">
-        &nbsp;|&nbsp;Logout
-      </router-link>
-    </div>
-    <router-view />
+    <nav-bar />
+    <main>
+      <router-view />
+    </main>
   </div>
 </template>
 
 <script>
+import NavBar from '@/components/NavBar.vue';
+
 export default {
+  components: {
+    NavBar
+  }
   
 }
 </script>
 
 <!-- Application-Wide Styles go here -->
 <style>
+nav {
+  margin: 1rem 0;
+}
 
+main {
+  margin-top: 1rem;
+}
 </style>

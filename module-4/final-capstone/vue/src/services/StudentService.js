@@ -2,11 +2,23 @@ import axios from 'axios';
 
 export default {
 
-    enroll(student) {
+    list() {
+        return axios.get('/students');
+    },
+
+    getStudent(id) {
+        return axios.get(`/students/${id}`);
+    },
+
+    create(student) {
         return axios.post('/students', student);
     },
 
-    expel(student) {
+    update(student) {
+        return axios.put('/students', student);
+    },
+
+    delete(student) {
         return axios.delete('/students/' + student.id);
     }
 }

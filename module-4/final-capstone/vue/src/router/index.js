@@ -1,10 +1,15 @@
 import Vue from "vue";
 import Router from "vue-router";
+import store from "../store/index";
+
 import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
 import Register from "../views/Register.vue";
-import store from "../store/index";
+import Students from '../views/Students.vue';
+import StudentDetails from '../views/StudentDetails.vue';
+import AddStudent from '../views/AddStudent.vue';
+import EditStudent from '../views/EditStudent.vue';
 
 Vue.use(Router);
 
@@ -30,6 +35,38 @@ const router = new Router({
       },
     },
     {
+      path: '/students',
+      name: 'Students',
+      component: Students,
+      meta: {
+        requiresAuth: true,
+      }
+    },
+    {
+      path: '/students/new',
+      name: 'AddStudent',
+      component: AddStudent,
+      meta: {
+        requiresAuth: true,
+      }
+    },
+    {
+      path: '/students/:studentId',
+      name: 'StudentDetails',
+      component: StudentDetails,
+      meta: {
+        requiresAuth: true,
+      }
+    },
+    {
+      path: '/students/:studentId/edit',
+      name: 'EditStudent',
+      component: EditStudent,
+      meta: {
+        requiresAuth: true,
+      }
+    },    
+    {
       path: "/login",
       name: "login",
       component: Login,
@@ -52,10 +89,6 @@ const router = new Router({
       meta: {
         requiresAuth: false,
       },
-    },
-    {
-      path: "*",
-      redirect: "/",
     },
   ],
 });

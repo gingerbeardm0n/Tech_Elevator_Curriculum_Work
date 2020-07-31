@@ -22,6 +22,7 @@ if(currentToken && currentToken != 'undefined') {
 
 export default new Vuex.Store({
   state: {
+    students: [],
     token: currentToken || '',
     user: currentUser || {} // If a user is an admin, their user.role will be 'admin'
   },
@@ -41,6 +42,16 @@ export default new Vuex.Store({
       state.token = '';
       state.user = {};
       axios.defaults.headers.common = {};
+    },
+    STUDENTS_LOADED(state, payload) {
+      state.students = payload;
+    },
+    STUDENT_UPDATED(state, payload) {
+      const index = state.students.findIndex(s => s.id === payload.id);
+      state.students.splice(index, 1, payload);
+    },
+    STUDENT_ADDED(state, payload) {
+      state.students.push(payload);
     }
   }
 })
