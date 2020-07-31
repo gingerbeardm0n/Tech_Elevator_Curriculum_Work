@@ -50,3 +50,4 @@ GO
 
 -- TODO: Add any further tables, seed values etc.
 
+--select * from Students

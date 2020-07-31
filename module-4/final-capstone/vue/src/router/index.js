@@ -61,7 +61,7 @@ const router = new Router({
     {
       path: '/students/:studentId/edit',
       name: 'EditStudent',
-      Component: EditStudent,
+      component: EditStudent,
       meta: {
         requiresAuth: true,
       }

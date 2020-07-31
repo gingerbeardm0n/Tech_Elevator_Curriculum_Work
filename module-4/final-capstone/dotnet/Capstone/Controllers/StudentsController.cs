@@ -27,7 +27,7 @@ namespace Capstone.Controllers
         [HttpGet("{id}")]
         public IActionResult StudentDetails(int id)
         {
-            if (id > 0)
+            if (id <= 0)
             {
                 return BadRequest("ID must be positive");
             }
