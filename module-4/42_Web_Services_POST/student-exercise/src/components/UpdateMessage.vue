@@ -34,7 +34,13 @@ export default {
         title: this.title,
         messageText: this.messageText
       };
+
       // call update in message service
+
+      messageService.update(message.id, message)
+      .then( (response) => {
+        this.$router.push(`/${message.topicId}`);
+      })
     }
   },
   created() {
