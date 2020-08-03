@@ -5,7 +5,7 @@
         <div v-if="loaded || students.length > 0">
             <ul class="list-group" v-if="students.length">
                 <router-link v-for="student of students" v-bind:key="student.id"
-                    v-bind:to="{name: 'StudentDetails', params: {id: student.id}}"                
+                    v-bind:to="{name: 'StudentDetails', params: {studentId: student.id}}"                
                     class="list-group-item list-group-action">
                     {{student.firstName}} {{student.lastName}}
                 </router-link>
@@ -38,10 +38,10 @@ export default {
         }
     },
     created() {
-        StudentService.list()
+        StudentService.getAllStudents()
             .then(response => {
                 this.loaded = true;
-                this.$store.commit('STUDENT_DATA_LOADED', response.data);
+                this.$store.commit('STUDENTS_LOADED', response.data);
             })
             .catch(error => {
                 console.error('Oh snap. Could not load students!', error);

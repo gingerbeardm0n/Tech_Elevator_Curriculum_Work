@@ -10,8 +10,8 @@ namespace Capstone.DAO
         private const string SelectAllSql = "SELECT FirstName, LastName, Id, Email, Phone, GPA, Notes FROM Students";
         private const string SelectOneSql = "SELECT FirstName, LastName, Id, Email, Phone, GPA, Notes FROM Students WHERE Id = @StudentId";
         private const string DeleteOneSql = "DELETE FROM Students WHERE Id = @StudentId";
-        private const string CreateOneSql = "INSERT INTO Students (FirstName, LastName, Email, Phone, GPA, Notes) VALUES (@First, @Last, @Email, @Phone, @GPA, @Notes)";
-        private const string UpdateOneSql = "UPDATE Students SET FName = @First, LName = @Last, Email = @Email, Phone = @Phone, GPA = @GPA, Notes = @Notes WHERE Id = @StudentId";
+        private const string CreateOneSql = "INSERT INTO Students (FirstName, LastName, Email, Phone, GPA, Notes) VALUES (@First, @Last, @Email, @Phone, @GPA, @Notes); SELECT @@IDENTITY;";
+        private const string UpdateOneSql = "UPDATE Students SET FirstName = @First, LastName = @Last, Email = @Email, Phone = @Phone, GPA = @GPA, Notes = @Notes WHERE Id = @StudentId";
 
         private readonly string _connectionString;
 
@@ -92,7 +92,9 @@ namespace Capstone.DAO
                 command.Parameters.AddWithValue("@GPA", student.GPA);
                 command.Parameters.AddWithValue("@Notes", student.Notes);
 
-                command.ExecuteNonQuery();
+                int id = Convert.ToInt32(command.ExecuteScalar());
+
+                student.Id = id;
 
                 return student;
             }

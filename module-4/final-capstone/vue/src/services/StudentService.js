@@ -7,7 +7,7 @@ export default {
     },
 
     getStudent(id) {
-        return axios.get(`/students/details/${id}`);
+        return axios.get('/students/' + id);
     },
 
     create(student) {

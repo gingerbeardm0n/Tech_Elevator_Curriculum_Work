@@ -1,6 +1,6 @@
 <template>
     <article>
-            <h1>Add Student</h1>
+        <h1>Edit Student</h1>
 
         <div class="alert alert-info" role="alert">Enter information about the new student and click Create to continue</div>
         
@@ -74,7 +74,7 @@ export default {
         saveStudent() {
             StudentService.update(this.student)
                 .then(response => {
-                    this.$store.commit('STUDENT_UPDATED', response.payload);
+                    this.$store.commit('STUDENT_UPDATED', response.data);
                     this.$router.push({name: 'StudentDetails', params: {studentId: response.data.id}});
                 })
                 .catch(error => {
@@ -83,7 +83,7 @@ export default {
         }
     },
     created() {
-        const id = this.$route.params.id;
+        const id = this.$route.params.studentId;
         StudentService.getStudent(id)
             .then(response => {
                 this.student = response.data;

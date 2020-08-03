@@ -46,7 +46,7 @@ export default {
             if (confirm('Are you sure you want to delete this student? This cannot be undone.')) {
                 StudentService.delete(this.student)
                     .then(() => {
-                        this.$router.push({name: 'AllStudents'});
+                        this.$router.push({name: 'Students'});
                     })
                     .catch(error => {
                         this.errorMessage = error.message;
